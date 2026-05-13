@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About Us | Royal Kings Group</title>
+
+<link rel="icon" type="image/png" href="images/nav_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8C96A;--gold-dark:#96771E;--deep:#0A0A0F;--dark:#10101A;--mid:#1A1A28;--surface:#1F1F30;--text:#F0ECE0;--muted:#8A8070;--t:0.3s ease;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Raleway',sans-serif;background:var(--deep);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:68px;}
+
+/* ═══ NAV ═══ */
+#mainNav{position:fixed;top:0;width:100%;z-index:1000;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);transition:all .3s ease;}
+#mainNav.scrolled{background:rgba(10,10,15,0.99);box-shadow:0 2px 20px rgba(0,0,0,.5);}
+/* .nav-logo moved to NAV LOGO WITH BRAND TEXT section */
+.nav-logo img{height:46px;width:auto;object-fit:contain;}
+.nav-logo-text{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2.5px;font-weight:700;color:var(--text);text-transform:uppercase;white-space:nowrap;}
+.nav-links{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;padding-left:16px;}
+.nav-links a{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:rgba(240,236,224,.78);text-decoration:none;transition:color .3s;white-space:nowrap;position:relative;padding-bottom:3px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{padding:7px 18px!important;border:1px solid var(--gold)!important;color:var(--gold)!important;border-radius:2px!important;}
+.nav-cta:hover{background:var(--gold)!important;color:var(--deep)!important;}
+.nav-cta::after{display:none!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:1100;margin-left:12px;flex-shrink:0;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold);transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-drawer{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:rgba(10,10,15,.99);border-left:1px solid rgba(201,168,76,.2);z-index:1050;padding:80px 32px 40px;display:flex;flex-direction:column;gap:18px;transition:right .35s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(16px);}
+.mobile-drawer.open{right:0;}
+.mobile-drawer a{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(240,236,224,.8);text-decoration:none;padding:11px 0;border-bottom:1px solid rgba(201,168,76,.1);transition:color .3s,padding-left .3s;}
+.mobile-drawer a:hover,.mobile-drawer a.active{color:var(--gold);}
+.mobile-drawer a:hover{padding-left:5px;}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1040;display:none;cursor:pointer;}
+.drawer-overlay.open{display:block;}
+@media(max-width:1200px){.nav-links{gap:16px;}.nav-links a{font-size:10.5px;}}
+@media(max-width:1000px){.nav-links{gap:12px;}.nav-links a{font-size:10px;letter-spacing:1.5px;}}
+@media(max-width:768px){#mainNav{padding:0 16px;height:62px;}.nav-links{display:none;}.hamburger{display:flex;}}
+
+/* PAGE HERO */
+.page-hero{position:relative;height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.28) saturate(.6);}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,15,.3),rgba(10,10,15,.85));}
+.page-hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block;animation:fU .8s .2s both;}
+.page-hero h1{font-family:'Cinzel',serif;font-size:clamp(28px,4vw,56px);font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--text);line-height:1.15;animation:fU .8s .4s both;}
+.page-hero h1 em{color:var(--gold);font-style:normal;}
+.hero-div{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:18px auto 0;animation:fU .8s .6s both;}
+@keyframes fU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--dark);border-bottom:1px solid rgba(201,168,76,.1);padding:12px 60px;}
+.bc{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.bc a{color:var(--muted);text-decoration:none;transition:color var(--t);}
+.bc a:hover{color:var(--gold);}
+.bc .cur{color:var(--gold);}
+
+/* SHARED */
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.2vw,46px);font-weight:300;line-height:1.3;color:var(--text);margin-bottom:14px;}
+.sec-title em{font-style:italic;color:var(--gold);}
+.gold-rule{width:52px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:14px 0 22px;}
+.gold-rule.center{margin:14px auto 22px;}
+.body-text{font-size:15px;line-height:2;color:rgba(240,236,224,.65);font-weight:300;}
+.body-text p{margin-bottom:16px;}
+.btn-p{padding:12px 32px;background:var(--gold);color:var(--deep);font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;text-decoration:none;transition:all var(--t);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);display:inline-flex;align-items:center;}
+.btn-p:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-g{padding:12px 32px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:1px solid rgba(201,168,76,.5);cursor:pointer;text-decoration:none;transition:all var(--t);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);display:inline-flex;align-items:center;}
+.btn-g:hover{border-color:var(--gold);background:rgba(201,168,76,.08);}
+.page-section{padding:84px 60px;}
+.page-section.dark{background:var(--dark);}
+.container{max-width:1200px;margin:0 auto;}
+.container-sm{max-width:860px;margin:0 auto;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+
+/* STATS */
+.stat-strip{background:linear-gradient(to right,var(--deep),var(--mid),var(--deep));border-top:1px solid rgba(201,168,76,.2);border-bottom:1px solid rgba(201,168,76,.2);padding:36px 60px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;}
+.si{text-align:center;padding:0 52px;border-right:1px solid rgba(201,168,76,.14);}
+.si:last-child{border-right:none;}
+.sn{font-family:'Cinzel',serif;font-size:34px;color:var(--gold);display:block;line-height:1;}
+.sl{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block;}
+
+/* CARDS */
+.card{background:var(--surface);border:1px solid rgba(201,168,76,.12);padding:36px 32px;transition:border-color var(--t),transform var(--t);display:flex;flex-direction:column;}
+.card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-4px);}
+.card-icon{font-size:28px;margin-bottom:16px;display:block;}
+.card-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--text);margin-bottom:10px;font-weight:600;}
+.card-text{font-size:13px;line-height:1.8;color:var(--muted);flex:1;}
+
+/* FOUNDER */
+.founder-section{padding:84px 60px;background:var(--deep);}
+.founder-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:start;max-width:1200px;margin:0 auto;}
+.founder-photo-wrap{position:relative;}
+.founder-photo-wrap::before{content:'';position:absolute;top:-14px;left:-14px;width:100%;height:100%;border:1px solid rgba(201,168,76,.3);z-index:0;pointer-events:none;}
+.founder-photo{position:relative;z-index:1;overflow:hidden;border:1px solid rgba(201,168,76,.1);}
+.founder-photo img{width:100%;display:block;object-fit:cover;object-position:center top;}
+.founder-plate{position:relative;z-index:1;background:linear-gradient(to right,var(--gold),var(--gold-dark));padding:16px 24px;display:flex;flex-direction:column;gap:4px;}
+.founder-name{font-family:'Cinzel',serif;font-size:14px;letter-spacing:2px;font-weight:700;color:var(--deep);text-transform:uppercase;}
+.founder-desig{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(10,10,15,.7);}
+
+/* OFFICE */
+.office-wrap{overflow:hidden;border:1px solid rgba(201,168,76,.1);}
+.office-wrap img{width:100%;display:block;object-fit:cover;filter:brightness(.88) saturate(.85);transition:filter .4s,transform .5s;}
+.office-wrap:hover img{filter:brightness(.96);transform:scale(1.02);}
+.office-caption{background:var(--mid);border:1px solid rgba(201,168,76,.12);border-top:none;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.office-caption span{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.office-caption strong{color:var(--gold);}
+
+/* CTA */
+.cta-band{padding:84px 60px;text-align:center;background:linear-gradient(to bottom,var(--dark),var(--deep));border-top:1px solid rgba(201,168,76,.1);}
+.cta-band p{font-size:13.5px;color:var(--muted);max-width:500px;margin:0 auto 32px;line-height:1.85;}
+
+/* FOOTER */
+footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:56px 60px 30px;}
+.footer-grid{display:grid;grid-template-columns:260px 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
+.footer-brand{display:flex;flex-direction:column;align-items:flex-start;}
+.footer-brand img{height:150px;width:auto;object-fit:contain;margin-bottom:16px;filter:drop-shadow(0 0 10px rgba(201,168,76,.15));}
+.footer-brand p{font-size:12px;line-height:1.85;color:var(--muted);}
+.footer-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;color:var(--gold-dark);text-transform:uppercase;margin-top:10px;}
+.footer-col h5{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.1);font-weight:700;}
+.footer-col a{display:block;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color var(--t),padding-left var(--t);}
+.footer-col a:hover{color:var(--text);padding-left:4px;}
+.footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:20px;display:flex;justify-content:center;}
+.footer-bottom p{font-size:10px;color:rgba(138,128,112,.5);}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px;}
+
+@media(max-width:1100px){.two-col,.founder-grid{grid-template-columns:1fr;gap:48px;}.founder-grid{max-width:700px;}.four-col{grid-template-columns:1fr 1fr;}.three-col{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.page-section,.founder-section,.cta-band{padding:50px 18px;}.breadcrumb{padding:10px 18px;}.page-hero{height:300px;}.stat-strip{flex-wrap:wrap;padding:24px 18px;gap:20px;}.si{border-right:none;padding:0 20px;}.four-col,.three-col{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.founder-photo-wrap::before{display:none;}.office-caption{flex-direction:column;}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+/* ═══ NAV LOGO WITH BRAND TEXT ═══ */
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;gap:10px;}
+.nav-logo-img{height:42px;width:auto;object-fit:contain;flex-shrink:0;}
+.nav-brand-text{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2.5px;font-weight:700;color:rgba(240,236,224,0.95);text-transform:uppercase;white-space:nowrap;line-height:1;}
+@media(max-width:1000px){.nav-brand-text{font-size:11px;letter-spacing:1.5px;}}
+@media(max-width:640px){.nav-brand-text{font-size:10px;letter-spacing:1.5px;}}@media(max-width:400px){.nav-brand-text{font-size:9px;letter-spacing:1px;}}
+
+/* ═══ TYPOGRAPHY UPGRADE — Inter font, improved readability ═══ */
+body{font-family:'Inter','Raleway',sans-serif;}
+.body-text,.body-text p,.aw-card-desc,.vc-desc,.post-text,.card-text,
+.testi-text,.setup-steps,.intro-bar p,.page-intro p,.intro p,
+p,li{font-weight:400;color:rgba(255,255,255,0.82);line-height:1.9;font-size:15px;}
+.body-text,.body-text p{font-size:15.5px;font-weight:400;line-height:2;}
+/* Small labels — increase weight */
+.section-eyebrow,.eyebrow,.yr-count,.section-count,.post-date,
+.vc-tag,.aw-card-body,.news-tag,.vid-type,.aw-btn-label{font-weight:600;}
+/* Muted text — keep gold theme but improve contrast */
+.aw-card-desc,.vc-desc,.post-text,.card-text,.testi-text{color:rgba(255,255,255,0.80);}
+.stat-lbl,.sl,.yr-count,.section-count{color:rgba(200,190,170,0.85);font-weight:500;}
+/* Navigation text sharper */
+.nav-links a,.mobile-drawer a{font-weight:700;letter-spacing:2px;}
+/* Headings keep Cinzel/Cormorant but body upgrades */
+h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
+.sec-title,.section-title,.page-hero h1,.page-hero-title{font-family:'Cormorant Garamond',serif;}
+/* Footer text */
+.footer-brand p,.footer-col a{font-family:'Inter',sans-serif;font-weight:400;color:rgba(200,190,170,0.75);}
+.footer-col a:hover{color:rgba(255,255,255,0.9);}
+
+
+
+/* ─── NEWS DROPDOWN ─── */
+.nav-dropdown{position:relative;display:flex;align-items:center;}
+.nav-dropdown-trigger{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;transition:color var(--t);white-space:nowrap;position:relative;padding-bottom:3px;cursor:default;display:flex;align-items:center;gap:4px;}
+.nav-dropdown-trigger::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--t);}
+.nav-dropdown-trigger:hover::after,.nav-dropdown-trigger.active::after{width:100%;}
+.nav-dropdown-trigger:hover,.nav-dropdown-trigger.active{color:var(--gold);}
+.dropdown-arrow{font-size:9px;transition:transform var(--t);}
+.nav-dropdown:hover .dropdown-arrow{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 2px);right:-12px;min-width:200px;margin-top:0;background:rgba(10,10,15,.98);border:1px solid rgba(201,168,76,.22);border-radius:3px;padding:10px 0 6px;display:none;flex-direction:column;z-index:1100;box-shadow:0 14px 44px rgba(0,0,0,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);animation:ddIn .2s ease;}
+@keyframes ddIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;background:transparent;}
+
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown-menu:hover{display:flex;}
+.nav-dropdown-menu a{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;padding:11px 20px;display:flex;align-items:center;gap:10px;transition:color var(--t),background var(--t);white-space:nowrap;}
+.nav-dropdown-menu a:hover{color:var(--gold);background:rgba(201,168,76,.08);}
+.dd-icon{font-size:13px;}
+/* Mobile news sub-menu */
+.mob-news-group{display:flex;flex-direction:column;border-bottom:1px solid rgba(201,168,76,.1);padding-bottom:2px;}
+.mob-news-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:11px 0 6px;font-weight:700;cursor:default;}
+.mob-sub-link{font-size:10px!important;letter-spacing:2px!important;padding:7px 0 7px 16px!important;border-bottom:none!important;color:rgba(240,236,224,.7)!important;display:block;}
+.mob-sub-link.active{color:var(--gold)!important;}
+.mob-sub-link:hover{color:var(--gold)!important;padding-left:20px!important;}
+
+/* Nav spacing adjustments */
+@media(max-width:1200px){.nav-links{gap:12px;padding-left:12px;}}
+@media(max-width:1000px){.nav-links{gap:11px;padding-left:12px;}}
+
+#aboutDropdown .nav-dropdown-menu{right:auto;left:0;}
+</style>
+</head>
+<body>
+
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
+    <img src="images/nav_logo.png" alt="Royal Kings Group emblem" class="nav-logo-img">
+    <span class="nav-brand-text">ROYAL KINGS GROUP</span>
+  </a>
+  <div class="nav-links" role="menubar">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="aboutDropdown">
+      <a href="our-story.html" class="nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+        About Us <span class="dropdown-arrow">&#x25BE;</span>
+      </a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="our-story.html" role="menuitem"><span class="dd-icon">&#x1F4D6;</span> Our Story</a>
+        <a href="founder.html" role="menuitem"><span class="dd-icon">&#x1F451;</span> Founder &amp; Chairman</a>
+        <a href="csr.html" role="menuitem"><span class="dd-icon">&#x1F91D;</span> Corporate Social Responsibility</a>
+      </div>
+    </div>
+    <a href="pillars.html">Our Pillars</a>
+    <a href="awards.html">Awards</a>
+    <a href="videos.html">Videos</a>
+    <div class="nav-dropdown" id="newsDropdown">
+      <a href="news.html" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        News <span class="dropdown-arrow">&#x25BE;</span>
+      </a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="news.html" role="menuitem"><span class="dd-icon">&#x1F4F0;</span> News Feed</a>
+        <a href="newspaper-features.html" role="menuitem"><span class="dd-icon">&#x1F4F0;</span> Newspaper Features</a>
+      </div>
+    </div>
+    <a href="memberships.html">Memberships</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="management-team.html">Our Team</a>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html" onclick="closeDrawer()">Home</a>
+  <div class="mob-about-group">
+    <span class="mob-about-label">&#x25BE; About Us</span>
+    <a href="our-story.html" onclick="closeDrawer()" class="mob-sub-link">Our Story</a>
+    <a href="founder.html" onclick="closeDrawer()" class="mob-sub-link">Founder &amp; Chairman</a>
+    <a href="csr.html" onclick="closeDrawer()" class="mob-sub-link">CSR</a>
+  </div>
+  <a href="pillars.html" onclick="closeDrawer()">Our Pillars</a>
+  <a href="awards.html" onclick="closeDrawer()">Awards</a>
+  <a href="videos.html" onclick="closeDrawer()">Videos</a>
+  <div class="mob-news-group">
+    <span class="mob-news-label">&#x25BE; News</span>
+    <a href="news.html" onclick="closeDrawer()" class="mob-sub-link">News Feed</a>
+    <a href="newspaper-features.html" onclick="closeDrawer()" class="mob-sub-link">Newspaper Features</a>
+  </div>
+  <a href="memberships.html" onclick="closeDrawer()">Memberships</a>
+  <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
+  <a href="management-team.html" onclick="closeDrawer()">Our Team</a>
+  <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('images/office.jpg')"></div>
+    <div class="page-hero-content">
+      <span class="eyebrow">Established 2013 &nbsp;·&nbsp; Singapore</span>
+      <h1>About <em>Royal Kings</em> Group</h1>
+      <div class="hero-div"></div>
+    </div>
+  </div>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="bc"><a href="index.html">Home</a><span>›</span><span class="cur">About Us</span></div>
+  </nav>
+
+  <!-- WHO WE ARE -->
+  <section class="page-section" id="about">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="eyebrow">Our Story</span>
+          <h2 class="sec-title">Built on <em>Integrity,</em><br>Driven by Performance</h2>
+          <div class="gold-rule"></div>
+          <div class="body-text">
+            
+            <p>Founded in 2013, the Group was established with a singular conviction — that businesses across Asia-Pacific deserved a partner who would operate with complete transparency, unwavering professionalism, and genuine commitment to their long-term success.</p>
+            <p>Today, with presence spanning Singapore, Hong Kong, Indonesia and Thailand, Royal Kings Group continues to redefine what integrated business support looks like across the modern Asia-Pacific landscape.</p>
+          </div>
+          <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;">
+            <a href="pillars.html" class="btn-p">Our Pillars</a>
+            <a href="contact.html" class="btn-g">Get In Touch</a>
+          </div>
+        </div>
+        <div>
+          <div class="office-wrap"><img src="images/office.jpg" alt="Royal Kings Group Singapore Office" loading="lazy"></div>
+          <div class="office-caption">
+            <span>Singapore Headquarters</span>
+            <strong>10 Ubi Crescent, #02-61 (Lobby D), Singapore 408564</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stat-strip">
+    <div class="si"><span class="sn">10+</span><span class="sl">Years of Excellence</span></div>
+    <div class="si"><span class="sn">5</span><span class="sl">Business Verticals</span></div>
+    <div class="si"><span class="sn">4</span><span class="sl">Countries Present</span></div>
+    <div class="si"><span class="sn">15+</span><span class="sl">Industry Awards</span></div>
+  </div>
+
+  <!-- VISION & MISSION -->
+  <section class="page-section dark" id="vision">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <span class="eyebrow">Our Direction</span>
+        <h2 class="sec-title" style="text-align:center;">Vision &amp; <em>Mission</em></h2>
+        <div class="gold-rule center"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch;">
+        <div class="card" style="border-color:rgba(201,168,76,.25);">
+          <span class="card-icon">🔭</span>
+          <h3 class="card-title" style="font-size:16px;">Our Vision</h3>
+          <div class="gold-rule"></div>
+          <p class="card-text" style="font-size:14px;line-height:1.95;">To be the most trusted and integrated business group in Asia-Pacific — recognised for excellence, innovation and our unwavering commitment to creating lasting value for every client, partner and community we serve.</p>
+        </div>
+        <div class="card" style="border-color:rgba(201,168,76,.25);">
+          <span class="card-icon">🎯</span>
+          <h3 class="card-title" style="font-size:16px;">Our Mission</h3>
+          <div class="gold-rule"></div>
+          <p class="card-text" style="font-size:14px;line-height:1.95;">To deliver practical, performance-driven business solutions across technology, corporate services, hospitality, global trade and precious metals — enabling our clients to grow with confidence, operate with compliance, and build with purpose.</p>
+        </div>
+      </div>
+      <div style="margin-top:64px;">
+        <h3 style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:40px;">Core Values</h3>
+        <div class="four-col">
+          <div class="card" style="text-align:center;"><span class="card-icon">⭐</span><h4 class="card-title">Excellence</h4><p class="card-text">We set and hold the highest standards in everything we deliver.</p></div>
+          <div class="card" style="text-align:center;"><span class="card-icon">🤝</span><h4 class="card-title">Integrity</h4><p class="card-text">Honest, transparent dealings in every relationship.</p></div>
+          <div class="card" style="text-align:center;"><span class="card-icon">📈</span><h4 class="card-title">Performance</h4><p class="card-text">Outcomes over activity — measured by your results.</p></div>
+          <div class="card" style="text-align:center;"><span class="card-icon">🌏</span><h4 class="card-title">Purpose</h4><p class="card-text">Long-term value for clients and communities across Asia-Pacific.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER & CHAIRMAN -->
+  <section class="founder-section" id="founder">
+    <div class="founder-grid">
+      <div class="founder-photo-wrap">
+        <div class="founder-photo">
+          <img src="images/founder.jpg" alt="Mr Sirajudeen Bin Syed Mohamed — Founder &amp; Chairman" loading="eager">
+        </div>
+        <div class="founder-plate">
+          <span class="founder-name">Mr Sirajudeen Bin Syed Mohamed</span>
+          <span class="founder-desig">Founder &amp; Chairman &nbsp;·&nbsp; Royal Kings Group</span>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Leadership</span>
+        <h2 class="sec-title">Founder &amp; <em>Chairman</em></h2>
+        <div class="gold-rule"></div>
+        <div class="body-text">
+          <p>Mr Sirajudeen Bin Syed Mohamed founded Royal Kings Group in Singapore in 2013 with a clear and enduring vision — to build a business platform that goes beyond conventional corporate services and acts as a genuine strategic partner in every client's success.</p>
+          <p>Under his leadership, the Group has grown from a single wholesale trading entity into a fully integrated five-pillar business platform recognised across Singapore and the Asia-Pacific region, having received over 15 prestigious industry awards including the Singapore Prestige Brand Award 2023, SME500 Award 2024, Top Leading Entrepreneurs 2024/2025 and the SIRAT Global Golden Dinar Award 2026.</p>
+          <p>Mr Sirajudeen is also the CEO of Nambikai Singapore and a deeply committed advocate for community welfare, interfaith harmony and social responsibility — values embedded at the core of the Royal Kings Group's organisational culture.</p>
+        </div>
+        <div style="margin-top:28px;padding:24px;background:rgba(201,168,76,.05);border-left:2px solid var(--gold);">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:rgba(240,236,224,.72);line-height:1.65;">"We do not simply offer services — we invest in the growth of every business we work with. That is the Royal Kings commitment."</p>
+          <p style="font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-top:14px;">Mr Sirajudeen Bin Syed Mohamed &nbsp;·&nbsp; Founder &amp; Chairman</p>
+        </div>
+        <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;">
+          <a href="awards.html" class="btn-p">View Awards</a>
+          <a href="contact.html" class="btn-g">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSR -->
+  <section class="page-section dark" id="csr">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <span class="eyebrow">Giving Back</span>
+        <h2 class="sec-title" style="text-align:center;">Corporate Social <em>Responsibility</em></h2>
+        <div class="gold-rule center"></div>
+        <p style="font-size:15px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.85;">Royal Kings Group believes sustainable business success is inseparable from positive community impact.</p>
+      </div>
+      <div class="three-col">
+        <div class="card"><span class="card-icon">🎓</span><h4 class="card-title">Education &amp; Skills</h4><p class="card-text">Supporting youth entrepreneurship programmes, skills development workshops and mentorship initiatives equipping the next generation of Asian business leaders.</p></div>
+        <div class="card"><span class="card-icon">🌱</span><h4 class="card-title">Community Development</h4><p class="card-text">Active participation in community outreach, charitable initiatives and partnerships — including sponsorship of interfaith Iftar gatherings and national day celebrations.</p></div>
+        <div class="card"><span class="card-icon">♻️</span><h4 class="card-title">Sustainable Business</h4><p class="card-text">Embedding responsible business practices from ethical supply chain management to contributing to Singapore's Green Plan 2030 and green-office initiatives.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container-sm">
+      <span class="eyebrow" style="display:block;font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Work With Us</span>
+      <h2 class="sec-title" style="text-align:center;">Ready to Build <em>Together?</em></h2>
+      <p>Learn how Royal Kings Group can become your strategic partner for growth, compliance and expansion across Asia-Pacific.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="pillars.html" class="btn-p">Explore Our Pillars</a>
+        <a href="contact.html" class="btn-g">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/footer_logo.png" alt="Royal Kings Group">
+      
+      <span class="footer-tag">Excellence &middot; Integrity &middot; Performance</span>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About Us</a>
+      <a href="about.html#vision">Vision &amp; Mission</a>
+      <a href="about.html#founder">Founder &amp; Chairman</a>
+      <a href="about.html#csr">Corporate Social Responsibility</a>
+      <a href="awards.html">Awards</a>
+      <a href="videos.html">Videos</a>
+    </div>
+    <div class="footer-col">
+      <h5>Our Pillars</h5>
+      <a href="pillars.html#tech">Technology &amp; Digital</a>
+      <a href="pillars.html#consultancy">Corporate Consultancy</a>
+      <a href="pillars.html#hospitality">Hospitality &amp; Events</a>
+      <a href="pillars.html#trading">Global Trading</a>
+      <a href="pillars.html#bullion">Royal Kings Bullion</a>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <a href="mailto:contact@royalkingsgroup.com">contact@royalkingsgroup.com</a>
+      <a href="tel:+6562260405">+65 6226 0405</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="memberships.html">Memberships</a>
+      <a href="news.html">News</a>
+      <a href="sitemap.html">Sitemap</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
+</footer>
+
+<script>
+'use strict';
+function openDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.add('open');d.setAttribute('aria-hidden','false');o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+function closeDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.remove('open');d.setAttribute('aria-hidden','true');o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+(function(){
+  var h=document.getElementById('hamburger');
+  if(h)h.addEventListener('click',function(){this.classList.contains('open')?closeDrawer():openDrawer();});
+  var o=document.getElementById('drawerOverlay');
+  if(o)o.addEventListener('click',closeDrawer);
+  window.addEventListener('scroll',function(){var n=document.getElementById('mainNav');if(n)n.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+})();
+
+/* Touch dropdown support */
+(function(){
+  ['newsDropdown','aboutDropdown'].forEach(function(did){
+    var dd=document.getElementById(did);
+  if(dd){
+    dd.addEventListener('touchstart',function(e){
+      var menu=dd.querySelector('.nav-dropdown-menu');
+      menu.style.display=menu.style.display==='flex'?'':'flex';
+      e.stopPropagation();
+    },{passive:true});
+    document.addEventListener('touchstart',function(e){
+      if(!dd.contains(e.target)){var m=dd.querySelector('.nav-dropdown-menu');if(m)m.style.display='';}
+    },{passive:true});
+  }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News &amp; Announcements | Royal Kings Group</title>
+
+<link rel="icon" type="image/png" href="images/nav_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8C96A;--gold-dark:#96771E;--deep:#0A0A0F;--dark:#10101A;--mid:#1A1A28;--surface:#1F1F30;--text:#F0ECE0;--muted:#8A8070;--t:.3s ease;}
+*{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
+body{font-family:'Raleway',sans-serif;background:var(--deep);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:68px;}
+
+/* ═══ NAV ═══ */
+#mainNav{position:fixed;top:0;width:100%;z-index:1000;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.2);transition:all var(--t);}
+#mainNav.scrolled{background:rgba(10,10,15,.99);box-shadow:0 2px 20px rgba(0,0,0,.5);}
+/* .nav-logo moved to NAV LOGO WITH BRAND TEXT section */
+.nav-logo img{height:46px;width:auto;object-fit:contain;}
+.nav-links{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;padding-left:16px;}
+.nav-links a{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:rgba(240,236,224,.78);text-decoration:none;transition:color var(--t);white-space:nowrap;position:relative;padding-bottom:3px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--t);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{padding:7px 18px!important;border:1px solid var(--gold)!important;color:var(--gold)!important;border-radius:2px!important;}
+.nav-cta:hover{background:var(--gold)!important;color:var(--deep)!important;}
+.nav-cta::after{display:none!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:1100;margin-left:12px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold);transition:all var(--t);}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-drawer{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:rgba(10,10,15,.99);border-left:1px solid rgba(201,168,76,.2);z-index:1050;padding:80px 32px 40px;display:flex;flex-direction:column;gap:18px;transition:right .35s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(16px);}
+.mobile-drawer.open{right:0;}
+.mobile-drawer a{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(240,236,224,.8);text-decoration:none;padding:11px 0;border-bottom:1px solid rgba(201,168,76,.1);transition:color var(--t),padding-left var(--t);}
+.mobile-drawer a:hover,.mobile-drawer a.active{color:var(--gold);}
+.mobile-drawer a:hover{padding-left:5px;}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1040;display:none;cursor:pointer;}
+.drawer-overlay.open{display:block;}
+@media(max-width:1200px){.nav-links{gap:16px;}.nav-links a{font-size:10.5px;}}
+@media(max-width:1000px){.nav-links{gap:11px;}.nav-links a{font-size:10px;letter-spacing:1.5px;}}
+@media(max-width:768px){#mainNav{padding:0 16px;height:62px;}.nav-links{display:none;}.hamburger{display:flex;}}
+
+/* ── HERO ── */
+.page-hero{position:relative;height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80') center/cover;filter:brightness(.24) saturate(.55);}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,15,.2),rgba(10,10,15,.9));}
+.hero-inner{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block;animation:fU .8s .2s both;}
+.page-hero h1{font-family:'Cinzel',serif;font-size:clamp(28px,4vw,54px);font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--text);animation:fU .8s .4s both;}
+.page-hero h1 em{color:var(--gold);font-style:normal;}
+.divider{width:56px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:16px auto 0;animation:fU .8s .6s both;}
+@keyframes fU{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--dark);border-bottom:1px solid rgba(201,168,76,.1);padding:12px 60px;}
+.bc{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.bc a{color:var(--muted);text-decoration:none;transition:color var(--t);} .bc a:hover{color:var(--gold);}
+.bc .cur{color:var(--gold);}
+
+/* ── SETUP BANNER ── */
+#setup-banner{
+  margin:32px 60px 0;
+  background:rgba(201,168,76,.04);
+  border:1px solid rgba(201,168,76,.22);
+  border-radius:4px;
+  padding:24px 28px;
+}
+#setup-banner h3{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+#setup-banner ol{padding-left:22px;font-size:13px;line-height:2.1;color:rgba(240,236,224,.65);}
+#setup-banner code{background:rgba(201,168,76,.1);padding:1px 7px;font-family:monospace;font-size:11.5px;color:var(--gold-light);border-radius:2px;}
+#setup-banner a{color:var(--gold);text-decoration:underline;}
+.token-row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;align-items:stretch;}
+#token-input{flex:1;min-width:260px;background:rgba(10,10,15,.6);border:1px solid rgba(201,168,76,.3);color:var(--text);font-family:'Raleway',sans-serif;font-size:13px;padding:11px 14px;outline:none;transition:border-color var(--t);border-radius:2px;}
+#token-input:focus{border-color:var(--gold);}
+#token-input::placeholder{color:var(--muted);}
+.btn-connect{padding:11px 24px;background:var(--gold);color:var(--deep);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;transition:background var(--t);border-radius:2px;white-space:nowrap;}
+.btn-connect:hover{background:var(--gold-light);}
+.btn-skip{padding:11px 20px;background:transparent;color:var(--muted);font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(201,168,76,.2);cursor:pointer;border-radius:2px;white-space:nowrap;transition:all var(--t);}
+.btn-skip:hover{border-color:var(--gold);color:var(--text);}
+#token-msg{font-size:12px;color:var(--muted);margin-top:8px;width:100%;min-height:16px;}
+
+/* ── FEED WRAPPER ── */
+#feed-wrapper{padding:44px 60px 0;display:none;}
+#fallback-wrapper{padding:32px 60px 0;display:none;}
+
+/* SECTION HEADER */
+.section-hdr{display:flex;align-items:center;gap:16px;margin-bottom:32px;}
+.section-hdr h2{font-family:'Cinzel',serif;font-size:18px;letter-spacing:3px;text-transform:uppercase;font-weight:700;white-space:nowrap;}
+.section-hdr h2.current{color:var(--gold);}
+.section-hdr h2.past{color:rgba(240,236,224,.45);}
+.section-rule{flex:1;height:1px;background:linear-gradient(to right,rgba(201,168,76,.35),transparent);}
+.section-count{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+
+/* ── POST GRID ── */
+.posts-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-bottom:52px;
+}
+
+/* ── POST CARD ── */
+.post-card{
+  background:var(--surface);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:4px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:border-color var(--t),transform var(--t),box-shadow var(--t);
+}
+.post-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.5);}
+
+/* POST IMAGE */
+.post-img{position:relative;aspect-ratio:16/9;overflow:hidden;flex-shrink:0;background:var(--mid);}
+.post-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82) saturate(.75);transition:filter .4s,transform .55s;}
+.post-card:hover .post-img img{filter:brightness(.96) saturate(.9);transform:scale(1.05);}
+.post-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--mid),var(--dark));}
+.post-img-placeholder svg{opacity:.18;}
+
+/* POST BODY */
+.post-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.post-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;}
+.post-date{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.post-badge{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(138,128,112,.8);border:1px solid rgba(201,168,76,.15);padding:3px 8px;border-radius:2px;}
+.post-text{font-size:13px;line-height:1.85;color:rgba(240,236,224,.65);font-weight:300;flex:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.post-footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,.08);gap:8px;flex-wrap:wrap;}
+.post-reactions{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.btn-view{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.28);padding:7px 14px;text-decoration:none;border-radius:2px;transition:all var(--t);white-space:nowrap;display:inline-flex;align-items:center;gap:6px;}
+.btn-view:hover{background:rgba(201,168,76,.18);border-color:var(--gold);}
+.btn-view::after{content:'↗';}
+
+/* ── SKELETON LOADER ── */
+.skeleton-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:48px;}
+.skel-card{border:1px solid rgba(201,168,76,.08);border-radius:4px;overflow:hidden;}
+.skel-img{aspect-ratio:16/9;}
+.skel-line{height:11px;border-radius:2px;margin:0 16px 10px;}
+.skel-line.w80{width:80%;}
+.skel-line.w60{width:60%;}
+.skel-line.w90{width:90%;}
+.shimmer{animation:shimmer 1.6s linear infinite;background:linear-gradient(90deg,var(--surface) 25%,rgba(201,168,76,.07) 50%,var(--surface) 75%);background-size:400% 100%;}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+
+/* ── EMPTY / ERROR STATE ── */
+.state-card{background:var(--surface);border:1px solid rgba(201,168,76,.1);border-radius:4px;padding:48px 32px;text-align:center;grid-column:1/-1;}
+.state-card p{font-size:13.5px;color:var(--muted);line-height:1.8;} .state-card strong{color:var(--gold);}
+
+/* ── LOAD MORE ── */
+#load-more-wrap{text-align:center;padding:0 0 52px;}
+
+/* ── FB FALLBACK EMBED ── */
+.fb-embed-block{
+  background:var(--surface);
+  border:1px solid rgba(201,168,76,.15);
+  border-radius:4px;
+  padding:32px;
+  display:flex;flex-direction:column;align-items:center;gap:20px;
+  text-align:center;
+  margin-bottom:48px;
+}
+.fb-embed-block h3{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--text);}
+.fb-embed-block p{font-size:13px;color:var(--muted);max-width:520px;line-height:1.75;}
+.fb-iframe-wrap{width:100%;max-width:700px;border:1px solid rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
+.fb-iframe-wrap iframe{display:block;border:none;width:100%;}
+
+/* ── CTA ── */
+.follow-cta{padding:56px 60px;text-align:center;background:linear-gradient(to bottom,var(--dark),var(--deep));border-top:1px solid rgba(201,168,76,.1);}
+.follow-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,40px);font-weight:300;color:var(--text);margin-bottom:10px;}
+.follow-cta h2 em{font-style:italic;color:var(--gold);}
+.follow-cta p{font-size:13.5px;color:var(--muted);max-width:480px;margin:0 auto 24px;line-height:1.85;}
+.gold-rule{width:52px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:12px auto;}
+.btn-fb{padding:12px 28px;background:rgba(24,119,242,.9);color:#fff;font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;text-decoration:none;transition:background var(--t);border-radius:2px;display:inline-flex;align-items:center;gap:8px;}
+.btn-fb:hover{background:rgba(24,119,242,1);}
+.btn-connect-api{padding:12px 28px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:1px solid rgba(201,168,76,.4);cursor:pointer;text-decoration:none;transition:all var(--t);border-radius:2px;display:inline-flex;align-items:center;gap:8px;}
+.btn-connect-api:hover{background:rgba(201,168,76,.08);border-color:var(--gold);}
+
+/* FOOTER */
+footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:56px 60px 30px;}
+.footer-grid{display:grid;grid-template-columns:260px 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
+.footer-brand{display:flex;flex-direction:column;align-items:flex-start;}
+.footer-brand img{height:150px;width:auto;object-fit:contain;margin-bottom:16px;filter:drop-shadow(0 0 10px rgba(201,168,76,.15));}
+.footer-brand p{font-size:12px;line-height:1.85;color:var(--muted);}
+.footer-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;color:var(--gold-dark);text-transform:uppercase;margin-top:10px;}
+.footer-col h5{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.1);font-weight:700;}
+.footer-col a{display:block;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color var(--t),padding-left var(--t);}
+.footer-col a:hover{color:var(--text);padding-left:4px;}
+.footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:20px;display:flex;justify-content:center;}
+.footer-bottom p{font-size:10px;color:rgba(138,128,112,.5);}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px;}
+
+@media(max-width:1024px){.posts-grid,.skeleton-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){
+  .posts-grid,.skeleton-grid{grid-template-columns:1fr;}
+  #feed-wrapper,#fallback-wrapper,.follow-cta,.breadcrumb,#setup-banner{padding-left:18px;padding-right:18px;}
+  .page-hero{height:280px;}
+  .fb-embed-block{padding:20px 14px;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+/* ═══ NAV LOGO WITH BRAND TEXT ═══ */
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;gap:10px;}
+.nav-logo-img{height:42px;width:auto;object-fit:contain;flex-shrink:0;}
+.nav-brand-text{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2.5px;font-weight:700;color:rgba(240,236,224,0.95);text-transform:uppercase;white-space:nowrap;line-height:1;}
+@media(max-width:1000px){.nav-brand-text{font-size:11px;letter-spacing:1.5px;}}
+@media(max-width:640px){.nav-brand-text{font-size:10px;letter-spacing:1.5px;}}@media(max-width:400px){.nav-brand-text{font-size:9px;letter-spacing:1px;}}
+
+/* ═══ TYPOGRAPHY UPGRADE — Inter font, improved readability ═══ */
+body{font-family:'Inter','Raleway',sans-serif;}
+.body-text,.body-text p,.aw-card-desc,.vc-desc,.post-text,.card-text,
+.testi-text,.setup-steps,.intro-bar p,.page-intro p,.intro p,
+p,li{font-weight:400;color:rgba(255,255,255,0.82);line-height:1.9;font-size:15px;}
+.body-text,.body-text p{font-size:15.5px;font-weight:400;line-height:2;}
+/* Small labels — increase weight */
+.section-eyebrow,.eyebrow,.yr-count,.section-count,.post-date,
+.vc-tag,.aw-card-body,.news-tag,.vid-type,.aw-btn-label{font-weight:600;}
+/* Muted text — keep gold theme but improve contrast */
+.aw-card-desc,.vc-desc,.post-text,.card-text,.testi-text{color:rgba(255,255,255,0.80);}
+.stat-lbl,.sl,.yr-count,.section-count{color:rgba(200,190,170,0.85);font-weight:500;}
+/* Navigation text sharper */
+.nav-links a,.mobile-drawer a{font-weight:700;letter-spacing:2px;}
+/* Headings keep Cinzel/Cormorant but body upgrades */
+h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
+.sec-title,.section-title,.page-hero h1,.page-hero-title{font-family:'Cormorant Garamond',serif;}
+/* Footer text */
+.footer-brand p,.footer-col a{font-family:'Inter',sans-serif;font-weight:400;color:rgba(200,190,170,0.75);}
+.footer-col a:hover{color:rgba(255,255,255,0.9);}
+
+
+
+/* ─── NEWS DROPDOWN ─── */
+.nav-dropdown{position:relative;display:flex;align-items:center;}
+.nav-dropdown-trigger{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;transition:color var(--t);white-space:nowrap;position:relative;padding-bottom:3px;cursor:default;display:flex;align-items:center;gap:4px;}
+.nav-dropdown-trigger::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--t);}
+.nav-dropdown-trigger:hover::after,.nav-dropdown-trigger.active::after{width:100%;}
+.nav-dropdown-trigger:hover,.nav-dropdown-trigger.active{color:var(--gold);}
+.dropdown-arrow{font-size:9px;transition:transform var(--t);}
+.nav-dropdown:hover .dropdown-arrow{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 2px);right:-12px;min-width:200px;margin-top:0;background:rgba(10,10,15,.98);border:1px solid rgba(201,168,76,.22);border-radius:3px;padding:10px 0 6px;display:none;flex-direction:column;z-index:1100;box-shadow:0 14px 44px rgba(0,0,0,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);animation:ddIn .2s ease;}
+@keyframes ddIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;background:transparent;}
+
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown-menu:hover{display:flex;}
+.nav-dropdown-menu a{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;padding:11px 20px;display:flex;align-items:center;gap:10px;transition:color var(--t),background var(--t);white-space:nowrap;}
+.nav-dropdown-menu a:hover{color:var(--gold);background:rgba(201,168,76,.08);}
+.dd-icon{font-size:13px;}
+/* Mobile news sub-menu */
+.mob-news-group{display:flex;flex-direction:column;border-bottom:1px solid rgba(201,168,76,.1);padding-bottom:2px;}
+.mob-news-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:11px 0 6px;font-weight:700;cursor:default;}
+.mob-sub-link{font-size:10px!important;letter-spacing:2px!important;padding:7px 0 7px 16px!important;border-bottom:none!important;color:rgba(240,236,224,.7)!important;display:block;}
+.mob-sub-link.active{color:var(--gold)!important;}
+.mob-sub-link:hover{color:var(--gold)!important;padding-left:20px!important;}
+
+/* Nav spacing adjustments */
+@media(max-width:1200px){.nav-links{gap:12px;padding-left:12px;}}
+@media(max-width:1000px){.nav-links{gap:11px;padding-left:12px;}}
+
+#aboutDropdown .nav-dropdown-menu{right:auto;left:0;}order-bottom:1px solid rgba(201,168,76,.1);font-weight:700;}
+.footer-col a{display:block;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color var(--t),padding-left var(--t);}
+.footer-col a:hover{color:var(--text);padding-left:4px;}
+.footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:20px;display:flex;justify-content:center;}
+.footer-bottom p{font-size:10px;color:rgba(138,128,112,.5);}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px;}
+
+@media(max-width:1024px){.posts-grid,.skeleton-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){
+  .posts-grid,.skeleton-grid{grid-template-columns:1fr;}
+  #feed-wrapper,#fallback-wrapper,.follow-cta,.breadcrumb,#setup-banner{padding-left:18px;padding-right:18px;}
+  .page-hero{height:280px;}
+  .fb-embed-block{padding:20px 14px;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+/* ═══ NAV LOGO WITH BRAND TEXT ═══ */
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;gap:10px;}
+.nav-logo-img{height:42px;width:auto;object-fit:contain;flex-shrink:0;}
+.nav-brand-text{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2.5px;font-weight:700;color:rgba(240,236,224,0.95);text-transform:uppercase;white-space:nowrap;line-height:1;}
+@media(max-width:1000px){.nav-brand-text{font-size:11px;letter-spacing:1.5px;}}
+@media(max-width:640px){.nav-brand-text{font-size:10px;letter-spacing:1.5px;}}@media(max-width:400px){.nav-brand-text{font-size:9px;letter-spacing:1px;}}
+
+/* ═══ TYPOGRAPHY UPGRADE — Inter font, improved readability ═══ */
+body{font-family:'Inter','Raleway',sans-serif;}
+.body-text,.body-text p,.aw-card-desc,.vc-desc,.post-text,.card-text,
+.testi-text,.setup-steps,.intro-bar p,.page-intro p,.intro p,
+p,li{font-weight:400;color:rgba(255,255,255,0.82);line-height:1.9;font-size:15px;}
+.body-text,.body-text p{font-size:15.5px;font-weight:400;line-height:2;}
+/* Small labels — increase weight */
+.section-eyebrow,.eyebrow,.yr-count,.section-count,.post-date,
+.vc-tag,.aw-card-body,.news-tag,.vid-type,.aw-btn-label{font-weight:600;}
+/* Muted text — keep gold theme but improve contrast */
+.aw-card-desc,.vc-desc,.post-text,.card-text,.testi-text{color:rgba(255,255,255,0.80);}
+.stat-lbl,.sl,.yr-count,.section-count{color:rgba(200,190,170,0.85);font-weight:500;}
+/* Navigation text sharper */
+.nav-links a,.mobile-drawer a{font-weight:700;letter-spacing:2px;}
+/* Headings keep Cinzel/Cormorant but body upgrades */
+h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
+.sec-title,.section-title,.page-hero h1,.page-hero-title{font-family:'Cormorant Garamond',serif;}
+/* Footer text */
+.footer-brand p,.footer-col a{font-family:'Inter',sans-serif;font-weight:400;color:rgba(200,190,170,0.75);}
+.footer-col a:hover{color:rgba(255,255,255,0.9);}
+
+
+
+/* ─── NEWS DROPDOWN ─── */
+.nav-dropdown{position:relative;display:flex;align-items:center;}
+.nav-dropdown-trigger{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;transition:color var(--t);white-space:nowrap;position:relative;padding-bottom:3px;cursor:default;display:flex;align-items:center;gap:4px;}
+.nav-dropdown-trigger::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--t);}
+.nav-dropdown-trigger:hover::after,.nav-dropdown-trigger.active::after{width:100%;}
+.nav-dropdown-trigger:hover,.nav-dropdown-trigger.active{color:var(--gold);}
+.dropdown-arrow{font-size:9px;transition:transform var(--t);}
+.nav-dropdown:hover .dropdown-arrow{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 2px);right:-12px;min-width:200px;margin-top:0;background:rgba(10,10,15,.98);border:1px solid rgba(201,168,76,.22);border-radius:3px;padding:10px 0 6px;display:none;flex-direction:column;z-index:1100;box-shadow:0 14px 44px rgba(0,0,0,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);animation:ddIn .2s ease;}
+@keyframes ddIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;background:transparent;}
+
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown-menu:hover{display:flex;}
+.nav-dropdown-menu a{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;padding:11px 20px;display:flex;align-items:center;gap:10px;transition:color var(--t),background var(--t);white-space:nowrap;}
+.nav-dropdown-menu a:hover{color:var(--gold);background:rgba(201,168,76,.08);}
+.dd-icon{font-size:13px;}
+/* Mobile news sub-menu */
+.mob-news-group{display:flex;flex-direction:column;border-bottom:1px solid rgba(201,168,76,.1);padding-bottom:2px;}
+.mob-news-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:11px 0 6px;font-weight:700;cursor:default;}
+.mob-sub-link{font-size:10px!important;letter-spacing:2px!important;padding:7px 0 7px 16px!important;border-bottom:none!important;color:rgba(240,236,224,.7)!important;display:block;}
+.mob-sub-link.active{color:var(--gold)!important;}
+.mob-sub-link:hover{color:var(--gold)!important;padding-left:20px!important;}
+
+/* Nav spacing adjustments */
+@media(max-width:1200px){.nav-links{gap:14px;padding-left:16px;}}
+@media(max-width:1000px){.nav-links{gap:11px;padding-left:12px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
+    <img src="images/nav_logo.png" alt="Royal Kings Group emblem" class="nav-logo-img">
+    <span class="nav-brand-text">ROYAL KINGS GROUP</span>
+  </a>
+  <div class="nav-links" role="menubar">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="aboutDropdown">
+      <a href="our-story.html" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        About Us <span class="dropdown-arrow">&#x25BE;</span>
+      </a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="our-story.html" role="menuitem"><span class="dd-icon">&#x1F4D6;</span> Our Story</a>
+        <a href="founder.html" role="menuitem"><span class="dd-icon">&#x1F451;</span> Founder &amp; Chairman</a>
+        <a href="csr.html" role="menuitem"><span class="dd-icon">&#x1F91D;</span> Corporate Social Responsibility</a>
+      </div>
+    </div>
+    <a href="pillars.html">Our Pillars</a>
+    <a href="awards.html">Awards</a>
+    <a href="videos.html">Videos</a>
+    <div class="nav-dropdown" id="newsDropdown">
+      <a href="news.html" class="nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+        News <span class="dropdown-arrow">&#x25BE;</span>
+      </a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="news.html" role="menuitem"><span class="dd-icon">&#x1F4F0;</span> News Feed</a>
+        <a href="newspaper-features.html" role="menuitem"><span class="dd-icon">&#x1F4F0;</span> Newspaper Features</a>
+      </div>
+    </div>
+    <a href="memberships.html">Memberships</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="management-team.html">Our Team</a>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html" onclick="closeDrawer()">Home</a>
+  <div class="mob-about-group">
+    <span class="mob-about-label">&#x25BE; About Us</span>
+    <a href="our-story.html" onclick="closeDrawer()" class="mob-sub-link">Our Story</a>
+    <a href="founder.html" onclick="closeDrawer()" class="mob-sub-link">Founder &amp; Chairman</a>
+    <a href="csr.html" onclick="closeDrawer()" class="mob-sub-link">CSR</a>
+  </div>
+  <a href="pillars.html" onclick="closeDrawer()">Our Pillars</a>
+  <a href="awards.html" onclick="closeDrawer()">Awards</a>
+  <a href="videos.html" onclick="closeDrawer()">Videos</a>
+  <div class="mob-news-group">
+    <span class="mob-news-label">&#x25BE; News</span>
+    <a href="news.html" onclick="closeDrawer()" class="mob-sub-link active">News Feed</a>
+    <a href="newspaper-features.html" onclick="closeDrawer()" class="mob-sub-link">Newspaper Features</a>
+  </div>
+  <a href="memberships.html" onclick="closeDrawer()">Memberships</a>
+  <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
+  <a href="management-team.html" onclick="closeDrawer()">Our Team</a>
+  <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <div class="page-hero" role="banner">
+    <div class="page-hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <span class="eyebrow">Latest Updates &amp; Announcements</span>
+      <h1>News &amp; <em>Feed</em></h1>
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="bc"><a href="index.html">Home</a><span aria-hidden="true">›</span><span class="cur" aria-current="page">News</span></div>
+  </nav>
+
+  <!-- ─── SETUP BANNER (shown when no token) ─── -->
+  <aside id="setup-banner" aria-label="Facebook connection setup">
+    <h3>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Connect Facebook Page for Live Feed
+    </h3>
+    <ol>
+      <li>Go to <a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="noopener">developers.facebook.com/tools/explorer</a></li>
+      <li>Select your Facebook App &rarr; choose the <strong>Royal Kings Group</strong> page</li>
+      <li>Click <strong>Generate Access Token</strong> — grant <code>pages_read_engagement</code> and <code>pages_show_list</code></li>
+      <li>For a <strong>permanent token</strong>: exchange via <a href="https://developers.facebook.com/tools/debug/accesstoken/" target="_blank" rel="noopener">Token Debugger</a> &rarr; <em>Extend Token</em></li>
+      <li>Paste the token below and click <strong>Connect &amp; Load Feed</strong></li>
+    </ol>
+    <p style="margin-top:12px;font-size:12px;color:rgba(138,128,112,.65);">Token stored in your browser session only. For production, proxy through your server to avoid exposing the token client-side.</p>
+    <div class="token-row">
+      <input type="password" id="token-input" placeholder="Paste Facebook Page Access Token here…" autocomplete="off" aria-label="Facebook access token">
+      <button class="btn-connect" onclick="connectFB()">Connect &amp; Load Feed</button>
+      <button class="btn-skip" onclick="showFallback()" title="Show Facebook Page Plugin instead">Use Embedded Feed</button>
+    </div>
+    <p id="token-msg" role="status" aria-live="polite"></p>
+  </aside>
+
+  <!-- ─── GRAPH API FEED ─── -->
+  <section id="feed-wrapper" aria-label="Facebook news feed" aria-live="polite">
+
+    <!-- Skeleton loaders shown while fetching -->
+    <div id="skeleton-section">
+      <div class="section-hdr" aria-hidden="true">
+        <h2 class="current">Loading…</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="skeleton-grid" aria-hidden="true">
+        <div class="skel-card"><div class="skel-img shimmer"></div><div style="padding:14px 0 10px;"><div class="skel-line shimmer w60" style="margin-top:0;"></div><div class="skel-line shimmer w90"></div><div class="skel-line shimmer w80"></div><div class="skel-line shimmer w60"></div></div></div>
+        <div class="skel-card"><div class="skel-img shimmer"></div><div style="padding:14px 0 10px;"><div class="skel-line shimmer w60" style="margin-top:0;"></div><div class="skel-line shimmer w90"></div><div class="skel-line shimmer w80"></div><div class="skel-line shimmer w60"></div></div></div>
+        <div class="skel-card"><div class="skel-img shimmer"></div><div style="padding:14px 0 10px;"><div class="skel-line shimmer w60" style="margin-top:0;"></div><div class="skel-line shimmer w90"></div><div class="skel-line shimmer w80"></div><div class="skel-line shimmer w60"></div></div></div>
+      </div>
+    </div>
+
+    <!-- This Year section -->
+    <div id="this-year-section" style="display:none;">
+      <div class="section-hdr">
+        <h2 class="current" id="this-year-label">2026</h2>
+        <div class="section-rule"></div>
+        <span class="section-count" id="this-year-count"></span>
+      </div>
+      <div class="posts-grid" id="this-year-grid"></div>
+    </div>
+
+    <!-- Past Years section -->
+    <div id="past-section" style="display:none;">
+      <div class="section-hdr">
+        <h2 class="past">Previous Posts</h2>
+        <div class="section-rule"></div>
+        <span class="section-count" id="past-count"></span>
+      </div>
+      <div class="posts-grid" id="past-grid"></div>
+    </div>
+
+    <!-- Load More -->
+    <div id="load-more-wrap" style="display:none;">
+      <button class="btn-connect" id="load-more-btn" onclick="loadMorePosts()" style="min-width:180px;">Load More Posts</button>
+    </div>
+
+  </section>
+
+  <!-- ─── FALLBACK: Facebook Page Plugin ─── -->
+  <div id="fallback-wrapper">
+    <div class="fb-embed-block">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      <h3>Royal Kings Group — Live Facebook Timeline</h3>
+      <p>Displaying the live Facebook page feed. For a fully custom grid layout with post filtering by year, connect the Graph API using the setup panel above.</p>
+      <div class="fb-iframe-wrap">
+        <!-- Facebook Page Plugin — live timeline, updates automatically -->
+        <iframe
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100091498026763&tabs=timeline&width=700&height=1000&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+          width="700" height="1000"
+          style="max-width:100%;"
+          scrolling="no" frameborder="0" allowfullscreen="true"
+          allow="autoplay;clipboard-write;encrypted-media;picture-in-picture;web-share"
+          loading="lazy"
+          title="Royal Kings Group Facebook Page Feed"
+          aria-label="Royal Kings Group Facebook timeline">
+        </iframe>
+      </div>
+      <button class="btn-connect-api" onclick="showSetup()">Connect Graph API for Custom Grid</button>
+    </div>
+  </div>
+
+  <!-- ─── FOLLOW CTA ─── -->
+  <section class="follow-cta" aria-label="Follow Royal Kings Group">
+    <h2>Follow Our <em>Journey</em></h2>
+    <div class="gold-rule"></div>
+    <p>For real-time updates, award celebrations, community events and corporate announcements from Royal Kings Group, follow us on Facebook.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://www.facebook.com/profile.php?id=100091498026763" target="_blank" rel="noopener" class="btn-fb" aria-label="Follow Royal Kings Group on Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Follow on Facebook
+      </a>
+      <a href="contact.html" class="btn-connect-api">Contact Us</a>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/footer_logo.png" alt="Royal Kings Group">
+      
+      <span class="footer-tag">Excellence &middot; Integrity &middot; Performance</span>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About Us</a>
+      <a href="about.html#vision">Vision &amp; Mission</a>
+      <a href="about.html#founder">Founder &amp; Chairman</a>
+      <a href="about.html#csr">Corporate Social Responsibility</a>
+      <a href="awards.html">Awards</a>
+      <a href="videos.html">Videos</a>
+    </div>
+    <div class="footer-col">
+      <h5>Our Pillars</h5>
+      <a href="pillars.html#tech">Technology &amp; Digital</a>
+      <a href="pillars.html#consultancy">Corporate Consultancy</a>
+      <a href="pillars.html#hospitality">Hospitality &amp; Events</a>
+      <a href="pillars.html#trading">Global Trading</a>
+      <a href="pillars.html#bullion">Royal Kings Bullion</a>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <a href="mailto:contact@royalkingsgroup.com">contact@royalkingsgroup.com</a>
+      <a href="tel:+6562260405">+65 6226 0405</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="memberships.html">Memberships</a>
+      <a href="news.html">News</a>
+      <a href="sitemap.html">Sitemap</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
+</footer>
+
+<script>
+'use strict';
+
+/* ── Config ── */
+var PAGE_ID    = '100091498026763';
+var GRAPH_VER  = 'v19.0';
+var FIELDS     = 'message,full_picture,created_time,permalink_url,story,attachments{subattachments,media_type,media{image},title,description}';
+var PER_PAGE   = 24;
+var CURR_YEAR  = new Date().getFullYear();
+var MONTHS     = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var SHORT_MON  = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+/* ── State ── */
+var accessToken  = '';
+var nextCursor   = null;
+var allPosts     = [];
+var isLoading    = false;
+
+/* ── Init ── */
+(function init() {
+  accessToken = sessionStorage.getItem('rkg_fb_token') || '';
+  if (accessToken) {
+    document.getElementById('setup-banner').style.display = 'none';
+    document.getElementById('feed-wrapper').style.display  = 'block';
+    fetchPosts();
+  } else {
+    document.getElementById('setup-banner').style.display = 'block';
+  }
+  initNav();
+})();
+
+/* ── Token connect ── */
+function connectFB() {
+  var t = document.getElementById('token-input').value.trim();
+  if (!t) { setMsg('Please paste your access token.'); return; }
+  setMsg('Connecting…');
+  accessToken = t;
+  sessionStorage.setItem('rkg_fb_token', t);
+  document.getElementById('setup-banner').style.display = 'none';
+  document.getElementById('feed-wrapper').style.display  = 'block';
+  fetchPosts();
+}
+
+function showFallback() {
+  document.getElementById('setup-banner').style.display   = 'none';
+  document.getElementById('fallback-wrapper').style.display = 'block';
+}
+
+function showSetup() {
+  document.getElementById('fallback-wrapper').style.display = 'none';
+  document.getElementById('setup-banner').style.display   = 'block';
+  document.getElementById('setup-banner').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function setMsg(m) { document.getElementById('token-msg').textContent = m; }
+
+/* ── Fetch ── */
+function fetchPosts(cursor) {
+  if (isLoading) return;
+  isLoading = true;
+  var url = 'https://graph.facebook.com/' + GRAPH_VER + '/' + PAGE_ID
+    + '/posts?fields=' + encodeURIComponent(FIELDS)
+    + '&limit=' + PER_PAGE
+    + '&access_token=' + accessToken
+    + (cursor ? '&after=' + cursor : '');
+
+  fetch(url)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      isLoading = false;
+      if (data.error) { handleError(data.error); return; }
+      var posts = data.data || [];
+      nextCursor = (data.paging && data.paging.cursors && data.paging.cursors.after) ? data.paging.cursors.after : null;
+      if (!cursor) { allPosts = posts; } else { allPosts = allPosts.concat(posts); }
+      renderFeed();
+    })
+    .catch(function(e) {
+      isLoading = false;
+      handleError({message: 'Network error — ' + e.message});
+    });
+}
+
+function loadMorePosts() {
+  if (nextCursor) fetchPosts(nextCursor);
+}
+
+function handleError(err) {
+  console.error('FB API Error:', err);
+  sessionStorage.removeItem('rkg_fb_token');
+  accessToken = '';
+  document.getElementById('feed-wrapper').style.display  = 'none';
+  document.getElementById('skeleton-section').style.display = 'block';
+  document.getElementById('setup-banner').style.display = 'block';
+  setMsg('Connection failed: ' + (err.message || 'Unknown error') + '. Please check your token.');
+  showFallback();
+}
+
+/* ── Render ── */
+function renderFeed() {
+  document.getElementById('skeleton-section').style.display = 'none';
+
+  /* Filter & sort */
+  var thisYear = allPosts.filter(function(p) {
+    return new Date(p.created_time).getFullYear() === CURR_YEAR;
+  }).sort(function(a,b){ return new Date(b.created_time) - new Date(a.created_time); });
+
+  var pastPosts = allPosts.filter(function(p) {
+    return new Date(p.created_time).getFullYear() < CURR_YEAR;
+  }).sort(function(a,b){ return new Date(b.created_time) - new Date(a.created_time); });
+
+  /* This year grid */
+  var tySection = document.getElementById('this-year-section');
+  var tyGrid    = document.getElementById('this-year-grid');
+  var tyLabel   = document.getElementById('this-year-label');
+  var tyCount   = document.getElementById('this-year-count');
+
+  if (thisYear.length > 0) {
+    tyLabel.textContent = CURR_YEAR + ' Posts';
+    tyCount.textContent = thisYear.length + ' post' + (thisYear.length !== 1 ? 's' : '');
+    tyGrid.innerHTML    = thisYear.map(buildCard).join('');
+    tySection.style.display = 'block';
+  } else {
+    tySection.style.display = 'none';
+  }
+
+  /* Past grid */
+  var pastSection = document.getElementById('past-section');
+  var pastGrid    = document.getElementById('past-grid');
+  var pastCount   = document.getElementById('past-count');
+
+  if (pastPosts.length > 0) {
+    pastCount.textContent = pastPosts.length + (nextCursor ? '+' : '') + ' post' + (pastPosts.length !== 1 ? 's' : '');
+    pastGrid.innerHTML    = pastPosts.map(buildCard).join('');
+    pastSection.style.display = 'block';
+  } else {
+    pastSection.style.display = 'none';
+  }
+
+  if (thisYear.length === 0 && pastPosts.length === 0) {
+    tyGrid.innerHTML = '<div class="state-card"><p>No posts found for this Facebook page yet.<br><strong>Check back soon for the latest updates from Royal Kings Group.</strong></p></div>';
+    tySection.style.display = 'block';
+  }
+
+  /* Load more button */
+  document.getElementById('load-more-wrap').style.display = nextCursor ? 'block' : 'none';
+}
+
+/* ── Build post card ── */
+function buildCard(post) {
+  var d      = new Date(post.created_time);
+  var dateStr= SHORT_MON[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+  var cap    = esc(post.message || post.story || '');
+  var short  = cap.length > 220 ? cap.slice(0,220) + '…' : cap;
+  var badge  = inferBadge(post.message || post.story || '');
+  var link   = post.permalink_url || ('https://www.facebook.com/profile.php?id=100091498026763');
+
+  /* Image: try full_picture, then attachment media */
+  var imgSrc = post.full_picture || '';
+  if (!imgSrc && post.attachments && post.attachments.data && post.attachments.data[0]) {
+    var att = post.attachments.data[0];
+    if (att.media && att.media.image) imgSrc = att.media.image.src;
+    if (!imgSrc && att.subattachments && att.subattachments.data && att.subattachments.data[0]) {
+      var sub = att.subattachments.data[0];
+      if (sub.media && sub.media.image) imgSrc = sub.media.image.src;
+    }
+  }
+
+  var imgHtml = imgSrc
+    ? '<div class="post-img"><img src="' + esc(imgSrc) + '" alt="' + badge + ' — Royal Kings Group" loading="lazy"></div>'
+    : '<div class="post-img"><div class="post-img-placeholder" aria-hidden="true">' + placeholderSVG() + '</div></div>';
+
+  var badgeHtml = badge ? '<span class="post-badge">' + badge + '</span>' : '';
+
+  return '<article class="post-card" itemscope itemtype="https://schema.org/SocialMediaPosting">'
+    + imgHtml
+    + '<div class="post-body">'
+    +   '<div class="post-meta">'
+    +     '<time class="post-date" datetime="' + esc(post.created_time) + '" itemprop="datePublished">' + dateStr + '</time>'
+    +     badgeHtml
+    +   '</div>'
+    +   '<p class="post-text" itemprop="text">' + short + '</p>'
+    +   '<div class="post-footer">'
+    +     '<span class="post-reactions"><svg width="12" height="12" viewBox="0 0 24 24" fill="rgba(201,168,76,.7)" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Royal Kings Group</span>'
+    +     '<a href="' + esc(link) + '" target="_blank" rel="noopener noreferrer" class="btn-view" aria-label="View this post on Facebook">View on Facebook</a>'
+    +   '</div>'
+    + '</div>'
+    + '</article>';
+}
+
+function inferBadge(text) {
+  if (!text) return 'Update';
+  var t = text.toLowerCase();
+  if (/award|recogni|honour|honor|prize|win/i.test(t)) return 'Award';
+  if (/sponsor|csr|iftar|charity|communit|relief/i.test(t)) return 'CSR';
+  if (/partner|collaborat|join|alliance/i.test(t)) return 'Partnership';
+  if (/national day|birthday|singapore|celebrat/i.test(t)) return 'Celebration';
+  if (/anniver|milestone|\d+ year/i.test(t)) return 'Milestone';
+  if (/launch|introduc|new |proud to/i.test(t)) return 'Launch';
+  if (/event|gala|dinner|ceremony|confer/i.test(t)) return 'Event';
+  if (/feature|media|news|press|murasu/i.test(t)) return 'Media';
+  return 'Update';
+}
+
+function placeholderSVG() {
+  return '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,1)" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+}
+
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+/* ── Nav ── */
+function openDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.add('open');d.setAttribute('aria-hidden','false');o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+function closeDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.remove('open');d.setAttribute('aria-hidden','true');o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+function initNav(){
+  var h=document.getElementById('hamburger');
+  if(h)h.addEventListener('click',function(){this.classList.contains('open')?closeDrawer():openDrawer();});
+  var o=document.getElementById('drawerOverlay');
+  if(o)o.addEventListener('click',closeDrawer);
+  window.addEventListener('scroll',function(){var n=document.getElementById('mainNav');if(n)n.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+}
+
+/* Touch dropdown support */
+(function(){
+  ['newsDropdown','aboutDropdown'].forEach(function(did){
+    var dd=document.getElementById(did);
+  if(dd){
+    dd.addEventListener('touchstart',function(e){
+      var menu=dd.querySelector('.nav-dropdown-menu');
+      menu.style.display=menu.style.display==='flex'?'':'flex';
+      e.stopPropagation();
+    },{passive:true});
+    document.addEventListener('touchstart',function(e){
+      if(!dd.contains(e.target)){var m=dd.querySelector('.nav-dropdown-menu');if(m)m.style.display='';}
+    },{passive:true});
+  }
+  });
+})();
+</script>
+</body>
+
+</html>

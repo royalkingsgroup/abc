@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Founder &amp; Chairman | Royal Kings Group</title>
+
+<link rel="icon" type="image/png" href="images/nav_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8C96A;--gold-dark:#96771E;--deep:#0A0A0F;--dark:#10101A;--mid:#1A1A28;--surface:#1F1F30;--text:#F0ECE0;--muted:#8A8070;--t:.3s ease;}
+*{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
+body{font-family:'Inter','Raleway',sans-serif;background:var(--deep);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:68px;}
+#mainNav{position:fixed;top:0;width:100%;z-index:1000;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.2);transition:all var(--t);}
+#mainNav.scrolled{background:rgba(10,10,15,.99);box-shadow:0 2px 20px rgba(0,0,0,.5);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;gap:10px;}
+.nav-logo-img{height:42px;width:auto;object-fit:contain;flex-shrink:0;}
+.nav-brand-text{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2.5px;font-weight:700;color:rgba(240,236,224,.95);text-transform:uppercase;white-space:nowrap;}
+@media(max-width:1000px){.nav-brand-text{font-size:11px;letter-spacing:1.5px;}}
+@media(max-width:640px){.nav-brand-text{font-size:10px;letter-spacing:1.5px;}}@media(max-width:400px){.nav-brand-text{font-size:9px;letter-spacing:1px;}}
+.nav-links{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;padding-left:16px;}
+.nav-links a,.nav-links .nav-dropdown-trigger{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;transition:color var(--t);white-space:nowrap;position:relative;padding-bottom:3px;}
+.nav-links a::after,.nav-dropdown-trigger::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--t);}
+.nav-links a:hover::after,.nav-links a.active::after,.nav-dropdown-trigger.active::after{width:100%;}
+.nav-links a:hover,.nav-links a.active,.nav-dropdown-trigger.active{color:var(--gold);}
+.nav-cta{padding:7px 18px!important;border:1px solid var(--gold)!important;color:var(--gold)!important;border-radius:2px!important;}
+.nav-cta:hover{background:var(--gold)!important;color:var(--deep)!important;}
+.nav-cta::after{display:none!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:1100;margin-left:12px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold);transition:all var(--t);}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-drawer{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:rgba(10,10,15,.99);border-left:1px solid rgba(201,168,76,.2);z-index:1050;padding:80px 32px 40px;display:flex;flex-direction:column;gap:18px;transition:right .35s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(16px);}
+.mobile-drawer.open{right:0;}
+.mobile-drawer a{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(240,236,224,.8);text-decoration:none;padding:11px 0;border-bottom:1px solid rgba(201,168,76,.1);transition:color var(--t),padding-left var(--t);}
+.mobile-drawer a:hover,.mobile-drawer a.active{color:var(--gold);}.mobile-drawer a:hover{padding-left:5px;}
+.mob-news-group,.mob-about-group{display:flex;flex-direction:column;border-bottom:1px solid rgba(201,168,76,.1);}
+.mob-news-label,.mob-about-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:11px 0 6px;font-weight:700;}
+.mob-sub-link{font-size:10px!important;letter-spacing:2px!important;padding:7px 0 7px 16px!important;border-bottom:none!important;color:rgba(240,236,224,.7)!important;}
+.mob-sub-link.active{color:var(--gold)!important;}.mob-sub-link:hover{color:var(--gold)!important;padding-left:20px!important;}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1040;display:none;cursor:pointer;}
+.drawer-overlay.open{display:block;}
+@media(max-width:1200px){.nav-links{gap:12px;padding-left:12px;}}
+@media(max-width:1000px){.nav-links{gap:11px;padding-left:12px;}.nav-links a,.nav-dropdown-trigger{font-size:10px;letter-spacing:1.5px;}}
+@media(max-width:768px){#mainNav{padding:0 16px;height:62px;}.nav-links{display:none;}.hamburger{display:flex;}}
+.nav-dropdown{position:relative;display:flex;align-items:center;}
+.nav-dropdown-trigger{cursor:default;display:flex;align-items:center;gap:4px;padding-bottom:3px;}
+.dropdown-arrow{font-size:9px;transition:transform var(--t);}
+.nav-dropdown:hover .dropdown-arrow{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 2px);right:-12px;min-width:240px;background:rgba(10,10,15,.98);border:1px solid rgba(201,168,76,.22);border-radius:3px;padding:10px 0 6px;display:none;flex-direction:column;z-index:1100;box-shadow:0 14px 44px rgba(0,0,0,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);animation:ddIn .2s ease;}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;background:transparent;}
+@keyframes ddIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown-menu:hover{display:flex;}
+.nav-dropdown-menu a{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;padding:11px 20px;display:flex;align-items:center;gap:10px;transition:color var(--t),background var(--t);}
+.nav-dropdown-menu a:hover{color:var(--gold);background:rgba(201,168,76,.08);}
+.dd-icon{font-size:13px;}
+.page-hero{position:relative;height:380px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.page-hero-bg{position:absolute;inset:0;}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,15,.2),rgba(10,10,15,.88));}
+.hero-inner{position:relative;z-index:2;text-align:center;padding:0 20px;}
+.eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block;animation:fU .8s .2s both;}
+.page-hero h1{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,52px);font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--text);animation:fU .8s .4s both;}
+.page-hero h1 em{color:var(--gold);font-style:normal;}
+.hero-div{width:56px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:16px auto 0;animation:fU .8s .6s both;}
+@keyframes fU{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.breadcrumb{background:var(--dark);border-bottom:1px solid rgba(201,168,76,.1);padding:12px 60px;}
+.bc{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.bc a{color:var(--muted);text-decoration:none;transition:color var(--t);}.bc a:hover{color:var(--gold);}
+.bc .sep{color:rgba(138,128,112,.4);}.bc .cur{color:var(--gold);}
+.gold-rule{width:52px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:12px 0;}
+.gold-rule.center{margin:12px auto;}
+.eyebrow-sm{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:10px;}
+.section-head{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,46px);font-weight:300;color:var(--text);line-height:1.2;}
+.section-head em{font-style:italic;color:var(--gold);}
+.body-text p{font-size:15.5px;font-weight:400;color:rgba(240,236,224,.85);line-height:1.95;margin-bottom:16px;}
+.body-text p:last-child{margin-bottom:0;}
+.stats-strip{background:linear-gradient(to right,var(--deep),var(--mid),var(--deep));border-top:1px solid rgba(201,168,76,.2);border-bottom:1px solid rgba(201,168,76,.2);padding:26px 60px;display:flex;justify-content:center;flex-wrap:wrap;}
+.si{text-align:center;padding:0 44px;border-right:1px solid rgba(201,168,76,.14);}
+.si:last-child{border-right:none;}
+.sn{font-family:'Cinzel',serif;font-size:30px;color:var(--gold);display:block;line-height:1;}
+.sl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,190,170,.85);font-weight:500;margin-top:5px;display:block;}
+.btn-p{padding:12px 30px;background:var(--gold);color:var(--deep);font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;text-decoration:none;transition:all var(--t);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);display:inline-flex;align-items:center;}
+.btn-p:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-g{padding:12px 30px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:1px solid rgba(201,168,76,.5);cursor:pointer;text-decoration:none;transition:all var(--t);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);display:inline-flex;align-items:center;}
+.btn-g:hover{border-color:var(--gold);background:rgba(201,168,76,.08);}
+footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:56px 60px 30px;}
+.footer-grid{display:grid;grid-template-columns:260px 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
+.footer-brand{display:flex;flex-direction:column;align-items:flex-start;}
+.footer-brand img{height:150px;width:auto;object-fit:contain;margin-bottom:16px;filter:drop-shadow(0 0 10px rgba(201,168,76,.15));}
+.footer-brand p{font-size:13px;font-weight:400;line-height:1.85;color:rgba(200,190,170,.75);}
+.footer-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;color:var(--gold-dark);text-transform:uppercase;margin-top:10px;}
+.footer-col h5{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.1);font-weight:700;}
+.footer-col a{display:block;font-size:13px;font-weight:400;color:rgba(200,190,170,.75);text-decoration:none;margin-bottom:8px;transition:color var(--t),padding-left var(--t);}
+.footer-col a:hover{color:rgba(255,255,255,.9);padding-left:4px;}
+.footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:20px;display:flex;justify-content:center;}
+.footer-bottom p{font-size:10px;color:rgba(138,128,112,.5);}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px;}
+@media(max-width:768px){.breadcrumb,.stats-strip{padding-left:18px;padding-right:18px;}.stats-strip{flex-wrap:wrap;}.si{border-right:none;padding:0 20px;}.page-hero{height:280px;}.footer-grid{grid-template-columns:1fr;}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+.founder-wrap{padding:84px 60px;max-width:1280px;margin:0 auto;}
+.founder-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:start;}
+.founder-photo-col{position:sticky;top:88px;}
+.founder-photo-frame{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.65);}
+.founder-photo-frame::before{content:'';position:absolute;top:-12px;left:-12px;width:100%;height:100%;border:1px solid rgba(201,168,76,.35);border-radius:4px;z-index:-1;}
+.founder-photo-frame img{width:100%;height:auto;display:block;filter:brightness(.9) saturate(.85);}
+.founder-plate{margin-top:20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:18px 20px;text-align:center;}
+.founder-name{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--text);display:block;margin-bottom:6px;}
+.founder-desig{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.founder-content{display:flex;flex-direction:column;gap:36px;}
+.sec-head{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,44px);font-weight:300;color:var(--text);line-height:1.2;margin-bottom:12px;}
+.sec-head em{font-style:italic;color:var(--gold);}
+.section-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:12px;}
+.body-text p{font-size:15.5px;font-weight:400;color:rgba(240,236,224,.85);line-height:1.95;margin-bottom:16px;}
+.body-text p:last-child{margin-bottom:0;}
+.quote-block{border-left:3px solid var(--gold);padding:20px 28px;background:rgba(201,168,76,.04);border-radius:0 4px 4px 0;margin:8px 0;}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,24px);font-style:italic;color:rgba(240,236,224,.9);line-height:1.7;}
+.quote-attr{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:12px;display:block;}
+.csr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+.csr-mini{background:var(--surface);border:1px solid rgba(201,168,76,.12);border-radius:4px;padding:22px 18px;transition:border-color var(--t),transform var(--t);}
+.csr-mini:hover{border-color:rgba(201,168,76,.3);transform:translateY(-3px);}
+.csr-mini-icon{font-size:26px;display:block;margin-bottom:10px;}
+.csr-mini-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:8px;}
+.csr-mini-text{font-size:12.5px;font-weight:400;color:rgba(200,190,170,.75);line-height:1.7;}
+.cta-strip{background:var(--dark);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);padding:56px 60px;text-align:center;}
+.cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,40px);font-weight:300;color:var(--text);margin-bottom:10px;}
+.cta-strip h2 em{font-style:italic;color:var(--gold);}
+.cta-strip p{font-size:15px;font-weight:400;color:rgba(255,255,255,.78);max-width:480px;margin:0 auto 24px;line-height:1.9;}
+.gold-rule{width:52px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:12px 0;}
+.gold-rule.center{margin:12px auto;}
+@media(max-width:900px){.founder-grid{grid-template-columns:1fr;}.founder-photo-col{position:static;}.csr-cards{grid-template-columns:1fr;}.founder-wrap,.cta-strip{padding:60px 40px;}}
+@media(max-width:600px){.founder-wrap,.cta-strip{padding:44px 18px;}.csr-cards{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.csr-cards{grid-template-columns:1fr;}}
+
+#aboutDropdown .nav-dropdown-menu{right:auto;left:0;}id rgba(201,168,76,.5);cursor:pointer;text-decoration:none;transition:all var(--t);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);display:inline-flex;align-items:center;}
+.btn-g:hover{border-color:var(--gold);background:rgba(201,168,76,.08);}
+footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:56px 60px 30px;}
+.footer-grid{display:grid;grid-template-columns:260px 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
+.footer-brand{display:flex;flex-direction:column;align-items:flex-start;}
+.footer-brand img{height:150px;width:auto;object-fit:contain;margin-bottom:16px;filter:drop-shadow(0 0 10px rgba(201,168,76,.15));}
+.footer-brand p{font-size:13px;font-weight:400;line-height:1.85;color:rgba(200,190,170,.75);}
+.footer-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;color:var(--gold-dark);text-transform:uppercase;margin-top:10px;}
+.footer-col h5{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.1);font-weight:700;}
+.footer-col a{display:block;font-size:13px;font-weight:400;color:rgba(200,190,170,.75);text-decoration:none;margin-bottom:8px;transition:color var(--t),padding-left var(--t);}
+.footer-col a:hover{color:rgba(255,255,255,.9);padding-left:4px;}
+.footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:20px;display:flex;justify-content:center;}
+.footer-bottom p{font-size:10px;color:rgba(138,128,112,.5);}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px;}
+@media(max-width:768px){.breadcrumb,.stats-strip{padding-left:18px;padding-right:18px;}.stats-strip{flex-wrap:wrap;}.si{border-right:none;padding:0 20px;}.page-hero{height:280px;}.footer-grid{grid-template-columns:1fr;}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+.founder-wrap{padding:84px 60px;max-width:1280px;margin:0 auto;}
+.founder-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:start;}
+.founder-photo-col{position:sticky;top:88px;}
+.founder-photo-frame{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.65);}
+.founder-photo-frame::before{content:'';position:absolute;top:-12px;left:-12px;width:100%;height:100%;border:1px solid rgba(201,168,76,.35);border-radius:4px;z-index:-1;}
+.founder-photo-frame img{width:100%;height:auto;display:block;filter:brightness(.9) saturate(.85);}
+.founder-plate{margin-top:20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:4px;padding:18px 20px;text-align:center;}
+.founder-name{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--text);display:block;margin-bottom:6px;}
+.founder-desig{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.founder-content{display:flex;flex-direction:column;gap:36px;}
+.sec-head{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,44px);font-weight:300;color:var(--text);line-height:1.2;margin-bottom:12px;}
+.sec-head em{font-style:italic;color:var(--gold);}
+.section-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:12px;}
+.body-text p{font-size:15.5px;font-weight:400;color:rgba(240,236,224,.85);line-height:1.95;margin-bottom:16px;}
+.body-text p:last-child{margin-bottom:0;}
+.quote-block{border-left:3px solid var(--gold);padding:20px 28px;background:rgba(201,168,76,.04);border-radius:0 4px 4px 0;margin:8px 0;}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,24px);font-style:italic;color:rgba(240,236,224,.9);line-height:1.7;}
+.quote-attr{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:12px;display:block;}
+.csr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+.csr-mini{background:var(--surface);border:1px solid rgba(201,168,76,.12);border-radius:4px;padding:22px 18px;transition:border-color var(--t),transform var(--t);}
+.csr-mini:hover{border-color:rgba(201,168,76,.3);transform:translateY(-3px);}
+.csr-mini-icon{font-size:26px;display:block;margin-bottom:10px;}
+.csr-mini-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:8px;}
+.csr-mini-text{font-size:12.5px;font-weight:400;color:rgba(200,190,170,.75);line-height:1.7;}
+.cta-strip{background:var(--dark);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);padding:56px 60px;text-align:center;}
+.cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,40px);font-weight:300;color:var(--text);margin-bottom:10px;}
+.cta-strip h2 em{font-style:italic;color:var(--gold);}
+.cta-strip p{font-size:15px;font-weight:400;color:rgba(255,255,255,.78);max-width:480px;margin:0 auto 24px;line-height:1.9;}
+.gold-rule{width:52px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:12px 0;}
+.gold-rule.center{margin:12px auto;}
+@media(max-width:900px){.founder-grid{grid-template-columns:1fr;}.founder-photo-col{position:static;}.csr-cards{grid-template-columns:1fr;}.founder-wrap,.cta-strip{padding:60px 40px;}}
+@media(max-width:600px){.founder-wrap,.cta-strip{padding:44px 18px;}.csr-cards{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.csr-cards{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
+    <img src="images/nav_logo.png" alt="Royal Kings Group emblem" class="nav-logo-img">
+    <span class="nav-brand-text">ROYAL KINGS GROUP</span>
+  </a>
+  <div class="nav-links" role="menubar">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="aboutDropdown">
+      <a href="our-story.html" class="nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+        About Us <span class="dropdown-arrow">&#x25BE;</span>
+      </a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="our-story.html" role="menuitem"><span class="dd-icon">&#x1F4D6;</span> Our Story</a>
+        <a href="founder.html" role="menuitem"><span class="dd-icon">&#x1F451;</span> Founder &amp; Chairman</a>
+        <a href="csr.html" role="menuitem"><span class="dd-icon">&#x1F91D;</span> Corporate Social Responsibility</a>
+      </div>
+    </div>
+    <a href="pillars.html">Our Pillars</a>
+    <a href="awards.html">Awards</a>
+    <a href="videos.html">Videos</a>
+    <div class="nav-dropdown" id="newsDropdown">
+      <a href="news.html" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        News <span class="dropdown-arrow">&#x25BE;</span>
+      </a>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="news.html" role="menuitem"><span class="dd-icon">&#x1F4F0;</span> News Feed</a>
+        <a href="newspaper-features.html" role="menuitem"><span class="dd-icon">&#x1F4F0;</span> Newspaper Features</a>
+      </div>
+    </div>
+    <a href="memberships.html">Memberships</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="management-team.html">Our Team</a>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html" onclick="closeDrawer()">Home</a>
+  <div class="mob-about-group">
+    <span class="mob-about-label">&#x25BE; About Us</span>
+    <a href="our-story.html" onclick="closeDrawer()" class="mob-sub-link">Our Story</a>
+    <a href="founder.html" onclick="closeDrawer()" class="mob-sub-link active">Founder &amp; Chairman</a>
+    <a href="csr.html" onclick="closeDrawer()" class="mob-sub-link">CSR</a>
+  </div>
+  <a href="pillars.html" onclick="closeDrawer()">Our Pillars</a>
+  <a href="awards.html" onclick="closeDrawer()">Awards</a>
+  <a href="videos.html" onclick="closeDrawer()">Videos</a>
+  <div class="mob-news-group">
+    <span class="mob-news-label">&#x25BE; News</span>
+    <a href="news.html" onclick="closeDrawer()" class="mob-sub-link">News Feed</a>
+    <a href="newspaper-features.html" onclick="closeDrawer()" class="mob-sub-link">Newspaper Features</a>
+  </div>
+  <a href="memberships.html" onclick="closeDrawer()">Memberships</a>
+  <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
+  <a href="management-team.html" onclick="closeDrawer()">Our Team</a>
+  <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
+</nav>
+<main>
+  <!-- HERO -->
+  <div class="page-hero" role="banner">
+    <div class="page-hero-bg" style="background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80') center/cover;filter:brightness(.22) saturate(.5);" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <span class="eyebrow">Royal Kings Group</span>
+      <h1>Founder <em>&amp;</em> Chairman</h1>
+      <div class="hero-div"></div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="bc">
+      <a href="index.html">Home</a><span class="sep">&#x203A;</span>
+      <a href="our-story.html">About Us</a><span class="sep">&#x203A;</span>
+      <span class="cur" aria-current="page">Founder &amp; Chairman</span>
+    </div>
+  </nav>
+
+  <!-- FOUNDER SECTION -->
+  <section class="founder-wrap" aria-labelledby="founder-heading">
+    <div class="founder-grid">
+
+      <!-- LEFT: PHOTO -->
+      <div class="founder-photo-col">
+        <div class="founder-photo-frame">
+          <img src="images/founder.jpg" alt="Mr Sirajudeen Bin Syed Mohamed — Founder &amp; Chairman, Royal Kings Group" loading="eager">
+        </div>
+        <div class="founder-plate">
+          <span class="founder-name">Mr. Sirajudeen Bin Syed Mohamed</span>
+          <span class="founder-desig">Founder &amp; Chairman — Royal Kings Group</span>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+          <a href="awards.html" class="btn-p" style="flex:1;justify-content:center;">View Awards</a>
+          <a href="contact.html" class="btn-g" style="flex:1;justify-content:center;">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: CONTENT -->
+      <div class="founder-content">
+        <div>
+          <span class="section-label">Leadership Profile</span>
+          <h2 class="sec-head" id="founder-heading">A Vision Built on<br><em>Trust &amp; Purpose</em></h2>
+          <div class="gold-rule"></div>
+          <div class="body-text" style="margin-top:24px;">
+            <p>Mr Sirajudeen Bin Syed Mohamed founded Royal Kings Group in Singapore in 2013 with a clear and enduring vision — to build a business platform that goes beyond transactions, creating a genuine ecosystem of value for every client, partner and community the Group touches.</p>
+            <p>Under his leadership, the Group has grown from a single wholesale trading entity into a fully integrated five-pillar business platform recognised across Singapore and the Asia-Pacific region — spanning technology, consultancy, hospitality, global trade and precious metals.</p>
+            <p>Mr Sirajudeen is also the CEO of Nambikai Singapore and a deeply committed advocate for community welfare, interfaith harmony and social responsibility. His leadership philosophy — rooted in transparency, performance and purpose — has been recognised with over 15 national and international business awards.</p>
+          </div>
+        </div>
+
+        <!-- QUOTE -->
+        <div class="quote-block">
+          <p class="quote-text">"We do not simply offer services — we invest in the growth of every business we work with. That is the Royal Kings commitment."</p>
+          <span class="quote-attr">— Mr. Sirajudeen Bin Syed Mohamed, Founder &amp; Chairman</span>
+        </div>
+
+        <!-- COMMUNITY & CSR -->
+        <div>
+          <span class="section-label">Community Leadership</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,34px);font-weight:300;color:var(--text);margin-bottom:10px;">Giving Back to <em style="font-style:italic;color:var(--gold);">Singapore &amp; Beyond</em></h3>
+          <div class="gold-rule"></div>
+          <p style="font-size:15px;font-weight:400;color:rgba(240,236,224,.8);line-height:1.9;margin-top:16px;">Royal Kings Group believes sustainable business success is inseparable from positive community impact. Under Mr. Sirajudeen's leadership, the Group actively contributes to Singapore's social fabric through three pillars of community engagement:</p>
+          <div class="csr-cards">
+            <div class="csr-mini">
+              <span class="csr-mini-icon">🎓</span>
+              <p class="csr-mini-title">Education &amp; Skills</p>
+              <p class="csr-mini-text">Supporting youth entrepreneurship programmes, skills development workshops and mentorship initiatives equipping the next generation of Asian business leaders.</p>
+            </div>
+            <div class="csr-mini">
+              <span class="csr-mini-icon">🌱</span>
+              <p class="csr-mini-title">Community Development</p>
+              <p class="csr-mini-text">Active participation in community outreach, charitable initiatives and partnerships — including sponsorship of interfaith Iftar gatherings and national day celebrations.</p>
+            </div>
+            <div class="csr-mini">
+              <span class="csr-mini-icon">♻️</span>
+              <p class="csr-mini-title">Sustainable Business</p>
+              <p class="csr-mini-text">Embedding responsible business practices from ethical supply chain management to contributing to Singapore's Green Plan 2030 and green-office initiatives.</p>
+            </div>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="csr.html" class="btn-g">View All CSR Initiatives</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Partner With <em>Royal Kings Group</em></h2>
+    <div class="gold-rule center"></div>
+    <p>Learn how Royal Kings Group can become your strategic partner for growth, compliance and expansion across Asia-Pacific.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="awards.html" class="btn-p">View Our Awards</a>
+      <a href="contact.html" class="btn-g">Contact Us</a>
+    </div>
+  </section>
+</main>
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/footer_logo.png" alt="Royal Kings Group">
+      
+      <span class="footer-tag">Excellence &middot; Integrity &middot; Performance</span>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About Us</a>
+      <a href="about.html#vision">Vision &amp; Mission</a>
+      <a href="about.html#founder">Founder &amp; Chairman</a>
+      <a href="about.html#csr">Corporate Social Responsibility</a>
+      <a href="awards.html">Awards</a>
+      <a href="videos.html">Videos</a>
+    </div>
+    <div class="footer-col">
+      <h5>Our Pillars</h5>
+      <a href="pillars.html#tech">Technology &amp; Digital</a>
+      <a href="pillars.html#consultancy">Corporate Consultancy</a>
+      <a href="pillars.html#hospitality">Hospitality &amp; Events</a>
+      <a href="pillars.html#trading">Global Trading</a>
+      <a href="pillars.html#bullion">Royal Kings Bullion</a>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <a href="mailto:contact@royalkingsgroup.com">contact@royalkingsgroup.com</a>
+      <a href="tel:+6562260405">+65 6226 0405</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="memberships.html">Memberships</a>
+      <a href="news.html">News</a>
+      <a href="sitemap.html">Sitemap</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
+</footer>
+<script>'use strict';
+function openDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.add('open');d.setAttribute('aria-hidden','false');o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+function closeDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.remove('open');d.setAttribute('aria-hidden','true');o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+(function(){
+  var h=document.getElementById('hamburger');
+  if(h)h.addEventListener('click',function(){ this.classList.contains('open')?closeDrawer():openDrawer(); });
+  var o=document.getElementById('drawerOverlay');
+  if(o)o.addEventListener('click',closeDrawer);
+  window.addEventListener('scroll',function(){ var n=document.getElementById('mainNav'); if(n)n.classList.toggle('scrolled',window.scrollY>60); },{passive:true});
+  ['newsDropdown','aboutDropdown'].forEach(function(did){
+    var dd=document.getElementById(did);
+    if(dd){
+      var menu=dd.querySelector('.nav-dropdown-menu');
+      dd.addEventListener('touchstart',function(e){ var isOpen=menu.style.display==='flex'; menu.style.display=isOpen?'':'flex'; if(!isOpen)e.stopPropagation(); },{passive:true});
+      document.addEventListener('touchstart',function(e){ if(!dd.contains(e.target)&&menu)menu.style.display=''; },{passive:true});
+    }
+  });
+})();
+</script>
+</body>
+
+</html>
