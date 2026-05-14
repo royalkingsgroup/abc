@@ -18,7 +18,7 @@ body{font-family:'Inter','Raleway',sans-serif;background:var(--deep);color:var(-
 .nav-logo-img{height:42px;width:auto;object-fit:contain;flex-shrink:0;}
 .nav-brand-text{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2.5px;font-weight:700;color:rgba(240,236,224,.95);text-transform:uppercase;white-space:nowrap;}
 @media(max-width:1000px){.nav-brand-text{font-size:11px;letter-spacing:1.5px;}}
-@media(max-width:640px){.nav-brand-text{font-size:10px;letter-spacing:1.5px;}}@media(max-width:400px){.nav-brand-text{font-size:9px;letter-spacing:1px;}}
+
 .nav-links{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;padding-left:16px;}
 .nav-links a,.nav-links .nav-dropdown-trigger{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;transition:color var(--t);white-space:nowrap;position:relative;padding-bottom:3px;}
 .nav-links a::after,.nav-dropdown-trigger::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--t);}
@@ -183,7 +183,16 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
 @media(max-width:900px){.story-grid,.vm-grid{grid-template-columns:1fr;gap:40px;}.story-grid.reverse{direction:ltr;}.cv-grid{grid-template-columns:repeat(2,1fr);}.story-wrap,.dark-section{padding:60px 40px;}}
 @media(max-width:600px){.cv-grid{grid-template-columns:1fr;}.story-wrap,.dark-section{padding:44px 18px;}.pillars-strip{gap:8px;}.cta-band{padding:44px 18px;}}
 
-#newsDropdown .nav-dropdown-menu{right:auto;left:0;}</style>
+#newsDropdown .nav-dropdown-menu{right:auto;left:0;}
+/* Mobile nav consistency fix */
+.mob-about-label,.mob-news-label{font-family:'Cinzel',serif;font-size:10px !important;letter-spacing:2.5px !important;text-transform:uppercase;color:var(--gold);padding:10px 0 5px;font-weight:700;display:block;}
+.mob-sub-link{font-family:'Cinzel',serif !important;font-size:9.5px !important;letter-spacing:2px !important;font-weight:600 !important;padding:7px 0 7px 14px !important;border-bottom:none !important;color:rgba(240,236,224,.72) !important;text-decoration:none;display:block;transition:color .3s,padding-left .3s;}
+.mob-sub-link.active{color:var(--gold) !important;}
+.mob-sub-link:hover{color:var(--gold) !important;padding-left:18px !important;}
+.mobile-drawer a{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;}
+@media(max-width:640px){.nav-brand-text{font-size:11px !important;letter-spacing:2px !important;}}
+@media(max-width:400px){.nav-brand-text{font-size:10px !important;letter-spacing:1.5px !important;}}
+</style>
 </head>
 <body>
 <nav id="mainNav" role="navigation" aria-label="Main navigation">

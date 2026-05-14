@@ -18,7 +18,7 @@ body{font-family:'Inter','Raleway',sans-serif;background:var(--deep);color:var(-
 .nav-logo-img{height:42px;width:auto;object-fit:contain;flex-shrink:0;}
 .nav-brand-text{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2.5px;font-weight:700;color:rgba(240,236,224,.95);text-transform:uppercase;white-space:nowrap;}
 @media(max-width:1000px){.nav-brand-text{font-size:11px;letter-spacing:1.5px;}}
-@media(max-width:640px){.nav-brand-text{font-size:10px;letter-spacing:1.5px;}}@media(max-width:400px){.nav-brand-text{font-size:9px;letter-spacing:1px;}}
+
 .nav-links{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;padding-left:16px;}
 .nav-links a,.nav-links .nav-dropdown-trigger{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(240,236,224,.78);text-decoration:none;transition:color var(--t);white-space:nowrap;position:relative;padding-bottom:3px;}
 .nav-links a::after,.nav-dropdown-trigger::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width var(--t);}
@@ -236,7 +236,16 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
 @media(max-width:600px){.np-grid{grid-template-columns:1fr;gap:12px;padding:0 18px;}.cat-header,.filter-wrap,.results-info,.stats-bar,.breadcrumb,.intro-bar,.cta-band,.view-more-row,.older-header{padding-left:18px;padding-right:18px;}.page-hero{height:280px;}.stats-bar{flex-wrap:wrap;padding:20px 18px;}.si{border-right:none;padding:0 18px;}.footer-grid{grid-template-columns:1fr;}#lb-cap{flex-direction:column;}.filter-bar{gap:6px;}.tab-btn{font-size:8px;padding:7px 12px;}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
 
-#newsDropdown .nav-dropdown-menu{right:auto;left:0;}</style>
+#newsDropdown .nav-dropdown-menu{right:auto;left:0;}
+/* Mobile nav consistency fix */
+.mob-about-label,.mob-news-label{font-family:'Cinzel',serif;font-size:10px !important;letter-spacing:2.5px !important;text-transform:uppercase;color:var(--gold);padding:10px 0 5px;font-weight:700;display:block;}
+.mob-sub-link{font-family:'Cinzel',serif !important;font-size:9.5px !important;letter-spacing:2px !important;font-weight:600 !important;padding:7px 0 7px 14px !important;border-bottom:none !important;color:rgba(240,236,224,.72) !important;text-decoration:none;display:block;transition:color .3s,padding-left .3s;}
+.mob-sub-link.active{color:var(--gold) !important;}
+.mob-sub-link:hover{color:var(--gold) !important;padding-left:18px !important;}
+.mobile-drawer a{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;}
+@media(max-width:640px){.nav-brand-text{font-size:11px !important;letter-spacing:2px !important;}}
+@media(max-width:400px){.nav-brand-text{font-size:10px !important;letter-spacing:1.5px !important;}}
+</style>
 </head>
 <body>
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
@@ -865,15 +874,15 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
 <script>
 'use strict';
 var FULL_SG01 = 'images/np_sg01.jpg';
-var FULL_IN01 = 'images/np_sg01.jpg';
-var FULL_IN02 = 'images/np_sg01.jpg';
-var FULL_IN03 = 'images/np_sg01.jpg';
-var FULL_IN04 = 'images/np_sg01.jpg';
-var FULL_IN05 = 'images/np_sg01.jpg';
-var FULL_IN06 = 'images/np_sg01.jpg';
-var FULL_IN07 = 'images/np_sg01.jpg';
-var FULL_IN08 = 'images/np_sg01.jpg';
-var FULL_INT01 = 'images/np_sg01.jpg';
+var FULL_IN01 = 'images/np_in01.jpg';
+var FULL_IN02 = 'images/np_in02.jpg';
+var FULL_IN03 = 'images/np_in03.jpg';
+var FULL_IN04 = 'images/np_in04.jpg';
+var FULL_IN05 = 'images/np_in05.jpg';
+var FULL_IN06 = 'images/np_in06.jpg';
+var FULL_IN07 = 'images/np_in07.jpg';
+var FULL_IN08 = 'images/np_in08.jpg';
+var FULL_INT01 = 'images/np_int01.jpg';
 var CLIPS = {
   'sg01':{'full':FULL_SG01,'pub':'Tamil Murasu','date':'21 March 2026','headline':'Community Iftar: A Wonderful Celebration in a Peaceful Atmosphere'},
   'in01':{'full':FULL_IN01,'pub':'Manichudar Tamil Daily','date':'8 May 2026','headline':'Royal Kings Group Partners with Mission ShakthiSAT for Women\'s STEM Empowerment'},
