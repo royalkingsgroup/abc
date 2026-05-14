@@ -14,7 +14,7 @@
 body{font-family:'Raleway',sans-serif;background:var(--deep);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:68px;}
 
 /* ═══ NAV ═══ */
-#mainNav{position:fixed;top:0;width:100%;z-index:1000;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.2);transition:all var(--t);}
+#mainNav{position:fixed;top:0;width:100%;z-index:1000;padding:0;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.2);transition:all var(--t);}
 #mainNav.scrolled{background:rgba(10,10,15,.99);box-shadow:0 2px 20px rgba(0,0,0,.5);}
 /* .nav-logo moved to NAV LOGO WITH BRAND TEXT section */
 .nav-logo img{height:46px;width:auto;object-fit:contain;}
@@ -40,7 +40,7 @@ body{font-family:'Raleway',sans-serif;background:var(--deep);color:var(--text);o
 .drawer-overlay.open{display:block;}
 @media(max-width:1200px){.nav-links{gap:16px;}.nav-links a{font-size:10.5px;}}
 @media(max-width:1000px){.nav-links{gap:11px;}.nav-links a{font-size:10px;letter-spacing:1.5px;}}
-@media(max-width:768px){#mainNav{padding:0 16px;height:62px;}.nav-links{display:none;}.hamburger{display:flex;}}
+@media(max-width:768px){#mainNav{padding:0;height:62px;}.nav-links{display:none;}.hamburger{display:flex;}}
 
 /* ── HERO ── */
 .page-hero{position:relative;height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -354,109 +354,360 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
 .fb-readmore{margin-top:auto;display:flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:700;transition:gap .2s;}
 .fb-readmore:hover{gap:10px;}
 @media(max-width:900px){.fb-posts-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){.fb-posts-grid{grid-template-columns:1fr;padding:0 18px 44px;}}
+@media(max-width:600px){.nf-iframe{display:block;width:100%;height:720px;border:none;overflow:hidden;background:transparent;}.nf-section{padding:32px 14px 48px;}.nf-stats{gap:24px;}.nf-plugin-outer::before,.nf-plugin-outer::after,.nf-corner-bl,.nf-corner-br{display:none;}.nf-topbar{padding:10px 14px;}.nf-bottombar{padding:11px 14px;flex-direction:column;gap:9px;}.nf-btn-solid,.nf-btn-outline{width:100%;justify-content:center;}}
 
-.news-intro{padding:28px 18px 16px;}}
-
-/* ── News Feed Page ── */
-.news-intro{padding:32px 60px 16px;text-align:center;}
-.news-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.8vw,36px);font-weight:300;color:var(--text);}
-.news-intro h2 em{font-style:italic;color:var(--gold);}
-.gold-rule{width:44px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:10px auto;}
-.news-intro p{font-size:13px;color:rgba(255,255,255,.65);margin-top:8px;line-height:1.7;}
-
-/* ── Single full-width feed with FB plugin + posts grid side by side ── */
-.news-wrap{display:grid;grid-template-columns:340px 1fr;gap:24px;padding:0 60px 48px;max-width:1280px;margin:0 auto;}
-
-/* ── FB Page Plugin (compact left column) ── */
-.fb-plugin-pane{background:var(--surface);border:1px solid rgba(201,168,76,.12);border-radius:5px;overflow:hidden;position:sticky;top:80px;height:fit-content;}
-.fb-plugin-header{padding:10px 14px;border-bottom:1px solid rgba(201,168,76,.08);display:flex;align-items:center;gap:8px;}
-.fb-plugin-header span{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);}
-
-/* ── Posts grid (right column) ── */
-.fb-api-pane{}
-.fb-api-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.fb-api-header span{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);}
-.fb-status-txt{font-family:'Cinzel',serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-
-/* ── 3-col post grid ── */
-.fb-posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-
-/* ── Compact post card ── */
-.fb-post-card{background:var(--surface);border:1px solid rgba(201,168,76,.1);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s,transform .25s;}
-.fb-post-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-2px);}
-.fb-post-img{width:100%;height:110px;object-fit:cover;display:block;}
-.fb-post-body{padding:9px 10px 10px;display:flex;flex-direction:column;gap:5px;flex:1;}
-.fb-post-date{font-family:'Cinzel',serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-.fb-post-msg{font-size:11.5px;color:rgba(240,236,224,.72);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1;}
-.fb-post-link{font-family:'Cinzel',serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px;margin-top:4px;transition:gap .2s;}
-.fb-post-link:hover{gap:7px;}
-
-/* ── Loading / Error ── */
-.fb-loading-txt{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);padding:24px;text-align:center;}
-.fb-error-msg{background:rgba(100,30,30,.2);border:1px solid rgba(200,80,80,.2);border-radius:4px;padding:12px 14px;font-size:12px;color:rgba(255,160,160,.85);line-height:1.7;}
-.fb-retry-btn{margin-top:8px;padding:6px 14px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:3px;cursor:pointer;font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;transition:all .25s;}
-.fb-retry-btn:hover{background:rgba(201,168,76,.16);}
-
-@media(max-width:1024px){.fb-posts-grid{grid-template-columns:repeat(2,1fr);}.news-wrap{grid-template-columns:280px 1fr;}}
-@media(max-width:768px){.news-wrap{grid-template-columns:1fr;padding:0 18px 36px;}.fb-plugin-pane{position:static;}.news-intro{padding:24px 18px 12px;}}
-@media(max-width:480px){.fb-posts-grid{grid-template-columns:1fr;}}
-
-/* ═══ NEWS FEED PAGE ═══ */
-.news-section{padding:44px 60px 64px;max-width:1280px;margin:0 auto;}
-.news-top-bar{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
-.news-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--gold);}
-.news-sub{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
-.news-wrap{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start;}
-
-/* ── FB Plugin pane ── */
-.plugin-pane{background:var(--surface);border:1px solid rgba(201,168,76,.15);border-radius:6px;overflow:hidden;}
-.plugin-head{padding:10px 14px;border-bottom:1px solid rgba(201,168,76,.1);display:flex;align-items:center;gap:8px;}
-.plugin-head-txt{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);}
-
-/* ── Posts section ── */
-.posts-pane{}
-.posts-status-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;min-height:22px;}
-.posts-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--gold);}
-.posts-count{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-
-/* ── Posts grid ── */
-.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
-
-/* ── Single post card ── */
-.post-card{background:var(--surface);border:1px solid rgba(201,168,76,.1);border-radius:5px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;}
-.post-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.55);}
-.post-thumb{width:100%;height:112px;object-fit:cover;display:block;background:var(--mid);flex-shrink:0;}
-.post-thumb-placeholder{width:100%;height:60px;background:linear-gradient(135deg,var(--mid),var(--dark));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.post-thumb-placeholder svg{opacity:.25;}
-.post-body{padding:10px 11px 12px;display:flex;flex-direction:column;gap:5px;flex:1;}
-.post-date{font-family:'Cinzel',serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-.post-msg{font-size:11.5px;font-weight:400;color:rgba(240,236,224,.78);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1;}
-.post-link{margin-top:6px;font-family:'Cinzel',serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap .2s,opacity .2s;}
-.post-link:hover{gap:7px;}
-
-/* ── State cards (loading / error / empty) ── */
-.state-cell{grid-column:1/-1;padding:32px 16px;text-align:center;}
-.state-spinner{width:28px;height:28px;border:2px solid rgba(201,168,76,.15);border-top-color:var(--gold);border-radius:50%;animation:spin .85s linear infinite;margin:0 auto 12px;}
-@keyframes spin{to{transform:rotate(360deg)}}
-.state-txt{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);}
-.state-err{color:rgba(255,140,140,.8);font-size:12px;font-family:'Inter',sans-serif;line-height:1.7;max-width:360px;margin:0 auto;}
-.retry-btn{margin-top:12px;padding:7px 18px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.28);border-radius:3px;cursor:pointer;font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;transition:all .25s;}
-.retry-btn:hover{background:rgba(201,168,76,.18);border-color:var(--gold);}
+/* ── Card bottom bar ── */
+.nf-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 22px;
+  background: var(--dark);
+  border-top: 1px solid rgba(201,168,76,.1);
+  flex-wrap: wrap;
+}
+.nf-btn-solid {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 24px;
+  background: var(--gold);
+  color: var(--deep);
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background .25s, transform .25s;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+}
+.nf-btn-solid:hover { background: var(--gold-light); transform: translateY(-2px); }
+.nf-btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 24px;
+  background: transparent;
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid rgba(201,168,76,.4);
+  border-radius: 2px;
+  transition: all .25s;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+}
+.nf-btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,.08); }
 
 /* ── Responsive ── */
-@media(max-width:1100px){.posts-grid{grid-template-columns:repeat(2,1fr);},.news-wrap{grid-template-columns:260px 1fr;}}
-@media(max-width:820px){.news-wrap{grid-template-columns:1fr;}.news-section{padding:32px 18px 48px;}}
-@media(max-width:480px){.posts-grid{grid-template-columns:1fr;}}
+@media(max-width:960px){.nf-iframe{height:640px;}.nf-section{padding:40px 24px 56px;}} .nf-section { padding: 44px 24px 64px; } }
+@media(max-width:600px){.nf-iframe{height:520px;}.nf-section{padding:32px 14px 48px;}.nf-stats{gap:24px;}.nf-plugin-outer::before,.nf-plugin-outer::after,.nf-corner-bl,.nf-corner-br{display:none;}.nf-topbar{padding:10px 14px;}.nf-bottombar{padding:11px 14px;flex-direction:column;gap:9px;}.nf-btn-solid,.nf-btn-outline{width:100%;justify-content:center;}}
+  .nf-section { padding: 36px 14px 52px; }
+  .nf-stats { gap: 28px; }
+  .nf-plugin-outer::before,.nf-plugin-outer::after,.nf-corner-bl,.nf-corner-br { display: none; }
+  .nf-topbar { padding: 11px 14px; }
+  .nf-bottombar { padding: 12px 14px; flex-direction: column; gap: 10px; }
+  .nf-btn-solid,.nf-btn-outline { width: 100%; justify-content: center; }
+}
+@media(min-width:1440px){.nf-plugin-outer{max-width:960px;}.nf-iframe{height:820px;}}
+}
+@media(min-width:1920px){.nf-plugin-outer{max-width:1060px;}.nf-iframe{height:920px;}.nf-section{padding:60px 60px 80px;}}
+  .nf-section { padding: 72px 60px 100px; }
+}
+
+
+/* ── Nav max-width container (prevents items flying to far right on wide monitors) ── */
+#mainNav{
+  justify-content: space-between;
+}
+.nav-inner{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+@media(min-width:1440px){ .nav-inner{ padding: 0 60px; } }
+@media(min-width:1920px){ .nav-inner{ padding: 0 80px; } }
+@media(max-width:768px){ .nav-inner{ padding: 0 16px; } }
+
+/* ═══ NEWS FEED PAGE — FULL STYLES ═══ */
+
+/* Section container */
+.nf-section {
+  padding: 60px 40px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Heading block ── */
+.nf-head {
+  text-align: center;
+  margin-bottom: 44px;
+  animation: nfUp .9s .1s both;
+  width: 100%;
+  max-width: 700px;
+}
+@keyframes nfUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.nf-eyebrow {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.nf-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+.nf-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+.nf-rule {
+  width: 52px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto 14px;
+}
+.nf-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.62);
+  line-height: 1.85;
+}
+
+/* ── Stats row ── */
+.nf-stats {
+  display: flex;
+  gap: 0;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: linear-gradient(to right, var(--deep), var(--mid), var(--deep));
+  border-top: 1px solid rgba(201,168,76,.18);
+  border-bottom: 1px solid rgba(201,168,76,.18);
+  padding: 22px 40px;
+  width: 100%;
+  max-width: 760px;
+  border-radius: 4px;
+  animation: nfUp .9s .2s both;
+}
+.nf-stat {
+  text-align: center;
+  padding: 0 36px;
+  border-right: 1px solid rgba(201,168,76,.14);
+}
+.nf-stat:last-child { border-right: none; }
+.nf-stat-n {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.nf-stat-l {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 7px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* ── Plugin outer wrapper ── */
+.nf-plugin-outer {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  animation: nfUp .9s .35s both;
+}
+
+/* Gold corner accents */
+.nf-plugin-outer::before,
+.nf-plugin-outer::after,
+.nf-corner-bl,
+.nf-corner-br {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-style: solid;
+  border-color: rgba(201,168,76,.5);
+  pointer-events: none;
+  z-index: 2;
+}
+.nf-plugin-outer::before { top:-6px; left:-6px;  border-width:2px 0 0 2px; border-radius:3px 0 0 0; }
+.nf-plugin-outer::after  { top:-6px; right:-6px; border-width:2px 2px 0 0; border-radius:0 3px 0 0; }
+.nf-corner-bl { bottom:-6px; left:-6px;  border-width:0 0 2px 2px; border-radius:0 0 0 3px; }
+.nf-corner-br { bottom:-6px; right:-6px; border-width:0 2px 2px 0; border-radius:0 0 3px 0; }
+
+/* ── Plugin card ── */
+.nf-plugin-card {
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,.25);
+  box-shadow:
+    0 0 0 1px rgba(201,168,76,.06),
+    0 12px 56px rgba(0,0,0,.75),
+    0 0 80px rgba(201,168,76,.05);
+}
+
+/* ── Top bar ── */
+.nf-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px;
+  background: linear-gradient(to right, var(--dark), var(--mid));
+  border-bottom: 1px solid rgba(201,168,76,.12);
+}
+.nf-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nf-fb-badge {
+  width: 28px; height: 28px;
+  background: #1877F2;
+  border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.nf-page-name {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.nf-live-dot {
+  display: flex; align-items: center; gap: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 7.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.nf-live-dot::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #4caf50;
+  box-shadow: 0 0 6px rgba(76,175,80,.7);
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.5; transform:scale(1.4); }
+}
+
+/* ── The iframe ── */
+.nf-iframe {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: none;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ── Bottom bar ── */
+.nf-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 20px;
+  background: var(--dark);
+  border-top: 1px solid rgba(201,168,76,.1);
+  flex-wrap: wrap;
+}
+.nf-btn-solid {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 24px;
+  background: var(--gold);
+  color: var(--deep);
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background .25s, transform .25s;
+  clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+}
+.nf-btn-solid:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+.nf-btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 24px;
+  background: transparent;
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid rgba(201,168,76,.4);
+  border-radius: 2px;
+  transition: all .25s;
+  clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+}
+.nf-btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,.08); }
+
+/* ── Responsive ── */
+@media(max-width:820px) {
+  .nf-iframe   { height: 640px; }
+  .nf-section  { padding: 44px 20px 60px; }
+  .nf-stats    { padding: 18px 20px; }
+  .nf-stat     { padding: 0 20px; }
+}
+@media(max-width:600px) {
+  .nf-iframe   { height: 560px; }
+  .nf-section  { padding: 32px 14px 48px; }
+  .nf-stats    { flex-wrap: wrap; gap: 14px; border: none; background: transparent; padding: 0; }
+  .nf-stat     { border-right: none; padding: 0 12px; }
+  .nf-plugin-outer::before,.nf-plugin-outer::after,
+  .nf-corner-bl,.nf-corner-br { display: none; }
+  .nf-bottombar { flex-direction: column; }
+  .nf-btn-solid,.nf-btn-outline { width: 100%; justify-content: center; }
+}
+@media(min-width:1440px) {
+  .nf-plugin-outer { max-width: 860px; }
+  .nf-iframe        { height: 820px; }
+  .nf-stats         { max-width: 860px; }
+}
+@media(min-width:1920px) {
+  .nf-plugin-outer { max-width: 960px; }
+  .nf-iframe        { height: 920px; }
+  .nf-section       { padding: 72px 60px 96px; }
+  .nf-stats         { max-width: 960px; }
+}
 
 </style>
-
-
-
 </head>
 <body>
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
-  <a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
+  <div class="nav-inner"><a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
     <img src="images/nav_logo.png" alt="Royal Kings Group emblem" class="nav-logo-img">
     <span class="nav-brand-text">ROYAL KINGS GROUP</span>
   </a>
@@ -492,6 +743,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
     <span></span><span></span><span></span>
   </button>
+  </div>
 </nav>
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
@@ -519,6 +771,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
 
 
 
+
+
+
+
 <main>
   <div class="page-hero" role="banner">
     <div class="page-hero-bg" aria-hidden="true"></div>
@@ -532,51 +788,67 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
     <div class="bc"><a href="index.html">Home</a><span aria-hidden="true">›</span><span class="cur" aria-current="page">News</span></div>
   </nav>
 
-  <section class="news-section" aria-label="News feed">
+  <section class="nf-section" aria-label="Facebook news feed">
 
-    <div class="news-top-bar">
-      <p class="news-title">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)"
-             style="vertical-align:middle;margin-right:6px;" aria-hidden="true">
-          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-        </svg>
-        Royal Kings Group &mdash; Latest Updates &amp; Announcements
-      </p>
-      <p class="news-sub">Live from Facebook</p>
+    <header class="nf-head">
+      <span class="nf-eyebrow">Social Media &middot; Live Updates</span>
+      <h2 class="nf-title">Latest Facebook <em>Updates</em></h2>
+      <div class="nf-rule"></div>
+      <p class="nf-sub">Stay connected with Royal Kings Group — follow our latest posts, events, community initiatives and business announcements.</p>
+    </header>
+
+    <div class="nf-stats">
+      <div class="nf-stat"><span class="nf-stat-n">4.3K+</span><span class="nf-stat-l">Followers</span></div>
+      <div class="nf-stat"><span class="nf-stat-n">10+</span><span class="nf-stat-l">Years Active</span></div>
+      <div class="nf-stat"><span class="nf-stat-n">SG</span><span class="nf-stat-l">HQ</span></div>
+      <div class="nf-stat"><span class="nf-stat-n">APAC</span><span class="nf-stat-l">Presence</span></div>
     </div>
 
-    <div class="news-wrap">
+    <div class="nf-plugin-outer">
+      <div class="nf-corner-bl"></div>
+      <div class="nf-corner-br"></div>
 
-      <!-- LEFT: Facebook Page Plugin -->
-      <aside class="plugin-pane" aria-label="Facebook Page">
-        <div class="plugin-head">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-          </svg>
-          <span class="plugin-head-txt">Facebook Page</span>
+      <div class="nf-plugin-card">
+
+        <div class="nf-topbar">
+          <div class="nf-topbar-left">
+            <div class="nf-fb-badge" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </div>
+            <span class="nf-page-name">Royal Kings Group</span>
+          </div>
+          <span class="nf-live-dot">Live Feed</span>
         </div>
+
         <iframe
-          src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/100091498026763&tabs=timeline&width=300&height=620&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false"
-          width="300" height="620"
-          style="border:none;overflow:hidden;display:block;width:100%;background:transparent;"
+          class="nf-iframe"
+          src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/100091498026763&tabs=timeline&width=760&height=720&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
           scrolling="yes"
-          allow="autoplay;clipboard-write;encrypted-media;picture-in-picture"
-          title="Royal Kings Group Facebook Page">
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          title="Royal Kings Group — Facebook Page">
         </iframe>
-      </aside>
 
-      <!-- RIGHT: API post grid -->
-      <div class="posts-pane">
-        <div class="posts-status-bar">
-          <span class="posts-label">Latest Posts</span>
-          <span class="posts-count" id="posts-count"></span>
+        <div class="nf-bottombar">
+          <a href="https://www.facebook.com/100091498026763" target="_blank" rel="noopener" class="nf-btn-solid">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+            Like &amp; Follow
+          </a>
+          <a href="https://www.facebook.com/100091498026763" target="_blank" rel="noopener" class="nf-btn-outline">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Open Facebook Page
+          </a>
         </div>
-        <div class="posts-grid" id="posts-grid" role="list">
-          <!-- JS populates -->
-        </div>
+
       </div>
-
     </div>
+
   </section>
 </main>
 <footer role="contentinfo">
@@ -617,206 +889,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
   <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
 </footer>
 <script>
-
 'use strict';
-
-/* ─── Config ─── */
-const USER_TOKEN = 'EAALNw2Y5rRYBRZAS3F8S9ZBT8txYqVxKF1NdTAdDH7i8LDN3wuGA04L427QqZCxXgoOswN8BCrGecRTKWlqXgkIOfUkIMZCX9L73ZANpeZBUuuCps5pE0YtcGnMxuqqV7HXzeuvYFOZAR0NxC66ZCKiShyO1RddHyrIgIqxbSFNFirtpNCQVf3eRZAydQrwK09wJqVJAysAwNbuZBEKbZAtMr79wXtT7oeWDHoBjBDIkew0mym4paJT51x5SYzMUwCH5FPTQr8IoTVVZCPC8vzNZBBKXYvft1Crc4wQJU7ZBEZD';
-const PAGE_ID    = '100091498026763';
-const PAGE_URL   = 'https://www.facebook.com/100091498026763';
-const API_VER    = 'v23.0';
-const FIELDS     = 'id,message,story,created_time,full_picture,permalink_url';
-const LIMIT      = 12;
-const MONTHS     = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
-document.addEventListener('DOMContentLoaded', () => {
-  initNav();
-  startFeed();
-});
-
-/* ══════════════════════════════════════════════════════════════
-   STEP 1: Exchange User Token → Page Access Token
-   STEP 2: Use Page Token to fetch /feed
-   STEP 3: Fall back to User Token on /feed and /posts
-   ══════════════════════════════════════════════════════════════ */
-async function startFeed() {
-  setStatus('loading');
-  console.log('[RKG] Starting feed fetch for page:', PAGE_ID);
-
-  /* ── Attempt 1: Get Page Token via /me/accounts ── */
-  try {
-    const accountsUrl = `https://graph.facebook.com/${API_VER}/me/accounts`
-                      + `?access_token=${USER_TOKEN}`;
-    console.log('[RKG] Fetching /me/accounts to get page token...');
-
-    const r    = await fetch(accountsUrl);
-    const body = await r.json();
-
-    if (body.error) {
-      console.warn('[RKG] /me/accounts error:', body.error.message);
-      throw new Error(body.error.message);
-    }
-
-    const pages = body.data || [];
-    console.log('[RKG] /me/accounts returned', pages.length, 'pages:', pages.map(p=>p.id));
-
-    const match = pages.find(p => p.id === PAGE_ID);
-    if (match && match.access_token) {
-      console.log('[RKG] Page token found! Using it for /feed...');
-      const posts = await fetchFeed(match.access_token, 'feed');
-      if (posts && posts.length > 0) { renderPosts(posts); return; }
-    } else {
-      console.warn('[RKG] Page ID not found in /me/accounts list. Trying user token...');
-    }
-  } catch(e) {
-    console.warn('[RKG] /me/accounts failed:', e.message);
-  }
-
-  /* ── Attempt 2: User token on /feed ── */
-  try {
-    console.log('[RKG] Trying USER token on /feed...');
-    const posts = await fetchFeed(USER_TOKEN, 'feed');
-    if (posts && posts.length > 0) { renderPosts(posts); return; }
-  } catch(e) {
-    console.warn('[RKG] /feed with user token failed:', e.message);
-  }
-
-  /* ── Attempt 3: User token on /posts ── */
-  try {
-    console.log('[RKG] Trying USER token on /posts...');
-    const posts = await fetchFeed(USER_TOKEN, 'posts');
-    if (posts && posts.length > 0) { renderPosts(posts); return; }
-  } catch(e) {
-    console.warn('[RKG] /posts with user token failed:', e.message);
-  }
-
-  /* ── All failed ── */
-  console.error('[RKG] All fetch attempts failed.');
-  setStatus('error',
-    `<strong>Could not load posts.</strong><br>
-     Reason: User token lacks page post access, OR the app is in Development Mode
-     (only admins/testers can see posts).<br><br>
-     <strong>Fix:</strong> In Facebook Developer Console → your App → Roles → add yourself as Tester,
-     OR switch the App to Live mode.<br><br>
-     <a href="${PAGE_URL}" target="_blank" rel="noopener" style="color:var(--gold);">
-       View Royal Kings Group on Facebook →
-     </a>`
-  );
-}
-
-async function fetchFeed(token, endpoint) {
-  const url = `https://graph.facebook.com/${API_VER}/${PAGE_ID}/${endpoint}`
-            + `?fields=${encodeURIComponent(FIELDS)}`
-            + `&limit=${LIMIT}`
-            + `&access_token=${token}`;
-
-  const r    = await fetch(url);
-  const body = await r.json();
-
-  if (body.error) {
-    console.warn(`[RKG] /${endpoint} error (${body.error.code}):`, body.error.message);
-    throw new Error(body.error.message);
-  }
-
-  const posts = (body.data || []).filter(p => p.message || p.story || p.full_picture);
-  console.log(`[RKG] /${endpoint} returned ${posts.length} usable posts`);
-  return posts;
-}
-
-/* ─── Render posts ─── */
-function renderPosts(posts) {
-  const grid = document.getElementById('posts-grid');
-  if (!grid) return;
-  grid.innerHTML = '';
-
-  posts.slice(0, LIMIT).forEach(post => {
-    grid.appendChild(buildCard(post));
-  });
-
-  const countEl = document.getElementById('posts-count');
-  if (countEl) countEl.textContent = posts.length + ' posts';
-  console.log('[RKG] Rendered', posts.length, 'cards ✅');
-}
-
-function buildCard(post) {
-  const msg  = (post.message || post.story || '').trim();
-  const img  = post.full_picture || null;
-  const date = fmtDate(post.created_time);
-  const link = post.permalink_url || `https://www.facebook.com/${post.id}`;
-
-  const card = document.createElement('article');
-  card.className = 'post-card';
-  card.onclick   = () => window.open(link, '_blank', 'noopener');
-
-  if (img) {
-    const el = document.createElement('img');
-    el.className   = 'post-thumb';
-    el.src         = img;
-    el.alt         = '';
-    el.loading     = 'lazy';
-    el.onerror     = () => el.style.display = 'none';
-    card.appendChild(el);
-  } else {
-    const ph = document.createElement('div');
-    ph.className = 'post-thumb-placeholder';
-    ph.innerHTML = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.35)" stroke-width="1.5">
-      <rect x="3" y="3" width="18" height="18" rx="2"/>
-      <circle cx="8.5" cy="8.5" r="1.5"/>
-      <polyline points="21 15 16 10 5 21"/>
-    </svg>`;
-    card.appendChild(ph);
-  }
-
-  const body = document.createElement('div');
-  body.className = 'post-body';
-  body.innerHTML =
-    `<span class="post-date">${date}</span>`
-    + (msg ? `<p class="post-msg">${esc(msg)}</p>` : '')
-    + `<a class="post-link" href="${link}" target="_blank" rel="noopener"
-         onclick="event.stopPropagation()">
-         View on Facebook
-         <svg width="9" height="9" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2">
-           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-           <polyline points="15 3 21 3 21 9"/>
-           <line x1="10" y1="14" x2="21" y2="3"/>
-         </svg>
-       </a>`;
-  card.appendChild(body);
-  return card;
-}
-
-/* ─── State helpers ─── */
-function setStatus(state, errHtml) {
-  const grid = document.getElementById('posts-grid');
-  if (!grid) return;
-
-  if (state === 'loading') {
-    grid.innerHTML = `<div class="state-cell">
-      <div class="state-spinner"></div>
-      <p class="state-txt">Loading posts&hellip;</p>
-    </div>`;
-
-  } else if (state === 'error') {
-    grid.innerHTML = `<div class="state-cell">
-      <p class="state-err">${errHtml}</p>
-      <button class="retry-btn" onclick="startFeed()">&#8635;&nbsp; Retry</button>
-    </div>`;
-  }
-}
-
-/* ─── Utils ─── */
-function fmtDate(iso) {
-  if (!iso) return '';
-  const d = new Date(iso);
-  return MONTHS[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-}
-function esc(s) {
-  return String(s)
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;').replace(/\n/g,' ');
-}
-
+document.addEventListener('DOMContentLoaded', () => { initNav(); });
 function openDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.add('open');d.setAttribute('aria-hidden','false');o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
 function closeDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.remove('open');d.setAttribute('aria-hidden','true');o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
 function initNav(){
@@ -843,6 +917,12 @@ function initNav(){
   }
   });
 })();
+
+
+
+
+
+
 
 
 

@@ -15,7 +15,7 @@ html{scroll-behavior:smooth;}
 body{font-family:'Raleway',sans-serif;background:var(--deep);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:68px;}
 
 /* ═══ NAV ═══ */
-#mainNav{position:fixed;top:0;width:100%;z-index:1000;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);transition:all .3s ease;}
+#mainNav{position:fixed;top:0;width:100%;z-index:1000;padding:0;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);transition:all .3s ease;}
 #mainNav.scrolled{background:rgba(10,10,15,0.99);box-shadow:0 2px 20px rgba(0,0,0,.5);}
 /* .nav-logo moved to NAV LOGO WITH BRAND TEXT section */
 .nav-logo img{height:46px;width:auto;object-fit:contain;}
@@ -42,7 +42,7 @@ body{font-family:'Raleway',sans-serif;background:var(--deep);color:var(--text);o
 .drawer-overlay.open{display:block;}
 @media(max-width:1200px){.nav-links{gap:16px;}.nav-links a{font-size:10.5px;}}
 @media(max-width:1000px){.nav-links{gap:12px;}.nav-links a{font-size:10px;letter-spacing:1.5px;}}
-@media(max-width:768px){#mainNav{padding:0 16px;height:62px;}.nav-links{display:none;}.hamburger{display:flex;}}
+@media(max-width:768px){#mainNav{padding:0;height:62px;}.nav-links{display:none;}.hamburger{display:flex;}}
 
 /* PAGE HERO */
 .page-hero{position:relative;height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -204,12 +204,32 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
 .mobile-drawer a{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;}
 @media(max-width:640px){.nav-brand-text{font-size:11px !important;letter-spacing:2px !important;}}
 @media(max-width:400px){.nav-brand-text{font-size:10px !important;letter-spacing:1.5px !important;}}
+
+@media(min-width:1440px){#mainNav{padding:0;}}
+@media(min-width:1920px){#mainNav{padding:0;}#mainNav.scrolled{padding:0 64px;}}
+
+/* ── Nav max-width container (prevents items flying to far right on wide monitors) ── */
+#mainNav{
+  justify-content: space-between;
+}
+.nav-inner{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+@media(min-width:1440px){ .nav-inner{ padding: 0 60px; } }
+@media(min-width:1920px){ .nav-inner{ padding: 0 80px; } }
+@media(max-width:768px){ .nav-inner{ padding: 0 16px; } }
 </style>
 </head>
 <body>
 
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
-  <a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
+  <div class="nav-inner"><a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
     <img src="images/nav_logo.png" alt="Royal Kings Group emblem" class="nav-logo-img">
     <span class="nav-brand-text">ROYAL KINGS GROUP</span>
   </a>
@@ -245,6 +265,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
     <span></span><span></span><span></span>
   </button>
+  </div>
 </nav>
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
