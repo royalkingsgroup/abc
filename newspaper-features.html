@@ -235,7 +235,8 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
 @media(max-width:900px){.np-grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
 @media(max-width:600px){.np-grid{grid-template-columns:1fr;gap:12px;padding:0 18px;}.cat-header,.filter-wrap,.results-info,.stats-bar,.breadcrumb,.intro-bar,.cta-band,.view-more-row,.older-header{padding-left:18px;padding-right:18px;}.page-hero{height:280px;}.stats-bar{flex-wrap:wrap;padding:20px 18px;}.si{border-right:none;padding:0 18px;}.footer-grid{grid-template-columns:1fr;}#lb-cap{flex-direction:column;}.filter-bar{gap:6px;}.tab-btn{font-size:8px;padding:7px 12px;}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
-</style>
+
+#newsDropdown .nav-dropdown-menu{right:auto;left:0;}</style>
 </head>
 <body>
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
@@ -252,6 +253,7 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
       <div class="nav-dropdown-menu" role="menu">
         <a href="our-story.html" role="menuitem"><span class="dd-icon">&#x1F4D6;</span> Our Story</a>
         <a href="founder.html" role="menuitem"><span class="dd-icon">&#x1F451;</span> Founder &amp; Chairman</a>
+        <a href="management-team.html" role="menuitem"><span class="dd-icon">&#x1F465;</span> Our Team</a>
         <a href="csr.html" role="menuitem"><span class="dd-icon">&#x1F91D;</span> Corporate Social Responsibility</a>
       </div>
     </div>
@@ -269,7 +271,6 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
     </div>
     <a href="memberships.html">Memberships</a>
     <a href="testimonials.html">Testimonials</a>
-    <a href="management-team.html">Our Team</a>
     <a href="contact.html" class="nav-cta">Contact Us</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
@@ -283,6 +284,7 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
     <span class="mob-about-label">&#x25BE; About Us</span>
     <a href="our-story.html" onclick="closeDrawer()" class="mob-sub-link">Our Story</a>
     <a href="founder.html" onclick="closeDrawer()" class="mob-sub-link">Founder &amp; Chairman</a>
+    <a href="management-team.html" onclick="closeDrawer()" class="mob-sub-link">Our Team</a>
     <a href="csr.html" onclick="closeDrawer()" class="mob-sub-link">CSR</a>
   </div>
   <a href="pillars.html" onclick="closeDrawer()">Our Pillars</a>
@@ -295,7 +297,6 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
   </div>
   <a href="memberships.html" onclick="closeDrawer()">Memberships</a>
   <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
-  <a href="management-team.html" onclick="closeDrawer()">Our Team</a>
   <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
 </nav>
 <main>
@@ -355,7 +356,7 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
     <div class="cat-header">
       <h2 class="sg">&#x1F1F8;&#x1F1EC; Singapore Press</h2>
       <div class="cat-rule"></div>
-      <span class="cat-count">2 clippings</span>
+      <span class="cat-count"> 1 clipping</span>
     </div>
     <div class="np-grid" id="grid-singapore">
 <article class="np-card" data-cat="singapore" data-pub="tamilmurasu" data-year="2026" id="sg01">
@@ -372,20 +373,7 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
     <button class="np-view-btn" onclick="openClipping('sg01')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" data-cat="singapore" data-pub="tamilmurasu" data-year="2026" id="sg02">
-  <div class="np-thumb" onclick="openClippingUrl('sg02','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/sph-260324-g2-a2-metal-p2-1-mock-up-1-gAQlXEhVndeFCo9U.jpg','Tamil Murasu','21 March 2026')">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/sph-260324-g2-a2-metal-p2-1-mock-up-1-gAQlXEhVndeFCo9U.jpg" alt="Tamil Murasu — Royal Kings Group Community Iftar Featured in Tamil Mur" loading="lazy">
-    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
-    <span class="np-cat-badge">🇸🇬 Singapore</span>
-    
-  </div>
-  <div class="np-body">
-    <div class="np-pub-row"><span class="np-pub">Tamil Murasu</span><span class="np-date">21 March 2026</span></div>
-    <h3 class="np-headline">Royal Kings Group Community Iftar Featured in Tamil Murasu — Page 2</h3>
-    <p class="np-desc">Page 2 of Tamil Murasu's coverage of Royal Kings Group's magnificent community Iftar, recognising the group's ongoing contribution to Singapore's multi-racial social fabric.</p>
-    <button class="np-view-btn" onclick="openClippingUrl('sg02','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/sph-260324-g2-a2-metal-p2-1-mock-up-1-gAQlXEhVndeFCo9U.jpg','Tamil Murasu','21 March 2026')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
-  </div>
-</article>    </div>
+
   </section>
   <div class="section-gap"></div>
 
@@ -888,7 +876,6 @@ var FULL_IN08 = 'images/np_sg01.jpg';
 var FULL_INT01 = 'images/np_sg01.jpg';
 var CLIPS = {
   'sg01':{'full':FULL_SG01,'pub':'Tamil Murasu','date':'21 March 2026','headline':'Community Iftar: A Wonderful Celebration in a Peaceful Atmosphere'},
-  'sg02':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/sph-260324-g2-a2-metal-p2-1-mock-up-1-gAQlXEhVndeFCo9U.jpg",'pub':'Tamil Murasu','date':'21 March 2026','headline':'Royal Kings Group Community Iftar Featured in Tamil Murasu — Page 2'},
   'in01':{'full':FULL_IN01,'pub':'Manichudar Tamil Daily','date':'8 May 2026','headline':'Royal Kings Group Partners with Mission ShakthiSAT for Women\'s STEM Empowerment'},
   'in02':{'full':FULL_IN02,'pub':'Manichudar Tamil Daily','date':'18 March 2026','headline':'Royal Kings Group Founder Receives Book on Prophet Muhammad in Chennai'},
   'in03':{'full':FULL_IN03,'pub':'Manichudar Tamil Daily','date':'4 April 2026','headline':'Royal Kings Group Participates in Saaliheen Education Foundation Anniversary Event'},

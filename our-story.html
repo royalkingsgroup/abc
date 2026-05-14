@@ -182,7 +182,8 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
 .cta-band h2 em{font-style:italic;color:var(--gold);}
 @media(max-width:900px){.story-grid,.vm-grid{grid-template-columns:1fr;gap:40px;}.story-grid.reverse{direction:ltr;}.cv-grid{grid-template-columns:repeat(2,1fr);}.story-wrap,.dark-section{padding:60px 40px;}}
 @media(max-width:600px){.cv-grid{grid-template-columns:1fr;}.story-wrap,.dark-section{padding:44px 18px;}.pillars-strip{gap:8px;}.cta-band{padding:44px 18px;}}
-</style>
+
+#newsDropdown .nav-dropdown-menu{right:auto;left:0;}</style>
 </head>
 <body>
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
@@ -197,8 +198,9 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
         About Us <span class="dropdown-arrow">&#x25BE;</span>
       </a>
       <div class="nav-dropdown-menu" role="menu">
-        <a href="our-story.html" role="menuitem"><span class="dd-icon">&#x1F4D6;</span> Our Story</a>
+        <a href="our-story.html" role="menuitem" class="dd-active"><span class="dd-icon">&#x1F4D6;</span> Our Story</a>
         <a href="founder.html" role="menuitem"><span class="dd-icon">&#x1F451;</span> Founder &amp; Chairman</a>
+        <a href="management-team.html" role="menuitem"><span class="dd-icon">&#x1F465;</span> Our Team</a>
         <a href="csr.html" role="menuitem"><span class="dd-icon">&#x1F91D;</span> Corporate Social Responsibility</a>
       </div>
     </div>
@@ -216,7 +218,6 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
     </div>
     <a href="memberships.html">Memberships</a>
     <a href="testimonials.html">Testimonials</a>
-    <a href="management-team.html">Our Team</a>
     <a href="contact.html" class="nav-cta">Contact Us</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
@@ -230,6 +231,7 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
     <span class="mob-about-label">&#x25BE; About Us</span>
     <a href="our-story.html" onclick="closeDrawer()" class="mob-sub-link active">Our Story</a>
     <a href="founder.html" onclick="closeDrawer()" class="mob-sub-link">Founder &amp; Chairman</a>
+    <a href="management-team.html" onclick="closeDrawer()" class="mob-sub-link">Our Team</a>
     <a href="csr.html" onclick="closeDrawer()" class="mob-sub-link">CSR</a>
   </div>
   <a href="pillars.html" onclick="closeDrawer()">Our Pillars</a>
@@ -242,13 +244,12 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
   </div>
   <a href="memberships.html" onclick="closeDrawer()">Memberships</a>
   <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
-  <a href="management-team.html" onclick="closeDrawer()">Our Team</a>
   <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
 </nav>
 <main>
   <!-- HERO -->
   <div class="page-hero" role="banner">
-    <div class="page-hero-bg" style="background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80') center/cover;filter:brightness(.28) saturate(.55);" aria-hidden="true"></div>
+    <div class="page-hero-bg" style="background:url('images/rkg_office_hero.jpg') center/cover;filter:brightness(.45) saturate(.85);" aria-hidden="true"></div>
     <div class="hero-inner">
       <span class="eyebrow">Royal Kings Group</span>
       <h1>Our <em>Story</em></h1>
@@ -362,7 +363,6 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
     <p>Get to know the Founder and Chairman who built Royal Kings Group from the ground up, and the team driving its continued growth.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
       <a href="founder.html" class="btn-p">Founder &amp; Chairman</a>
-      <a href="management-team.html" class="btn-g">Our Team</a>
     </div>
   </section>
 </main>

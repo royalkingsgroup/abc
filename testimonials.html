@@ -208,7 +208,8 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
 /* Nav spacing adjustments */
 @media(max-width:1200px){.nav-links{gap:14px;padding-left:16px;}}
 @media(max-width:1000px){.nav-links{gap:11px;padding-left:12px;}}
-</style>
+
+#newsDropdown .nav-dropdown-menu{right:auto;left:0;}</style>
 </head>
 <body>
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
@@ -224,6 +225,7 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
       <div class="nav-dropdown-menu" role="menu">
         <a href="our-story.html" role="menuitem"><span class="dd-icon">&#x1F4D6;</span> Our Story</a>
         <a href="founder.html" role="menuitem"><span class="dd-icon">&#x1F451;</span> Founder &amp; Chairman</a>
+        <a href="management-team.html" role="menuitem"><span class="dd-icon">&#x1F465;</span> Our Team</a>
         <a href="csr.html" role="menuitem"><span class="dd-icon">&#x1F91D;</span> Corporate Social Responsibility</a>
       </div>
     </div><a href="pillars.html">Our Pillars</a>
@@ -237,7 +239,6 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
       </div>
     </div>
     <a href="memberships.html">Memberships</a><a href="testimonials.html" class="active">Testimonials</a>
-    <a href="management-team.html">Our Team</a>
     <a href="contact.html" class="nav-cta">Contact Us</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
@@ -251,6 +252,7 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
     <span class="mob-about-label">&#x25BE; About Us</span>
     <a href="our-story.html" onclick="closeDrawer()" class="mob-sub-link">Our Story</a>
     <a href="founder.html" onclick="closeDrawer()" class="mob-sub-link">Founder &amp; Chairman</a>
+    <a href="management-team.html" onclick="closeDrawer()" class="mob-sub-link">Our Team</a>
     <a href="csr.html" onclick="closeDrawer()" class="mob-sub-link">CSR</a>
   </div>
   <a href="pillars.html" onclick="closeDrawer()">Our Pillars</a>
@@ -263,7 +265,6 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
   </div>
   <a href="memberships.html" onclick="closeDrawer()">Memberships</a>
   <a href="testimonials.html" onclick="closeDrawer()" class="active">Testimonials</a>
-  <a href="management-team.html" onclick="closeDrawer()">Our Team</a>
   <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
 </nav>
 <main>
