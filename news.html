@@ -339,6 +339,22 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
 .mobile-drawer a{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;}
 @media(max-width:640px){.nav-brand-text{font-size:11px !important;letter-spacing:2px !important;}}
 @media(max-width:400px){.nav-brand-text{font-size:10px !important;letter-spacing:1.5px !important;}}
+
+#token-panel{display:none !important;}
+.fb-posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 60px 60px;}
+.fb-card{background:var(--surface);border:1px solid rgba(201,168,76,.12);border-radius:5px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .3s,box-shadow .3s;}
+.fb-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.5);}
+.fb-img-wrap{height:200px;overflow:hidden;background:var(--mid);}
+.fb-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+.fb-card:hover .fb-img-wrap img{transform:scale(1.04);}
+.fb-body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.fb-meta{display:flex;align-items:center;justify-content:space-between;}
+.fb-date{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.fb-msg{font-size:13px;color:rgba(240,236,224,.8);line-height:1.75;flex:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.fb-readmore{margin-top:auto;display:flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:700;transition:gap .2s;}
+.fb-readmore:hover{gap:10px;}
+@media(max-width:900px){.fb-posts-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.fb-posts-grid{grid-template-columns:1fr;padding:0 18px 44px;}}
 </style>
 </head>
 <body>
@@ -566,214 +582,148 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
 'use strict';
 
 /* ── Config ── */
-var PAGE_ID    = '100091498026763';
-var GRAPH_VER  = 'v19.0';
-var FIELDS     = 'message,full_picture,created_time,permalink_url,story,attachments{subattachments,media_type,media{image},title,description}';
-var PER_PAGE   = 24;
-var CURR_YEAR  = new Date().getFullYear();
-var MONTHS     = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-var SHORT_MON  = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
-/* ── State ── */
-var accessToken  = '';
-var nextCursor   = null;
-var allPosts     = [];
-var isLoading    = false;
+var PAGE_ID   = '100091498026763';
+var GRAPH_VER = 'v19.0';
+var TOKEN     = 'EAALNw2Y5rRYBRZAS3F8S9ZBT8txYqVxKF1NdTAdDH7i8LDN3wuGA04L427QqZCxXgoOswN8BCrGecRTKWlqXgkIOfUkIMZCX9L73ZANpeZBUuuCps5pE0YtcGnMxuqqV7HXzeuvYFOZAR0NxC66ZCKiShyO1RddHyrIgIqxbSFNFirtpNCQVf3eRZAydQrwK09wJqVJAysAwNbuZBEKbZAtMr79wXtT7oeWDHoBjBDIkew0mym4paJT51x5SYzMUwCH5FPTQr8IoTVVZCPC8vzNZBBKXYvft1Crc4wQJU7ZBEZD';
+var LIMIT     = 20;
+var FIELDS    = 'id,message,story,full_picture,created_time,permalink_url,attachments{subattachments,media_type,media{image},title,description}';
 
 /* ── Init ── */
-(function init() {
-  accessToken = sessionStorage.getItem('rkg_fb_token') || '';
-  if (accessToken) {
-    document.getElementById('setup-banner').style.display = 'none';
-    document.getElementById('feed-wrapper').style.display  = 'block';
-    fetchPosts();
-  } else {
-    document.getElementById('setup-banner').style.display = 'block';
-  }
+(function() {
+  document.getElementById('setup-banner').style.display = 'none';
+  document.getElementById('feed-wrapper').style.display = 'block';
+  loadFeed();
   initNav();
 })();
 
-/* ── Token connect ── */
-function connectFB() {
-  var t = document.getElementById('token-input').value.trim();
-  if (!t) { setMsg('Please paste your access token.'); return; }
-  setMsg('Connecting…');
-  accessToken = t;
-  sessionStorage.setItem('rkg_fb_token', t);
-  document.getElementById('setup-banner').style.display = 'none';
-  document.getElementById('feed-wrapper').style.display  = 'block';
-  fetchPosts();
+/* ── Load Feed ── */
+function loadFeed() {
+  showSkeleton(true);
+  hideError();
+
+  /* Try /feed first (works with user tokens), fallback to /posts */
+  var endpoints = ['feed', 'posts'];
+  tryEndpoint(endpoints, 0);
 }
 
-function showFallback() {
-  document.getElementById('setup-banner').style.display   = 'none';
-  document.getElementById('fallback-wrapper').style.display = 'block';
-}
+function tryEndpoint(endpoints, idx) {
+  if (idx >= endpoints.length) {
+    showSkeleton(false);
+    showError('Could not load posts from any endpoint. Please check token permissions.');
+    return;
+  }
 
-function showSetup() {
-  document.getElementById('fallback-wrapper').style.display = 'none';
-  document.getElementById('setup-banner').style.display   = 'block';
-  document.getElementById('setup-banner').scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-function setMsg(m) { document.getElementById('token-msg').textContent = m; }
-
-/* ── Fetch ── */
-function fetchPosts(cursor) {
-  if (isLoading) return;
-  isLoading = true;
-  var url = 'https://graph.facebook.com/' + GRAPH_VER + '/' + PAGE_ID
-    + '/posts?fields=' + encodeURIComponent(FIELDS)
-    + '&limit=' + PER_PAGE
-    + '&access_token=' + accessToken
-    + (cursor ? '&after=' + cursor : '');
+  var ep  = endpoints[idx];
+  var url = 'https://graph.facebook.com/' + GRAPH_VER + '/'
+            + PAGE_ID + '/' + ep
+            + '?fields=' + encodeURIComponent(FIELDS)
+            + '&limit=' + LIMIT
+            + '&access_token=' + TOKEN;
 
   fetch(url)
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      isLoading = false;
-      if (data.error) { handleError(data.error); return; }
-      var posts = data.data || [];
-      nextCursor = (data.paging && data.paging.cursors && data.paging.cursors.after) ? data.paging.cursors.after : null;
-      if (!cursor) { allPosts = posts; } else { allPosts = allPosts.concat(posts); }
-      renderFeed();
+      showSkeleton(false);
+      if (data.error) {
+        console.warn('Endpoint /' + ep + ' failed:', data.error.message);
+        tryEndpoint(endpoints, idx + 1);
+        return;
+      }
+      var posts = (data.data || []).filter(function(p) {
+        return p.message || p.story || (p.attachments && p.attachments.data);
+      });
+      if (posts.length === 0) {
+        tryEndpoint(endpoints, idx + 1);
+        return;
+      }
+      renderPosts(posts);
     })
-    .catch(function(e) {
-      isLoading = false;
-      handleError({message: 'Network error — ' + e.message});
+    .catch(function(err) {
+      console.warn('Endpoint /' + ep + ' fetch error:', err);
+      tryEndpoint(endpoints, idx + 1);
     });
 }
 
-function loadMorePosts() {
-  if (nextCursor) fetchPosts(nextCursor);
-}
-
-function handleError(err) {
-  console.error('FB API Error:', err);
-  sessionStorage.removeItem('rkg_fb_token');
-  accessToken = '';
-  document.getElementById('feed-wrapper').style.display  = 'none';
-  document.getElementById('skeleton-section').style.display = 'block';
-  document.getElementById('setup-banner').style.display = 'block';
-  setMsg('Connection failed: ' + (err.message || 'Unknown error') + '. Please check your token.');
-  showFallback();
-}
-
 /* ── Render ── */
-function renderFeed() {
-  document.getElementById('skeleton-section').style.display = 'none';
+function renderPosts(posts) {
+  var grid = document.getElementById('posts-grid');
+  grid.innerHTML = '';
 
-  /* Filter & sort */
-  var thisYear = allPosts.filter(function(p) {
-    return new Date(p.created_time).getFullYear() === CURR_YEAR;
-  }).sort(function(a,b){ return new Date(b.created_time) - new Date(a.created_time); });
+  posts.slice(0, LIMIT).forEach(function(p) {
+    var card = buildCard(p);
+    if (card) grid.appendChild(card);
+  });
 
-  var pastPosts = allPosts.filter(function(p) {
-    return new Date(p.created_time).getFullYear() < CURR_YEAR;
-  }).sort(function(a,b){ return new Date(b.created_time) - new Date(a.created_time); });
-
-  /* This year grid */
-  var tySection = document.getElementById('this-year-section');
-  var tyGrid    = document.getElementById('this-year-grid');
-  var tyLabel   = document.getElementById('this-year-label');
-  var tyCount   = document.getElementById('this-year-count');
-
-  if (thisYear.length > 0) {
-    tyLabel.textContent = CURR_YEAR + ' Posts';
-    tyCount.textContent = thisYear.length + ' post' + (thisYear.length !== 1 ? 's' : '');
-    tyGrid.innerHTML    = thisYear.map(buildCard).join('');
-    tySection.style.display = 'block';
-  } else {
-    tySection.style.display = 'none';
-  }
-
-  /* Past grid */
-  var pastSection = document.getElementById('past-section');
-  var pastGrid    = document.getElementById('past-grid');
-  var pastCount   = document.getElementById('past-count');
-
-  if (pastPosts.length > 0) {
-    pastCount.textContent = pastPosts.length + (nextCursor ? '+' : '') + ' post' + (pastPosts.length !== 1 ? 's' : '');
-    pastGrid.innerHTML    = pastPosts.map(buildCard).join('');
-    pastSection.style.display = 'block';
-  } else {
-    pastSection.style.display = 'none';
-  }
-
-  if (thisYear.length === 0 && pastPosts.length === 0) {
-    tyGrid.innerHTML = '<div class="state-card"><p>No posts found for this Facebook page yet.<br><strong>Check back soon for the latest updates from Royal Kings Group.</strong></p></div>';
-    tySection.style.display = 'block';
-  }
-
-  /* Load more button */
-  document.getElementById('load-more-wrap').style.display = nextCursor ? 'block' : 'none';
+  document.getElementById('post-count').textContent = posts.length + ' posts loaded';
 }
 
-/* ── Build post card ── */
-function buildCard(post) {
-  var d      = new Date(post.created_time);
-  var dateStr= SHORT_MON[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-  var cap    = esc(post.message || post.story || '');
-  var short  = cap.length > 220 ? cap.slice(0,220) + '…' : cap;
-  var badge  = inferBadge(post.message || post.story || '');
-  var link   = post.permalink_url || ('https://www.facebook.com/profile.php?id=100091498026763');
+function buildCard(p) {
+  var msg    = p.message || p.story || '';
+  var imgUrl = p.full_picture || getAttachmentImg(p);
+  var date   = formatDate(p.created_time);
+  var link   = p.permalink_url || ('https://www.facebook.com/' + p.id);
 
-  /* Image: try full_picture, then attachment media */
-  var imgSrc = post.full_picture || '';
-  if (!imgSrc && post.attachments && post.attachments.data && post.attachments.data[0]) {
-    var att = post.attachments.data[0];
-    if (att.media && att.media.image) imgSrc = att.media.image.src;
-    if (!imgSrc && att.subattachments && att.subattachments.data && att.subattachments.data[0]) {
-      var sub = att.subattachments.data[0];
-      if (sub.media && sub.media.image) imgSrc = sub.media.image.src;
-    }
+  var article = document.createElement('article');
+  article.className = 'fb-card';
+
+  var imgHtml = '';
+  if (imgUrl) {
+    imgHtml = '<div class="fb-img-wrap"><img src="' + esc(imgUrl) + '" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"></div>';
   }
 
-  var imgHtml = imgSrc
-    ? '<div class="post-img"><img src="' + esc(imgSrc) + '" alt="' + badge + ' — Royal Kings Group" loading="lazy"></div>'
-    : '<div class="post-img"><div class="post-img-placeholder" aria-hidden="true">' + placeholderSVG() + '</div></div>';
+  var msgHtml = msg ? '<p class="fb-msg">' + esc(msg).replace(/\n/g,'<br>') + '</p>' : '';
 
-  var badgeHtml = badge ? '<span class="post-badge">' + badge + '</span>' : '';
+  article.innerHTML =
+    imgHtml +
+    '<div class="fb-body">' +
+      '<div class="fb-meta"><span class="fb-date">' + date + '</span></div>' +
+      msgHtml +
+      '<a href="' + esc(link) + '" target="_blank" rel="noopener" class="fb-readmore">' +
+        'View on Facebook' +
+        '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
+      '</a>' +
+    '</div>';
 
-  return '<article class="post-card" itemscope itemtype="https://schema.org/SocialMediaPosting">'
-    + imgHtml
-    + '<div class="post-body">'
-    +   '<div class="post-meta">'
-    +     '<time class="post-date" datetime="' + esc(post.created_time) + '" itemprop="datePublished">' + dateStr + '</time>'
-    +     badgeHtml
-    +   '</div>'
-    +   '<p class="post-text" itemprop="text">' + short + '</p>'
-    +   '<div class="post-footer">'
-    +     '<span class="post-reactions"><svg width="12" height="12" viewBox="0 0 24 24" fill="rgba(201,168,76,.7)" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Royal Kings Group</span>'
-    +     '<a href="' + esc(link) + '" target="_blank" rel="noopener noreferrer" class="btn-view" aria-label="View this post on Facebook">View on Facebook</a>'
-    +   '</div>'
-    + '</div>'
-    + '</article>';
+  return article;
 }
 
-function inferBadge(text) {
-  if (!text) return 'Update';
-  var t = text.toLowerCase();
-  if (/award|recogni|honour|honor|prize|win/i.test(t)) return 'Award';
-  if (/sponsor|csr|iftar|charity|communit|relief/i.test(t)) return 'CSR';
-  if (/partner|collaborat|join|alliance/i.test(t)) return 'Partnership';
-  if (/national day|birthday|singapore|celebrat/i.test(t)) return 'Celebration';
-  if (/anniver|milestone|\d+ year/i.test(t)) return 'Milestone';
-  if (/launch|introduc|new |proud to/i.test(t)) return 'Launch';
-  if (/event|gala|dinner|ceremony|confer/i.test(t)) return 'Event';
-  if (/feature|media|news|press|murasu/i.test(t)) return 'Media';
-  return 'Update';
+function getAttachmentImg(p) {
+  try {
+    return p.attachments.data[0].media.image.src;
+  } catch(e) { return null; }
 }
 
-function placeholderSVG() {
-  return '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,1)" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+function formatDate(iso) {
+  var d = new Date(iso);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 }
 
 function esc(s) {
-  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
-/* ── Nav ── */
+function showSkeleton(show) {
+  var sk = document.getElementById('skeleton-section');
+  if (sk) sk.style.display = show ? 'block' : 'none';
+}
+
+function showError(msg) {
+  var el = document.getElementById('feed-error');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function hideError() {
+  var el = document.getElementById('feed-error');
+  if (el) el.style.display = 'none';
+}
+
+function retryLoad() { loadFeed(); }
+
 function openDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.add('open');d.setAttribute('aria-hidden','false');o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
 function closeDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.remove('open');d.setAttribute('aria-hidden','true');o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
 function initNav(){
@@ -800,6 +750,7 @@ function initNav(){
   }
   });
 })();
+
 </script>
 </body>
 
