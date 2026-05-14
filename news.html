@@ -355,11 +355,106 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
 .fb-readmore:hover{gap:10px;}
 @media(max-width:900px){.fb-posts-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.fb-posts-grid{grid-template-columns:1fr;padding:0 18px 44px;}}
+
+.news-intro{padding:28px 18px 16px;}}
+
+/* ── News Feed Page ── */
+.news-intro{padding:32px 60px 16px;text-align:center;}
+.news-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.8vw,36px);font-weight:300;color:var(--text);}
+.news-intro h2 em{font-style:italic;color:var(--gold);}
+.gold-rule{width:44px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:10px auto;}
+.news-intro p{font-size:13px;color:rgba(255,255,255,.65);margin-top:8px;line-height:1.7;}
+
+/* ── Single full-width feed with FB plugin + posts grid side by side ── */
+.news-wrap{display:grid;grid-template-columns:340px 1fr;gap:24px;padding:0 60px 48px;max-width:1280px;margin:0 auto;}
+
+/* ── FB Page Plugin (compact left column) ── */
+.fb-plugin-pane{background:var(--surface);border:1px solid rgba(201,168,76,.12);border-radius:5px;overflow:hidden;position:sticky;top:80px;height:fit-content;}
+.fb-plugin-header{padding:10px 14px;border-bottom:1px solid rgba(201,168,76,.08);display:flex;align-items:center;gap:8px;}
+.fb-plugin-header span{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);}
+
+/* ── Posts grid (right column) ── */
+.fb-api-pane{}
+.fb-api-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.fb-api-header span{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);}
+.fb-status-txt{font-family:'Cinzel',serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+
+/* ── 3-col post grid ── */
+.fb-posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+
+/* ── Compact post card ── */
+.fb-post-card{background:var(--surface);border:1px solid rgba(201,168,76,.1);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s,transform .25s;}
+.fb-post-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-2px);}
+.fb-post-img{width:100%;height:110px;object-fit:cover;display:block;}
+.fb-post-body{padding:9px 10px 10px;display:flex;flex-direction:column;gap:5px;flex:1;}
+.fb-post-date{font-family:'Cinzel',serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.fb-post-msg{font-size:11.5px;color:rgba(240,236,224,.72);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1;}
+.fb-post-link{font-family:'Cinzel',serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px;margin-top:4px;transition:gap .2s;}
+.fb-post-link:hover{gap:7px;}
+
+/* ── Loading / Error ── */
+.fb-loading-txt{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);padding:24px;text-align:center;}
+.fb-error-msg{background:rgba(100,30,30,.2);border:1px solid rgba(200,80,80,.2);border-radius:4px;padding:12px 14px;font-size:12px;color:rgba(255,160,160,.85);line-height:1.7;}
+.fb-retry-btn{margin-top:8px;padding:6px 14px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:3px;cursor:pointer;font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;transition:all .25s;}
+.fb-retry-btn:hover{background:rgba(201,168,76,.16);}
+
+@media(max-width:1024px){.fb-posts-grid{grid-template-columns:repeat(2,1fr);}.news-wrap{grid-template-columns:280px 1fr;}}
+@media(max-width:768px){.news-wrap{grid-template-columns:1fr;padding:0 18px 36px;}.fb-plugin-pane{position:static;}.news-intro{padding:24px 18px 12px;}}
+@media(max-width:480px){.fb-posts-grid{grid-template-columns:1fr;}}
+
+/* ═══ NEWS FEED PAGE ═══ */
+.news-section{padding:44px 60px 64px;max-width:1280px;margin:0 auto;}
+.news-top-bar{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
+.news-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--gold);}
+.news-sub{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.news-wrap{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start;}
+
+/* ── FB Plugin pane ── */
+.plugin-pane{background:var(--surface);border:1px solid rgba(201,168,76,.15);border-radius:6px;overflow:hidden;}
+.plugin-head{padding:10px 14px;border-bottom:1px solid rgba(201,168,76,.1);display:flex;align-items:center;gap:8px;}
+.plugin-head-txt{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);}
+
+/* ── Posts section ── */
+.posts-pane{}
+.posts-status-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;min-height:22px;}
+.posts-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--gold);}
+.posts-count{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+
+/* ── Posts grid ── */
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
+
+/* ── Single post card ── */
+.post-card{background:var(--surface);border:1px solid rgba(201,168,76,.1);border-radius:5px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;}
+.post-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.55);}
+.post-thumb{width:100%;height:112px;object-fit:cover;display:block;background:var(--mid);flex-shrink:0;}
+.post-thumb-placeholder{width:100%;height:60px;background:linear-gradient(135deg,var(--mid),var(--dark));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.post-thumb-placeholder svg{opacity:.25;}
+.post-body{padding:10px 11px 12px;display:flex;flex-direction:column;gap:5px;flex:1;}
+.post-date{font-family:'Cinzel',serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.post-msg{font-size:11.5px;font-weight:400;color:rgba(240,236,224,.78);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1;}
+.post-link{margin-top:6px;font-family:'Cinzel',serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap .2s,opacity .2s;}
+.post-link:hover{gap:7px;}
+
+/* ── State cards (loading / error / empty) ── */
+.state-cell{grid-column:1/-1;padding:32px 16px;text-align:center;}
+.state-spinner{width:28px;height:28px;border:2px solid rgba(201,168,76,.15);border-top-color:var(--gold);border-radius:50%;animation:spin .85s linear infinite;margin:0 auto 12px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.state-txt{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);}
+.state-err{color:rgba(255,140,140,.8);font-size:12px;font-family:'Inter',sans-serif;line-height:1.7;max-width:360px;margin:0 auto;}
+.retry-btn{margin-top:12px;padding:7px 18px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.28);border-radius:3px;cursor:pointer;font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;transition:all .25s;}
+.retry-btn:hover{background:rgba(201,168,76,.18);border-color:var(--gold);}
+
+/* ── Responsive ── */
+@media(max-width:1100px){.posts-grid{grid-template-columns:repeat(2,1fr);},.news-wrap{grid-template-columns:260px 1fr;}}
+@media(max-width:820px){.news-wrap{grid-template-columns:1fr;}.news-section{padding:32px 18px 48px;}}
+@media(max-width:480px){.posts-grid{grid-template-columns:1fr;}}
+
 </style>
+
+
+
 </head>
 <body>
-
-<!-- NAV -->
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
   <a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
     <img src="images/nav_logo.png" alt="Royal Kings Group emblem" class="nav-logo-img">
@@ -421,8 +516,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
   <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
 </nav>
 
+
+
+
 <main>
-  <!-- HERO -->
   <div class="page-hero" role="banner">
     <div class="page-hero-bg" aria-hidden="true"></div>
     <div class="hero-inner">
@@ -431,115 +528,57 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
       <div class="divider"></div>
     </div>
   </div>
-
-  <!-- BREADCRUMB -->
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <div class="bc"><a href="index.html">Home</a><span aria-hidden="true">›</span><span class="cur" aria-current="page">News</span></div>
   </nav>
 
-  <!-- ─── SETUP BANNER (shown when no token) ─── -->
-  <aside id="setup-banner" aria-label="Facebook connection setup">
-    <h3>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      Connect Facebook Page for Live Feed
-    </h3>
-    <ol>
-      <li>Go to <a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="noopener">developers.facebook.com/tools/explorer</a></li>
-      <li>Select your Facebook App &rarr; choose the <strong>Royal Kings Group</strong> page</li>
-      <li>Click <strong>Generate Access Token</strong> — grant <code>pages_read_engagement</code> and <code>pages_show_list</code></li>
-      <li>For a <strong>permanent token</strong>: exchange via <a href="https://developers.facebook.com/tools/debug/accesstoken/" target="_blank" rel="noopener">Token Debugger</a> &rarr; <em>Extend Token</em></li>
-      <li>Paste the token below and click <strong>Connect &amp; Load Feed</strong></li>
-    </ol>
-    <p style="margin-top:12px;font-size:12px;color:rgba(138,128,112,.65);">Token stored in your browser session only. For production, proxy through your server to avoid exposing the token client-side.</p>
-    <div class="token-row">
-      <input type="password" id="token-input" placeholder="Paste Facebook Page Access Token here…" autocomplete="off" aria-label="Facebook access token">
-      <button class="btn-connect" onclick="connectFB()">Connect &amp; Load Feed</button>
-      <button class="btn-skip" onclick="showFallback()" title="Show Facebook Page Plugin instead">Use Embedded Feed</button>
-    </div>
-    <p id="token-msg" role="status" aria-live="polite"></p>
-  </aside>
+  <section class="news-section" aria-label="News feed">
 
-  <!-- ─── GRAPH API FEED ─── -->
-  <section id="feed-wrapper" aria-label="Facebook news feed" aria-live="polite">
-
-    <!-- Skeleton loaders shown while fetching -->
-    <div id="skeleton-section">
-      <div class="section-hdr" aria-hidden="true">
-        <h2 class="current">Loading…</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="skeleton-grid" aria-hidden="true">
-        <div class="skel-card"><div class="skel-img shimmer"></div><div style="padding:14px 0 10px;"><div class="skel-line shimmer w60" style="margin-top:0;"></div><div class="skel-line shimmer w90"></div><div class="skel-line shimmer w80"></div><div class="skel-line shimmer w60"></div></div></div>
-        <div class="skel-card"><div class="skel-img shimmer"></div><div style="padding:14px 0 10px;"><div class="skel-line shimmer w60" style="margin-top:0;"></div><div class="skel-line shimmer w90"></div><div class="skel-line shimmer w80"></div><div class="skel-line shimmer w60"></div></div></div>
-        <div class="skel-card"><div class="skel-img shimmer"></div><div style="padding:14px 0 10px;"><div class="skel-line shimmer w60" style="margin-top:0;"></div><div class="skel-line shimmer w90"></div><div class="skel-line shimmer w80"></div><div class="skel-line shimmer w60"></div></div></div>
-      </div>
+    <div class="news-top-bar">
+      <p class="news-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)"
+             style="vertical-align:middle;margin-right:6px;" aria-hidden="true">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+        Royal Kings Group &mdash; Latest Updates &amp; Announcements
+      </p>
+      <p class="news-sub">Live from Facebook</p>
     </div>
 
-    <!-- This Year section -->
-    <div id="this-year-section" style="display:none;">
-      <div class="section-hdr">
-        <h2 class="current" id="this-year-label">2026</h2>
-        <div class="section-rule"></div>
-        <span class="section-count" id="this-year-count"></span>
-      </div>
-      <div class="posts-grid" id="this-year-grid"></div>
-    </div>
+    <div class="news-wrap">
 
-    <!-- Past Years section -->
-    <div id="past-section" style="display:none;">
-      <div class="section-hdr">
-        <h2 class="past">Previous Posts</h2>
-        <div class="section-rule"></div>
-        <span class="section-count" id="past-count"></span>
-      </div>
-      <div class="posts-grid" id="past-grid"></div>
-    </div>
-
-    <!-- Load More -->
-    <div id="load-more-wrap" style="display:none;">
-      <button class="btn-connect" id="load-more-btn" onclick="loadMorePosts()" style="min-width:180px;">Load More Posts</button>
-    </div>
-
-  </section>
-
-  <!-- ─── FALLBACK: Facebook Page Plugin ─── -->
-  <div id="fallback-wrapper">
-    <div class="fb-embed-block">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      <h3>Royal Kings Group — Live Facebook Timeline</h3>
-      <p>Displaying the live Facebook page feed. For a fully custom grid layout with post filtering by year, connect the Graph API using the setup panel above.</p>
-      <div class="fb-iframe-wrap">
-        <!-- Facebook Page Plugin — live timeline, updates automatically -->
+      <!-- LEFT: Facebook Page Plugin -->
+      <aside class="plugin-pane" aria-label="Facebook Page">
+        <div class="plugin-head">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+          <span class="plugin-head-txt">Facebook Page</span>
+        </div>
         <iframe
-          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100091498026763&tabs=timeline&width=700&height=1000&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-          width="700" height="1000"
-          style="max-width:100%;"
-          scrolling="no" frameborder="0" allowfullscreen="true"
-          allow="autoplay;clipboard-write;encrypted-media;picture-in-picture;web-share"
-          loading="lazy"
-          title="Royal Kings Group Facebook Page Feed"
-          aria-label="Royal Kings Group Facebook timeline">
+          src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/100091498026763&tabs=timeline&width=300&height=620&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false"
+          width="300" height="620"
+          style="border:none;overflow:hidden;display:block;width:100%;background:transparent;"
+          scrolling="yes"
+          allow="autoplay;clipboard-write;encrypted-media;picture-in-picture"
+          title="Royal Kings Group Facebook Page">
         </iframe>
-      </div>
-      <button class="btn-connect-api" onclick="showSetup()">Connect Graph API for Custom Grid</button>
-    </div>
-  </div>
+      </aside>
 
-  <!-- ─── FOLLOW CTA ─── -->
-  <section class="follow-cta" aria-label="Follow Royal Kings Group">
-    <h2>Follow Our <em>Journey</em></h2>
-    <div class="gold-rule"></div>
-    <p>For real-time updates, award celebrations, community events and corporate announcements from Royal Kings Group, follow us on Facebook.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://www.facebook.com/profile.php?id=100091498026763" target="_blank" rel="noopener" class="btn-fb" aria-label="Follow Royal Kings Group on Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Follow on Facebook
-      </a>
-      <a href="contact.html" class="btn-connect-api">Contact Us</a>
+      <!-- RIGHT: API post grid -->
+      <div class="posts-pane">
+        <div class="posts-status-bar">
+          <span class="posts-label">Latest Posts</span>
+          <span class="posts-count" id="posts-count"></span>
+        </div>
+        <div class="posts-grid" id="posts-grid" role="list">
+          <!-- JS populates -->
+        </div>
+      </div>
+
     </div>
   </section>
 </main>
-
 <footer role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -577,152 +616,206 @@ h1,h2,h3,h4,h5,h6{font-family:'Cinzel',serif;}
   </div>
   <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
 </footer>
-
 <script>
+
 'use strict';
 
-/* ── Config ── */
-var PAGE_ID   = '100091498026763';
-var GRAPH_VER = 'v19.0';
-var TOKEN     = 'EAALNw2Y5rRYBRZAS3F8S9ZBT8txYqVxKF1NdTAdDH7i8LDN3wuGA04L427QqZCxXgoOswN8BCrGecRTKWlqXgkIOfUkIMZCX9L73ZANpeZBUuuCps5pE0YtcGnMxuqqV7HXzeuvYFOZAR0NxC66ZCKiShyO1RddHyrIgIqxbSFNFirtpNCQVf3eRZAydQrwK09wJqVJAysAwNbuZBEKbZAtMr79wXtT7oeWDHoBjBDIkew0mym4paJT51x5SYzMUwCH5FPTQr8IoTVVZCPC8vzNZBBKXYvft1Crc4wQJU7ZBEZD';
-var LIMIT     = 20;
-var FIELDS    = 'id,message,story,full_picture,created_time,permalink_url,attachments{subattachments,media_type,media{image},title,description}';
+/* ─── Config ─── */
+const USER_TOKEN = 'EAALNw2Y5rRYBRZAS3F8S9ZBT8txYqVxKF1NdTAdDH7i8LDN3wuGA04L427QqZCxXgoOswN8BCrGecRTKWlqXgkIOfUkIMZCX9L73ZANpeZBUuuCps5pE0YtcGnMxuqqV7HXzeuvYFOZAR0NxC66ZCKiShyO1RddHyrIgIqxbSFNFirtpNCQVf3eRZAydQrwK09wJqVJAysAwNbuZBEKbZAtMr79wXtT7oeWDHoBjBDIkew0mym4paJT51x5SYzMUwCH5FPTQr8IoTVVZCPC8vzNZBBKXYvft1Crc4wQJU7ZBEZD';
+const PAGE_ID    = '100091498026763';
+const PAGE_URL   = 'https://www.facebook.com/100091498026763';
+const API_VER    = 'v23.0';
+const FIELDS     = 'id,message,story,created_time,full_picture,permalink_url';
+const LIMIT      = 12;
+const MONTHS     = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-/* ── Init ── */
-(function() {
-  document.getElementById('setup-banner').style.display = 'none';
-  document.getElementById('feed-wrapper').style.display = 'block';
-  loadFeed();
+document.addEventListener('DOMContentLoaded', () => {
   initNav();
-})();
+  startFeed();
+});
 
-/* ── Load Feed ── */
-function loadFeed() {
-  showSkeleton(true);
-  hideError();
+/* ══════════════════════════════════════════════════════════════
+   STEP 1: Exchange User Token → Page Access Token
+   STEP 2: Use Page Token to fetch /feed
+   STEP 3: Fall back to User Token on /feed and /posts
+   ══════════════════════════════════════════════════════════════ */
+async function startFeed() {
+  setStatus('loading');
+  console.log('[RKG] Starting feed fetch for page:', PAGE_ID);
 
-  /* Try /feed first (works with user tokens), fallback to /posts */
-  var endpoints = ['feed', 'posts'];
-  tryEndpoint(endpoints, 0);
-}
+  /* ── Attempt 1: Get Page Token via /me/accounts ── */
+  try {
+    const accountsUrl = `https://graph.facebook.com/${API_VER}/me/accounts`
+                      + `?access_token=${USER_TOKEN}`;
+    console.log('[RKG] Fetching /me/accounts to get page token...');
 
-function tryEndpoint(endpoints, idx) {
-  if (idx >= endpoints.length) {
-    showSkeleton(false);
-    showError('Could not load posts from any endpoint. Please check token permissions.');
-    return;
+    const r    = await fetch(accountsUrl);
+    const body = await r.json();
+
+    if (body.error) {
+      console.warn('[RKG] /me/accounts error:', body.error.message);
+      throw new Error(body.error.message);
+    }
+
+    const pages = body.data || [];
+    console.log('[RKG] /me/accounts returned', pages.length, 'pages:', pages.map(p=>p.id));
+
+    const match = pages.find(p => p.id === PAGE_ID);
+    if (match && match.access_token) {
+      console.log('[RKG] Page token found! Using it for /feed...');
+      const posts = await fetchFeed(match.access_token, 'feed');
+      if (posts && posts.length > 0) { renderPosts(posts); return; }
+    } else {
+      console.warn('[RKG] Page ID not found in /me/accounts list. Trying user token...');
+    }
+  } catch(e) {
+    console.warn('[RKG] /me/accounts failed:', e.message);
   }
 
-  var ep  = endpoints[idx];
-  var url = 'https://graph.facebook.com/' + GRAPH_VER + '/'
-            + PAGE_ID + '/' + ep
-            + '?fields=' + encodeURIComponent(FIELDS)
-            + '&limit=' + LIMIT
-            + '&access_token=' + TOKEN;
+  /* ── Attempt 2: User token on /feed ── */
+  try {
+    console.log('[RKG] Trying USER token on /feed...');
+    const posts = await fetchFeed(USER_TOKEN, 'feed');
+    if (posts && posts.length > 0) { renderPosts(posts); return; }
+  } catch(e) {
+    console.warn('[RKG] /feed with user token failed:', e.message);
+  }
 
-  fetch(url)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      showSkeleton(false);
-      if (data.error) {
-        console.warn('Endpoint /' + ep + ' failed:', data.error.message);
-        tryEndpoint(endpoints, idx + 1);
-        return;
-      }
-      var posts = (data.data || []).filter(function(p) {
-        return p.message || p.story || (p.attachments && p.attachments.data);
-      });
-      if (posts.length === 0) {
-        tryEndpoint(endpoints, idx + 1);
-        return;
-      }
-      renderPosts(posts);
-    })
-    .catch(function(err) {
-      console.warn('Endpoint /' + ep + ' fetch error:', err);
-      tryEndpoint(endpoints, idx + 1);
-    });
+  /* ── Attempt 3: User token on /posts ── */
+  try {
+    console.log('[RKG] Trying USER token on /posts...');
+    const posts = await fetchFeed(USER_TOKEN, 'posts');
+    if (posts && posts.length > 0) { renderPosts(posts); return; }
+  } catch(e) {
+    console.warn('[RKG] /posts with user token failed:', e.message);
+  }
+
+  /* ── All failed ── */
+  console.error('[RKG] All fetch attempts failed.');
+  setStatus('error',
+    `<strong>Could not load posts.</strong><br>
+     Reason: User token lacks page post access, OR the app is in Development Mode
+     (only admins/testers can see posts).<br><br>
+     <strong>Fix:</strong> In Facebook Developer Console → your App → Roles → add yourself as Tester,
+     OR switch the App to Live mode.<br><br>
+     <a href="${PAGE_URL}" target="_blank" rel="noopener" style="color:var(--gold);">
+       View Royal Kings Group on Facebook →
+     </a>`
+  );
 }
 
-/* ── Render ── */
+async function fetchFeed(token, endpoint) {
+  const url = `https://graph.facebook.com/${API_VER}/${PAGE_ID}/${endpoint}`
+            + `?fields=${encodeURIComponent(FIELDS)}`
+            + `&limit=${LIMIT}`
+            + `&access_token=${token}`;
+
+  const r    = await fetch(url);
+  const body = await r.json();
+
+  if (body.error) {
+    console.warn(`[RKG] /${endpoint} error (${body.error.code}):`, body.error.message);
+    throw new Error(body.error.message);
+  }
+
+  const posts = (body.data || []).filter(p => p.message || p.story || p.full_picture);
+  console.log(`[RKG] /${endpoint} returned ${posts.length} usable posts`);
+  return posts;
+}
+
+/* ─── Render posts ─── */
 function renderPosts(posts) {
-  var grid = document.getElementById('posts-grid');
+  const grid = document.getElementById('posts-grid');
+  if (!grid) return;
   grid.innerHTML = '';
 
-  posts.slice(0, LIMIT).forEach(function(p) {
-    var card = buildCard(p);
-    if (card) grid.appendChild(card);
+  posts.slice(0, LIMIT).forEach(post => {
+    grid.appendChild(buildCard(post));
   });
 
-  document.getElementById('post-count').textContent = posts.length + ' posts loaded';
+  const countEl = document.getElementById('posts-count');
+  if (countEl) countEl.textContent = posts.length + ' posts';
+  console.log('[RKG] Rendered', posts.length, 'cards ✅');
 }
 
-function buildCard(p) {
-  var msg    = p.message || p.story || '';
-  var imgUrl = p.full_picture || getAttachmentImg(p);
-  var date   = formatDate(p.created_time);
-  var link   = p.permalink_url || ('https://www.facebook.com/' + p.id);
+function buildCard(post) {
+  const msg  = (post.message || post.story || '').trim();
+  const img  = post.full_picture || null;
+  const date = fmtDate(post.created_time);
+  const link = post.permalink_url || `https://www.facebook.com/${post.id}`;
 
-  var article = document.createElement('article');
-  article.className = 'fb-card';
+  const card = document.createElement('article');
+  card.className = 'post-card';
+  card.onclick   = () => window.open(link, '_blank', 'noopener');
 
-  var imgHtml = '';
-  if (imgUrl) {
-    imgHtml = '<div class="fb-img-wrap"><img src="' + esc(imgUrl) + '" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"></div>';
+  if (img) {
+    const el = document.createElement('img');
+    el.className   = 'post-thumb';
+    el.src         = img;
+    el.alt         = '';
+    el.loading     = 'lazy';
+    el.onerror     = () => el.style.display = 'none';
+    card.appendChild(el);
+  } else {
+    const ph = document.createElement('div');
+    ph.className = 'post-thumb-placeholder';
+    ph.innerHTML = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.35)" stroke-width="1.5">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <circle cx="8.5" cy="8.5" r="1.5"/>
+      <polyline points="21 15 16 10 5 21"/>
+    </svg>`;
+    card.appendChild(ph);
   }
 
-  var msgHtml = msg ? '<p class="fb-msg">' + esc(msg).replace(/\n/g,'<br>') + '</p>' : '';
-
-  article.innerHTML =
-    imgHtml +
-    '<div class="fb-body">' +
-      '<div class="fb-meta"><span class="fb-date">' + date + '</span></div>' +
-      msgHtml +
-      '<a href="' + esc(link) + '" target="_blank" rel="noopener" class="fb-readmore">' +
-        'View on Facebook' +
-        '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
-      '</a>' +
-    '</div>';
-
-  return article;
+  const body = document.createElement('div');
+  body.className = 'post-body';
+  body.innerHTML =
+    `<span class="post-date">${date}</span>`
+    + (msg ? `<p class="post-msg">${esc(msg)}</p>` : '')
+    + `<a class="post-link" href="${link}" target="_blank" rel="noopener"
+         onclick="event.stopPropagation()">
+         View on Facebook
+         <svg width="9" height="9" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+           <polyline points="15 3 21 3 21 9"/>
+           <line x1="10" y1="14" x2="21" y2="3"/>
+         </svg>
+       </a>`;
+  card.appendChild(body);
+  return card;
 }
 
-function getAttachmentImg(p) {
-  try {
-    return p.attachments.data[0].media.image.src;
-  } catch(e) { return null; }
+/* ─── State helpers ─── */
+function setStatus(state, errHtml) {
+  const grid = document.getElementById('posts-grid');
+  if (!grid) return;
+
+  if (state === 'loading') {
+    grid.innerHTML = `<div class="state-cell">
+      <div class="state-spinner"></div>
+      <p class="state-txt">Loading posts&hellip;</p>
+    </div>`;
+
+  } else if (state === 'error') {
+    grid.innerHTML = `<div class="state-cell">
+      <p class="state-err">${errHtml}</p>
+      <button class="retry-btn" onclick="startFeed()">&#8635;&nbsp; Retry</button>
+    </div>`;
+  }
 }
 
-function formatDate(iso) {
-  var d = new Date(iso);
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+/* ─── Utils ─── */
+function fmtDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return MONTHS[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 }
-
 function esc(s) {
   return String(s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    .replace(/"/g,'&quot;').replace(/\n/g,' ');
 }
-
-function showSkeleton(show) {
-  var sk = document.getElementById('skeleton-section');
-  if (sk) sk.style.display = show ? 'block' : 'none';
-}
-
-function showError(msg) {
-  var el = document.getElementById('feed-error');
-  if (!el) return;
-  el.textContent = msg;
-  el.style.display = 'block';
-}
-
-function hideError() {
-  var el = document.getElementById('feed-error');
-  if (el) el.style.display = 'none';
-}
-
-function retryLoad() { loadFeed(); }
 
 function openDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.add('open');d.setAttribute('aria-hidden','false');o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
 function closeDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.remove('open');d.setAttribute('aria-hidden','true');o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
@@ -751,7 +844,12 @@ function initNav(){
   });
 })();
 
+
+
+
+
+
+
 </script>
 </body>
-
 </html>
