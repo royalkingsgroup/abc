@@ -7,7 +7,8 @@
 
 <link rel="icon" type="image/png" href="images/nav_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Raleway:wght@600;700;800;900&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#C9A84C;--gold-light:#E8C96A;--gold-dark:#96771E;--deep:#0A0A0F;--dark:#10101A;--mid:#1A1A28;--surface:#1F1F30;--text:#F0ECE0;--muted:#8A8070;--t:.3s ease;}
 *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
@@ -240,6 +241,198 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
 @media(min-width:1440px){ .nav-inner{ padding: 0 60px; } }
 @media(min-width:1920px){ .nav-inner{ padding: 0 80px; } }
 @media(max-width:768px){ .nav-inner{ padding: 0 16px; } }
+
+/* ═══ FONT ACCESSIBILITY IMPROVEMENT ═══ */
+/* Replace thin Cinzel with bold Raleway for all UI labels/nav */
+/* Raleway 700+ is thick, modern, highly readable at all ages  */
+
+:root {
+  --font-ui:   'Raleway', 'Nunito Sans', 'Inter', sans-serif;
+  --font-body: 'Nunito Sans', 'Inter', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+}
+
+/* Override Cinzel across the board */
+.nav-links a,
+.nav-dropdown-trigger,
+.nav-dropdown-menu a,
+.nav-brand-text,
+.mob-about-label,
+.mob-news-label,
+.mob-sub-link,
+.mobile-drawer a {
+  font-family: var(--font-ui) !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+}
+
+/* Nav top level: slightly larger + bold */
+.nav-links a,
+.nav-dropdown-trigger {
+  font-size: 12px !important;
+  letter-spacing: 1.5px !important;
+  font-weight: 700 !important;
+}
+
+/* Dropdown menu items */
+.nav-dropdown-menu a {
+  font-size: 11.5px !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+/* Brand name */
+.nav-brand-text {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+}
+
+/* Mobile drawer */
+.mobile-drawer a {
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+  font-weight: 700 !important;
+}
+.mob-sub-link {
+  font-size: 12px !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  color: rgba(240,236,224,.8) !important;
+}
+.mob-about-label,
+.mob-news-label {
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+}
+
+/* Buttons */
+.btn-primary, .btn-ghost,
+.nav-cta, .btn-p, .btn-g,
+.csr-btn, .np-view-btn,
+.fb-page-btn, .fb-page-btn-ghost,
+.nf-btn-solid, .nf-btn-outline,
+.vm-btn, .retry-btn {
+  font-family: var(--font-ui) !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  font-size: 11px !important;
+}
+
+/* Section eyebrows / small labels */
+.eyebrow, .eyebrow-sm, .section-eyebrow,
+.pillar-tag, .nf-eyebrow, .news-feed-eyebrow,
+.cat-header h2, .year-badge,
+.section-label, .breadcrumb, .bc {
+  font-family: var(--font-ui) !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+}
+
+/* Stats numbers */
+.sn, .nf-stat-n {
+  font-family: var(--font-ui) !important;
+  font-weight: 800 !important;
+}
+.sl, .nf-stat-l, .stat-label {
+  font-family: var(--font-ui) !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.5px !important;
+}
+
+/* Card titles / pub names */
+.np-pub, .np-headline,
+.award-title, .tm-name, .tm-title,
+.csr-title, .csr-org, .vm-title {
+  font-family: var(--font-ui) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Body text — keep Inter but bump weight */
+body, p, .body-text p, .np-desc, .csr-desc,
+.award-desc, .fb-post-msg {
+  font-family: var(--font-body) !important;
+  font-weight: 400;
+}
+
+/* ── MOBILE READABILITY ── */
+@media(max-width:768px) {
+  /* Nav brand bigger on mobile */
+  .nav-brand-text {
+    font-size: 13px !important;
+    display: block !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  /* Mobile drawer links — much more readable */
+  .mobile-drawer a {
+    font-size: 15px !important;
+    letter-spacing: 1px !important;
+    font-weight: 700 !important;
+    padding: 13px 0 !important;
+  }
+  .mob-sub-link {
+    font-size: 13px !important;
+    padding: 9px 0 9px 16px !important;
+  }
+  .mob-about-label, .mob-news-label {
+    font-size: 14px !important;
+  }
+
+  /* Page headings */
+  .page-hero h1 {
+    font-size: clamp(24px, 7vw, 38px) !important;
+    letter-spacing: 2px !important;
+  }
+  .section-head, .sec-head, .news-feed-title, .nf-title {
+    font-size: clamp(24px, 6.5vw, 36px) !important;
+  }
+
+  /* Body text bigger */
+  body { font-size: 15px !important; }
+  p, .body-text p, .np-desc, .csr-desc {
+    font-size: 14.5px !important;
+    line-height: 1.85 !important;
+  }
+
+  /* Card content */
+  .np-headline, .csr-title, .award-title {
+    font-size: 13px !important;
+    letter-spacing: 0.3px !important;
+  }
+  .np-pub, .csr-org {
+    font-size: 11px !important;
+  }
+  .np-date, .csr-date, .post-date {
+    font-size: 10px !important;
+  }
+
+  /* Buttons */
+  .btn-primary, .btn-ghost, .btn-p, .btn-g,
+  .csr-btn, .np-view-btn, .nf-btn-solid, .nf-btn-outline {
+    font-size: 12px !important;
+    padding: 11px 20px !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Stats */
+  .sn, .nf-stat-n { font-size: 26px !important; }
+  .sl, .nf-stat-l { font-size: 9px !important; }
+
+  /* Breadcrumb */
+  .bc { font-size: 12px !important; letter-spacing: 1px !important; }
+}
+
+@media(max-width:480px) {
+  .mobile-drawer a  { font-size: 16px !important; }
+  .mob-sub-link     { font-size: 14px !important; }
+  body              { font-size: 15.5px !important; }
+  p, .body-text p   { font-size: 15px !important; }
+  .page-hero h1     { font-size: clamp(22px, 6.5vw, 32px) !important; }
+}
 </style>
 </head>
 <body>
