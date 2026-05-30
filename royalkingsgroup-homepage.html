@@ -117,8 +117,7 @@ nav.scrolled .nav-logo img{height:36px;}
 .pillar-cta{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:16px;opacity:0;transform:translateY(8px);transition:opacity 0.4s 0.1s,transform 0.4s 0.1s;border:none;background:none;padding:0;}
 .pillar-card.clickable:hover .pillar-cta{opacity:1;transform:translateY(0);cursor:pointer;}
 .pillar-cta::after{content:' →';}
-/* Fintech: special gold-tint badge */
-.pillar-card.no-click .pillar-inner::after{content:'Coming Soon';position:absolute;top:18px;right:18px;font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:3px 8px;background:rgba(201,168,76,0.08);}
+/* Fintech pillar — clickable */
 
 /* WHY US */
 .why-outer{background:var(--mid);}
@@ -875,8 +874,8 @@ body, p, .body-text p, .np-desc, .csr-desc,
       </div>
     </div>
 
-    <!-- 05 Fintech — NOT CLICKABLE, no popup -->
-    <div class="pillar-card no-click" role="presentation" aria-label="Royal Kings Fintech Pte. Ltd.">
+    <!-- 05 Fintech — CLICKABLE popup -->
+    <div class="pillar-card clickable" onclick="openMicrosite('fintech')" onkeydown="if(event.key==='Enter'||event.key===' ')openMicrosite('fintech')" role="button" tabindex="0" aria-label="Royal Kings Fintech Pte. Ltd.">
       <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=900&q=80')"></div>
       <div class="pillar-inner">
         <span class="pillar-number">05 / 05</span><span class="pillar-icon">✨</span>
@@ -1075,9 +1074,9 @@ var msData = {
   fintech: {
     tag: '05 / 05 — Financial Technology & Digital Innovation',
     title: 'Royal Kings Fintech Pte. Ltd.',
-    img: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1200&q=85',
-    about: '<p>Royal Kings Fintech Pte. Ltd. is the Group\'s financial technology division, offering premium digital finance, and fintech products and services to individuals, family offices, and institutional investors seeking tangible wealth preservation.</p><p>We provide certified fintech bars and coins, secure storage advisory, and strategic guidance on building a financial technology portfolio — with transparent pricing and deep expertise across Asia-Pacific.</p>',
-    services: ['Digital Payments Infrastructure','Blockchain Innovation','Tokenisation Solutions','Fintech Consulting','Digital Financial Ecosystems','Cross-Border Finance','Financial Inclusion Technology']
+    img: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&q=85',
+    about: '<p>Royal Kings Fintech Pte. Ltd. is a future-focused financial technology company empowering businesses, institutions, and communities through digital finance, blockchain innovation, and intelligent financial ecosystems.</p><p>We deliver next-generation fintech solutions — from digital payments and tokenisation to cross-border finance and smart financial infrastructure — enabling organisations to navigate the rapidly evolving digital economy with confidence and security.</p>',
+    services: ['Digital Payments Infrastructure','Blockchain Innovation','Tokenisation Solutions','Fintech Strategy Consulting','Digital Financial Ecosystems','Cross-Border Finance','Smart Financial Infrastructure','Financial Inclusion Technology']
   }
 };
 
