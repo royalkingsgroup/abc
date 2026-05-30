@@ -676,6 +676,96 @@ body, p, .body-text p, .np-desc, .csr-desc,
   .section-eyebrow,
   .eyebrow           { font-size: 11px !important; letter-spacing: 2.5px !important; }
 }
+
+/* ── Royal Kings Fintech Pillar ── */
+.fintech-legal{
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(201,168,76,.65);
+  margin:-10px 0 14px;
+}
+.fintech-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:14px;margin-top:24px;
+}
+.fintech-item{
+  display:flex;align-items:flex-start;gap:12px;
+  background:rgba(201,168,76,.04);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:5px;padding:12px 14px;
+  transition:border-color .25s,background .25s;
+}
+.fintech-item:hover{
+  border-color:rgba(201,168,76,.3);
+  background:rgba(201,168,76,.08);
+}
+.fintech-item-icon{
+  width:36px;height:36px;flex-shrink:0;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.18);
+  border-radius:5px;
+  display:flex;align-items:center;justify-content:center;
+}
+.fintech-item-title{
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:12px;font-weight:700;color:var(--text);
+  margin-bottom:2px;
+}
+.fintech-item-sub{
+  font-size:11px;color:var(--muted);line-height:1.5;
+}
+/* Visual wrapper */
+.fintech-visual-wrap{
+  display:flex;align-items:center;justify-content:center;
+}
+.fintech-visual{
+  position:relative;
+  background:linear-gradient(135deg,rgba(201,168,76,.04),rgba(201,168,76,.01));
+  border:1px solid rgba(201,168,76,.15);
+  border-radius:12px;
+  padding:32px;
+  width:100%;max-width:420px;
+  overflow:hidden;
+}
+.ft-glow{
+  position:absolute;top:50%;left:50%;
+  width:200px;height:200px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(201,168,76,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.ft-network{width:100%;height:auto;}
+.ft-stats{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;margin-top:20px;
+  background:rgba(201,168,76,.05);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:5px;padding:14px 10px;
+}
+.ft-stat{text-align:center;padding:0 20px;}
+.ft-stat-n{
+  display:block;
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:22px;font-weight:800;color:var(--gold);line-height:1;
+}
+.ft-stat-l{
+  display:block;
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:7.5px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);margin-top:4px;
+}
+.ft-divider{
+  width:1px;height:40px;
+  background:rgba(201,168,76,.18);flex-shrink:0;
+}
+@media(max-width:900px){
+  .fintech-grid{grid-template-columns:1fr;}
+  .fintech-visual{max-width:340px;}
+}
+@media(max-width:600px){
+  .ft-stats{flex-wrap:wrap;gap:10px;}
+  .ft-divider{display:none;}
+}
 </style>
 </head>
 <body>
@@ -846,32 +936,184 @@ body, p, .body-text p, .np-desc, .csr-desc,
     <div class="img-frame" style="height:500px;"><img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=900&q=80" alt="Global Trading" loading="lazy"></div>
   </div></div></section>
 
-  <!-- PILLAR 5: BULLION -->
-  <section class="pillar-page-section dark" id="bullion"><div class="container"><div class="two-col">
-    <div>
-      <span class="pillar-tag">05 / 05</span><span class="coming-soon-tag">Coming Soon</span>
-      <span class="section-eyebrow">Precious Metals &amp; Wealth Preservation</span>
-      <h2 class="section-title">Royal Kings <em>Bullion</em></h2>
-      <div class="gold-rule"></div>
-      <div class="body-text">
-        <p>Royal Kings Bullion is the Group's precious metals division, offering premium gold, silver and bullion products and services to individuals, family offices and institutional investors seeking tangible wealth preservation in an uncertain world.</p>
-        <p>We provide certified bullion bars and coins, secure storage advisory and strategic guidance on building a precious metals portfolio — with transparent pricing, trusted provenance and deep expertise in the physical metals market across Asia-Pacific.</p>
+  <!-- PILLAR 5: fintech -->
+  
+  <!-- PILLAR 5: ROYAL KINGS FINTECH PTE. LTD. -->
+  <section class="pillar-page-section dark" id="fintech">
+    <div class="container">
+      <div class="two-col">
+
+        <!-- Content -->
+        <div>
+          <span class="pillar-tag">05 / 05</span>
+          <span class="coming-soon-tag">Coming Soon</span>
+          <span class="section-eyebrow">Financial Technology &amp; Digital Innovation</span>
+          <h2 class="section-title">Royal Kings <em>Fintech</em></h2>
+          <p class="fintech-legal">Royal Kings Fintech Pte. Ltd.</p>
+          <div class="gold-rule"></div>
+
+          <div class="body-text">
+            <p>Royal Kings Fintech Pte. Ltd. is a future-focused financial technology company helping businesses, institutions, and communities embrace digital finance, innovation, and intelligent financial ecosystems.</p>
+            <p>We drive digital transformation through innovative fintech solutions, blockchain technologies, tokenisation frameworks, and smart financial infrastructure — empowering organisations to participate confidently in the next generation of the digital economy.</p>
+          </div>
+
+          <!-- Service grid -->
+          <div class="fintech-grid">
+            <div class="fintech-item">
+              <div class="fintech-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              </div>
+              <div>
+                <p class="fintech-item-title">Digital Payments</p>
+                <p class="fintech-item-sub">Secure, scalable payment infrastructure</p>
+              </div>
+            </div>
+            <div class="fintech-item">
+              <div class="fintech-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div>
+                <p class="fintech-item-title">Blockchain Innovation</p>
+                <p class="fintech-item-sub">Distributed ledger &amp; smart contracts</p>
+              </div>
+            </div>
+            <div class="fintech-item">
+              <div class="fintech-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+              </div>
+              <div>
+                <p class="fintech-item-title">Tokenisation Solutions</p>
+                <p class="fintech-item-sub">Real-world asset digitalisation</p>
+              </div>
+            </div>
+            <div class="fintech-item">
+              <div class="fintech-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <div>
+                <p class="fintech-item-title">Fintech Consulting</p>
+                <p class="fintech-item-sub">Strategy, compliance &amp; roadmaps</p>
+              </div>
+            </div>
+            <div class="fintech-item">
+              <div class="fintech-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div>
+                <p class="fintech-item-title">Digital Ecosystems</p>
+                <p class="fintech-item-sub">Interconnected financial platforms</p>
+              </div>
+            </div>
+            <div class="fintech-item">
+              <div class="fintech-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div>
+                <p class="fintech-item-title">Cross-Border Finance</p>
+                <p class="fintech-item-sub">Seamless global transactions</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:32px;">
+            <a href="contact.html" class="btn-primary">Partner With Us</a>
+          </div>
+        </div>
+
+        <!-- Visual: Fintech dashboard graphic -->
+        <div class="fintech-visual-wrap">
+          <div class="fintech-visual">
+            <div class="ft-glow"></div>
+            <!-- Blockchain node graphic (pure CSS/SVG — no external image needed) -->
+            <svg class="ft-network" viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(201,168,76,.45)"/>
+                  <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+                </radialGradient>
+                <filter id="blur2">
+                  <feGaussianBlur stdDeviation="2"/>
+                </filter>
+              </defs>
+              <!-- Connection lines -->
+              <g stroke="rgba(201,168,76,.2)" stroke-width="1" fill="none">
+                <line x1="200" y1="170" x2="80" y2="80"/>
+                <line x1="200" y1="170" x2="320" y2="80"/>
+                <line x1="200" y1="170" x2="340" y2="200"/>
+                <line x1="200" y1="170" x2="280" y2="290"/>
+                <line x1="200" y1="170" x2="120" y2="290"/>
+                <line x1="200" y1="170" x2="60" y2="200"/>
+                <line x1="80" y1="80" x2="320" y2="80"/>
+                <line x1="60" y1="200" x2="120" y2="290"/>
+                <line x1="340" y1="200" x2="280" y2="290"/>
+              </g>
+              <!-- Animated data pulses -->
+              <circle r="3" fill="rgba(201,168,76,.8)">
+                <animateMotion dur="3s" repeatCount="indefinite" path="M200,170 L80,80"/>
+              </circle>
+              <circle r="3" fill="rgba(201,168,76,.8)">
+                <animateMotion dur="2.5s" repeatCount="indefinite" path="M200,170 L320,80"/>
+              </circle>
+              <circle r="3" fill="rgba(201,168,76,.6)">
+                <animateMotion dur="4s" repeatCount="indefinite" path="M200,170 L340,200"/>
+              </circle>
+              <circle r="3" fill="rgba(201,168,76,.7)">
+                <animateMotion dur="3.5s" repeatCount="indefinite" path="M200,170 L120,290"/>
+              </circle>
+              <!-- Nodes -->
+              <g fill="rgba(201,168,76,.08)" stroke="rgba(201,168,76,.5)" stroke-width="1.5">
+                <!-- Central node -->
+                <circle cx="200" cy="170" r="28" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.7)" stroke-width="2"/>
+                <circle cx="200" cy="170" r="18" fill="rgba(201,168,76,.08)"/>
+                <!-- Outer nodes -->
+                <circle cx="80" cy="80" r="16"/>
+                <circle cx="320" cy="80" r="16"/>
+                <circle cx="340" cy="200" r="14"/>
+                <circle cx="280" cy="290" r="14"/>
+                <circle cx="120" cy="290" r="14"/>
+                <circle cx="60" cy="200" r="14"/>
+              </g>
+              <!-- Node icons -->
+              <text x="200" y="175" text-anchor="middle" fill="rgba(201,168,76,.9)" font-size="11" font-family="sans-serif" font-weight="700">RKF</text>
+              <text x="80" y="84" text-anchor="middle" fill="rgba(201,168,76,.7)" font-size="7.5" font-family="sans-serif">Pay</text>
+              <text x="320" y="84" text-anchor="middle" fill="rgba(201,168,76,.7)" font-size="7.5" font-family="sans-serif">Chain</text>
+              <text x="340" y="204" text-anchor="middle" fill="rgba(201,168,76,.7)" font-size="7.5" font-family="sans-serif">DeFi</text>
+              <text x="280" y="294" text-anchor="middle" fill="rgba(201,168,76,.7)" font-size="7.5" font-family="sans-serif">Token</text>
+              <text x="120" y="294" text-anchor="middle" fill="rgba(201,168,76,.7)" font-size="7.5" font-family="sans-serif">X-Border</text>
+              <text x="60" y="204" text-anchor="middle" fill="rgba(201,168,76,.7)" font-size="7.5" font-family="sans-serif">AI</text>
+              <!-- Orbital rings -->
+              <circle cx="200" cy="170" r="50" fill="none" stroke="rgba(201,168,76,.08)" stroke-width="1" stroke-dasharray="4 6"/>
+              <circle cx="200" cy="170" r="90" fill="none" stroke="rgba(201,168,76,.06)" stroke-width="1" stroke-dasharray="3 8"/>
+            </svg>
+            <!-- Stats overlay -->
+            <div class="ft-stats">
+              <div class="ft-stat">
+                <span class="ft-stat-n">9+</span>
+                <span class="ft-stat-l">Fintech Solutions</span>
+              </div>
+              <div class="ft-divider"></div>
+              <div class="ft-stat">
+                <span class="ft-stat-n">APAC</span>
+                <span class="ft-stat-l">Ready</span>
+              </div>
+              <div class="ft-divider"></div>
+              <div class="ft-stat">
+                <span class="ft-stat-n">2025</span>
+                <span class="ft-stat-l">Launching</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="service-pills">
-        <span class="service-pill">Gold Bullion Products</span><span class="service-pill">Silver Bullion</span>
-        <span class="service-pill">Platinum &amp; Palladium</span><span class="service-pill">Wealth Preservation</span>
-        <span class="service-pill">Secure Storage Advisory</span><span class="service-pill">Portfolio Consulting</span>
-        <span class="service-pill">Metal Authentication</span><span class="service-pill">Estate Planning</span>
-      </div>
-      <div style="margin-top:28px;"><a href="contact.html" class="btn-primary">Enquire Now</a></div>
     </div>
-    <div class="img-frame" style="height:500px;"><img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=900&q=80" alt="Precious Metals Bullion" loading="lazy"></div>
-  </div></div></section>
+  </section>
+
 
   <section class="cta-band"><div class="container-sm" style="text-align:center;">
     <span class="section-eyebrow">Integrated Solutions</span>
     <h2 class="section-title" style="text-align:center;">Need <em>Multiple Services?</em></h2>
-    <p>Many of our clients benefit from cross-pillar collaboration — technology and consultancy, trading and hospitality, bullion and wealth advisory. Talk to us about an integrated engagement.</p>
+    <p>Many of our clients benefit from cross-pillar collaboration — technology and consultancy, trading and hospitality, fintech and wealth advisory. Talk to us about an integrated engagement.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
       <a href="contact.html" class="btn-primary">Start the Conversation</a><a href="about.html" class="btn-ghost">About the Group</a>
     </div>
@@ -899,7 +1141,7 @@ body, p, .body-text p, .np-desc, .csr-desc,
       <a href="pillars.html#consultancy">Corporate Consultancy</a>
       <a href="pillars.html#hospitality">Hospitality &amp; Events</a>
       <a href="pillars.html#trading">Global Trading</a>
-      <a href="pillars.html#bullion">Royal Kings Bullion</a>
+      <a href="pillars.html#fintech">Royal Kings Fintech Pte. Ltd.</a>
     </div>
     <div class="footer-col">
       <h5>Connect</h5>
