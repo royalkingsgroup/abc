@@ -2,8 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="Royal Kings Group's CSR initiatives across Singapore — community events, charity sponsorships, interfaith programmes, and social welfare contributions since 2023.">
+<meta name="keywords" content="Royal Kings Group CSR, corporate social responsibility Singapore, community initiatives">
+<meta name="author" content="Royal Kings Group">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://royalkingsgroup.github.io/website/csr.html">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://royalkingsgroup.github.io/website/csr.html">
+<meta property="og:title" content="CSR — Royal Kings Group">
+<meta property="og:description" content="Royal Kings Group's community and social responsibility initiatives across Singapore.">
+<meta property="og:image" content="https://royalkingsgroup.github.io/website/images/footer_logo.png">
+<meta property="og:site_name" content="Royal Kings Group">
+<meta property="og:locale" content="en_SG">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CSR — Royal Kings Group">
+<meta name="twitter:description" content="Royal Kings Group's community and social responsibility initiatives across Singapore.">
+<meta name="twitter:image" content="https://royalkingsgroup.github.io/website/images/footer_logo.png">
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Corporate Social Responsibility | Royal Kings Group Singapore",
+      "url": "https://royalkingsgroup.github.io/website/csr.html",
+      "description": "Royal Kings Group's CSR initiatives across Singapore — community events, charity sponsorships, interfaith programmes, and social welfare contributions since 2023.",
+      "publisher": {"@type":"Organization","name":"Royal Kings Group","url":"https://royalkingsgroup.github.io/website","logo":"https://royalkingsgroup.github.io/website/images/footer_logo.png"}
+    }
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Corporate Social Responsibility | Royal Kings Group</title>
+<title>Corporate Social Responsibility | Royal Kings Group Singapore</title>
 
 <link rel="icon" type="image/png" href="images/nav_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +90,7 @@ body{font-family:'Inter','Raleway',sans-serif;background:var(--deep);color:var(-
 .dd-icon{font-size:13px;}
 /* HERO */
 .page-hero{position:relative;height:380px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1600&q=80') center/cover;filter:brightness(.25) saturate(.55);}
+.page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1600&q=80') center/cover;filter:brightness(0.52) saturate(.55);}
 .page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,15,.2),rgba(10,10,15,.9));}
 .hero-inner{position:relative;z-index:2;text-align:center;padding:0 20px;}
 .eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block;animation:fU .8s .2s both;}
@@ -559,6 +589,248 @@ body, p, .body-text p, .np-desc, .csr-desc,
   .section-eyebrow,
   .eyebrow           { font-size: 11px !important; letter-spacing: 2.5px !important; }
 }
+
+/* ══════════════════════════════════════════════════════
+   GLOBAL DESIGN REFINEMENT — Better contrast, readability
+   Lighter section backgrounds, improved visual hierarchy
+   ══════════════════════════════════════════════════════ */
+
+/* Refined color tokens — slightly lifted backgrounds */
+:root {
+  --deep:    #0D0D14;   /* was #0A0A0F — very slightly lighter */
+  --dark:    #131320;   /* was #10101A */
+  --mid:     #1C1C2C;   /* was #1A1A28 */
+  --surface: #232336;   /* was #1F1F30 */
+  --surface2:#282840;   /* new: card hover surface */
+  --text:    #F2EEE2;   /* was #F0ECE0 — slightly brighter */
+  --muted:   #9A9080;   /* was #8A8070 — more readable */
+  --border:  rgba(201,168,76,.18);  /* consistent border */
+}
+
+/* Section alternation — break up monotone black */
+.pillar-page-section.dark,
+.dark-section,
+.why-outer,
+.stats-bar,
+.stats-strip {
+  background: linear-gradient(to bottom, var(--dark), var(--mid)) !important;
+}
+
+/* Card improvements — slightly lighter, better hover */
+.award-card,
+.csr-card,
+.np-card,
+.post-card,
+.fb-post-card,
+.pillar-card,
+.tm-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  transition: background .25s, border-color .25s, transform .25s, box-shadow .25s !important;
+}
+.award-card:hover,
+.csr-card:hover,
+.np-card:hover,
+.post-card:hover,
+.tm-card:hover {
+  background: var(--surface2) !important;
+  border-color: rgba(201,168,76,.38) !important;
+}
+
+/* Improve hero brightness across all pages */
+.page-hero-bg {
+  filter: brightness(0.52) saturate(.75) !important;
+}
+.hero-bg {
+  filter: brightness(.36) saturate(.7) !important;
+}
+
+/* Better text contrast */
+body { color: var(--text); }
+
+/* Line height improvements for body text */
+.body-text p, .award-desc, .csr-desc, .np-desc,
+.tm-desc, p { line-height: 1.85 !important; }
+
+/* Section padding consistency */
+.pillar-page-section,
+.section-pad { padding: 80px 60px !important; }
+@media(max-width:768px) {
+  .pillar-page-section,
+  .section-pad { padding: 52px 18px !important; }
+}
+
+/* Better form inputs */
+input, textarea, select {
+  background: rgba(255,255,255,.05) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 3px !important;
+}
+input:focus, textarea:focus {
+  border-color: rgba(201,168,76,.5) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(201,168,76,.12) !important;
+}
+
+/* Skip navigation for accessibility */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 8px;
+  padding: 8px 16px;
+  background: var(--gold);
+  color: var(--deep);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  z-index: 9999;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top .2s;
+}
+.skip-nav:focus { top: 0; }
+
+/* Improved focus indicators */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold) !important;
+  outline-offset: 3px !important;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Facebook plugin alignment */
+.nf-plugin-outer {
+  margin: 0 auto !important;
+}
+.nf-iframe {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+}
+.nf-section {
+  padding: 48px 24px 72px !important;
+}
+.news-feed-section {
+  padding: 48px 24px 72px !important;
+}
+
+/* Better CTA buttons */
+.btn-primary, .btn-p {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after, .btn-p::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.08);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.btn-primary:hover::after, .btn-p:hover::after { opacity: 1; }
+
+/* Image lazy load fade */
+img[loading="lazy"] {
+  transition: opacity .4s;
+}
+img.loaded { opacity: 1; }
+
+/* Large screen improvements */
+@media(min-width:1440px) {
+  .container,
+  .news-feed-section > *,
+  .nf-section > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   CONSISTENT HEADING FONT — matching "Our Video Library"
+   Cormorant Garamond 300 for display/section headings
+   with italic gold EM accents (same as videos page)
+   ══════════════════════════════════════════════════════ */
+
+/* Core display headings — Cormorant Garamond (elegant, readable) */
+.page-intro h2,
+.intro-bar h2,
+.section-title,
+.section-head,
+.sec-head,
+.news-feed-title,
+.nf-title,
+.our-story-heading,
+.cta-band h2,
+.cta-strip h2,
+.founder-head h2,
+.vm-card .vm-title + p,
+h2.section-title,
+h2.sec-head {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size:   clamp(24px, 3vw, 44px) !important;
+  font-weight: 300 !important;
+  color:       var(--text) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Gold italic accent (em inside heading) */
+.page-intro h2 em,
+.intro-bar h2 em,
+.section-title em,
+.section-head em,
+.sec-head em,
+.news-feed-title em,
+.nf-title em,
+.cta-band h2 em,
+.cta-strip h2 em {
+  font-family:  'Cormorant Garamond', serif !important;
+  font-style:   italic !important;
+  font-weight:  300 !important;
+  color:        var(--gold) !important;
+}
+
+/* Section eyebrows keep Raleway bold (nav-style labels) */
+.page-hero-eyebrow,
+.eyebrow,
+.hero-eyebrow,
+.section-eyebrow,
+.section-label,
+.eyebrow-sm,
+.nf-eyebrow,
+.news-feed-eyebrow {
+  font-family:  'Raleway', 'Nunito Sans', sans-serif !important;
+  font-weight:  700 !important;
+  font-size:    clamp(9px, 1vw, 12px) !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+}
+
+/* Sub-headings (card titles, pillar names etc.) — Raleway 700 */
+.award-title,
+.csr-title,
+.np-headline,
+.tm-name,
+.vm-card .vm-title {
+  font-family: 'Raleway', 'Nunito Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size:   clamp(13px, 1.5vw, 16px) !important;
+  letter-spacing: 0.3px !important;
+}
+
+/* Page hero H1 (page banners) — keep bold Raleway */
+.page-hero h1,
+.page-hero-title,
+.hero-title {
+  font-family: 'Raleway', 'Nunito Sans', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 3px !important;
+}
 </style>
 </head>
 <body>
@@ -623,7 +895,7 @@ body, p, .body-text p, .np-desc, .csr-desc,
   <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
   <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
 </nav>
-<main>
+<main id="main-content">
   <div class="page-hero" role="banner">
     <div class="page-hero-bg" aria-hidden="true"></div>
     <div class="hero-inner">

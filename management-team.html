@@ -2,8 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="Meet the Royal Kings Group leadership team — Founder, Directors, Advisors, and Senior Officers driving business excellence across Singapore and Asia-Pacific.">
+<meta name="keywords" content="Royal Kings Group team, Singapore management, leadership team, directors advisors">
+<meta name="author" content="Royal Kings Group">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://royalkingsgroup.github.io/website/management-team.html">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://royalkingsgroup.github.io/website/management-team.html">
+<meta property="og:title" content="Management Team — Royal Kings Group">
+<meta property="og:description" content="The leadership team behind Royal Kings Group's growth and success.">
+<meta property="og:image" content="https://royalkingsgroup.github.io/website/images/footer_logo.png">
+<meta property="og:site_name" content="Royal Kings Group">
+<meta property="og:locale" content="en_SG">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Management Team — Royal Kings Group">
+<meta name="twitter:description" content="The leadership team behind Royal Kings Group's growth and success.">
+<meta name="twitter:image" content="https://royalkingsgroup.github.io/website/images/footer_logo.png">
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Management Team | Royal Kings Group Singapore",
+      "url": "https://royalkingsgroup.github.io/website/management-team.html",
+      "description": "Meet the Royal Kings Group leadership team — Founder, Directors, Advisors, and Senior Officers driving business excellence across Singapore and Asia-Pacific.",
+      "publisher": {"@type":"Organization","name":"Royal Kings Group","url":"https://royalkingsgroup.github.io/website","logo":"https://royalkingsgroup.github.io/website/images/footer_logo.png"}
+    }
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Management Team | Royal Kings Group</title>
+<title>Management Team | Royal Kings Group Singapore</title>
 
 <link rel="icon" type="image/png" href="images/nav_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,9 +90,9 @@ body{font-family:'Inter','Raleway',sans-serif;background:var(--deep);color:var(-
 
 /* ═══ HERO ═══ */
 .page-hero{position:relative;height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.page-hero-bg{position:absolute;inset:0;background:#000;overflow:hidden;}
-.page-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.35) saturate(.55);}
-.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,15,.15),rgba(10,10,15,.88));}
+.page-hero-bg{position:absolute;inset:0;overflow:hidden;}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.60) saturate(0.85);display:block;}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,15,.15),rgba(10,10,15,.60));}
 .hero-inner{position:relative;z-index:2;text-align:center;padding:0 20px;}
 .eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block;animation:fU .8s .2s both;}
 .page-hero h1{font-family:'Cinzel',serif;font-size:clamp(28px,4vw,54px);font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--text);animation:fU .8s .4s both;}
@@ -634,6 +664,248 @@ body, p, .body-text p, .np-desc, .csr-desc,
   .section-eyebrow,
   .eyebrow           { font-size: 11px !important; letter-spacing: 2.5px !important; }
 }
+
+/* ══════════════════════════════════════════════════════
+   GLOBAL DESIGN REFINEMENT — Better contrast, readability
+   Lighter section backgrounds, improved visual hierarchy
+   ══════════════════════════════════════════════════════ */
+
+/* Refined color tokens — slightly lifted backgrounds */
+:root {
+  --deep:    #0D0D14;   /* was #0A0A0F — very slightly lighter */
+  --dark:    #131320;   /* was #10101A */
+  --mid:     #1C1C2C;   /* was #1A1A28 */
+  --surface: #232336;   /* was #1F1F30 */
+  --surface2:#282840;   /* new: card hover surface */
+  --text:    #F2EEE2;   /* was #F0ECE0 — slightly brighter */
+  --muted:   #9A9080;   /* was #8A8070 — more readable */
+  --border:  rgba(201,168,76,.18);  /* consistent border */
+}
+
+/* Section alternation — break up monotone black */
+.pillar-page-section.dark,
+.dark-section,
+.why-outer,
+.stats-bar,
+.stats-strip {
+  background: linear-gradient(to bottom, var(--dark), var(--mid)) !important;
+}
+
+/* Card improvements — slightly lighter, better hover */
+.award-card,
+.csr-card,
+.np-card,
+.post-card,
+.fb-post-card,
+.pillar-card,
+.tm-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  transition: background .25s, border-color .25s, transform .25s, box-shadow .25s !important;
+}
+.award-card:hover,
+.csr-card:hover,
+.np-card:hover,
+.post-card:hover,
+.tm-card:hover {
+  background: var(--surface2) !important;
+  border-color: rgba(201,168,76,.38) !important;
+}
+
+/* Improve hero brightness across all pages */
+.page-hero-bg {
+  filter: brightness(0.52) saturate(.75) !important;
+}
+.hero-bg {
+  filter: brightness(.36) saturate(.7) !important;
+}
+
+/* Better text contrast */
+body { color: var(--text); }
+
+/* Line height improvements for body text */
+.body-text p, .award-desc, .csr-desc, .np-desc,
+.tm-desc, p { line-height: 1.85 !important; }
+
+/* Section padding consistency */
+.pillar-page-section,
+.section-pad { padding: 80px 60px !important; }
+@media(max-width:768px) {
+  .pillar-page-section,
+  .section-pad { padding: 52px 18px !important; }
+}
+
+/* Better form inputs */
+input, textarea, select {
+  background: rgba(255,255,255,.05) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 3px !important;
+}
+input:focus, textarea:focus {
+  border-color: rgba(201,168,76,.5) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(201,168,76,.12) !important;
+}
+
+/* Skip navigation for accessibility */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 8px;
+  padding: 8px 16px;
+  background: var(--gold);
+  color: var(--deep);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  z-index: 9999;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top .2s;
+}
+.skip-nav:focus { top: 0; }
+
+/* Improved focus indicators */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold) !important;
+  outline-offset: 3px !important;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Facebook plugin alignment */
+.nf-plugin-outer {
+  margin: 0 auto !important;
+}
+.nf-iframe {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+}
+.nf-section {
+  padding: 48px 24px 72px !important;
+}
+.news-feed-section {
+  padding: 48px 24px 72px !important;
+}
+
+/* Better CTA buttons */
+.btn-primary, .btn-p {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after, .btn-p::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.08);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.btn-primary:hover::after, .btn-p:hover::after { opacity: 1; }
+
+/* Image lazy load fade */
+img[loading="lazy"] {
+  transition: opacity .4s;
+}
+img.loaded { opacity: 1; }
+
+/* Large screen improvements */
+@media(min-width:1440px) {
+  .container,
+  .news-feed-section > *,
+  .nf-section > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   CONSISTENT HEADING FONT — matching "Our Video Library"
+   Cormorant Garamond 300 for display/section headings
+   with italic gold EM accents (same as videos page)
+   ══════════════════════════════════════════════════════ */
+
+/* Core display headings — Cormorant Garamond (elegant, readable) */
+.page-intro h2,
+.intro-bar h2,
+.section-title,
+.section-head,
+.sec-head,
+.news-feed-title,
+.nf-title,
+.our-story-heading,
+.cta-band h2,
+.cta-strip h2,
+.founder-head h2,
+.vm-card .vm-title + p,
+h2.section-title,
+h2.sec-head {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size:   clamp(24px, 3vw, 44px) !important;
+  font-weight: 300 !important;
+  color:       var(--text) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Gold italic accent (em inside heading) */
+.page-intro h2 em,
+.intro-bar h2 em,
+.section-title em,
+.section-head em,
+.sec-head em,
+.news-feed-title em,
+.nf-title em,
+.cta-band h2 em,
+.cta-strip h2 em {
+  font-family:  'Cormorant Garamond', serif !important;
+  font-style:   italic !important;
+  font-weight:  300 !important;
+  color:        var(--gold) !important;
+}
+
+/* Section eyebrows keep Raleway bold (nav-style labels) */
+.page-hero-eyebrow,
+.eyebrow,
+.hero-eyebrow,
+.section-eyebrow,
+.section-label,
+.eyebrow-sm,
+.nf-eyebrow,
+.news-feed-eyebrow {
+  font-family:  'Raleway', 'Nunito Sans', sans-serif !important;
+  font-weight:  700 !important;
+  font-size:    clamp(9px, 1vw, 12px) !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+}
+
+/* Sub-headings (card titles, pillar names etc.) — Raleway 700 */
+.award-title,
+.csr-title,
+.np-headline,
+.tm-name,
+.vm-card .vm-title {
+  font-family: 'Raleway', 'Nunito Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size:   clamp(13px, 1.5vw, 16px) !important;
+  letter-spacing: 0.3px !important;
+}
+
+/* Page hero H1 (page banners) — keep bold Raleway */
+.page-hero h1,
+.page-hero-title,
+.hero-title {
+  font-family: 'Raleway', 'Nunito Sans', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 3px !important;
+}
 </style>
 </head>
 <body>
@@ -698,239 +970,7 @@ body, p, .body-text p, .np-desc, .csr-desc,
   <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
   <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
 </nav>
-<main>
-  <div class="page-hero" role="banner">
-    <div class="page-hero-bg">
-      <img src="images/team_team.jpg" alt="Royal Kings Group Management Team">
-    </div>
-    <div class="hero-inner">
-      <span class="eyebrow">Leadership &amp; Governance</span>
-      <h1><em>Management</em> Team</h1>
-      <div class="hero-div"></div>
-    </div>
-  </div>
-
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="bc">
-      <a href="index.html">Home</a><span class="sep">&#x203A;</span>
-      <a href="about.html">About Us</a><span class="sep">&#x203A;</span>
-      <span class="cur" aria-current="page">Management Team</span>
-    </div>
-  </nav>
-
-  <div class="intro-bar">
-    <h2>The <em>People</em> Behind Royal Kings Group</h2>
-    <div class="gold-rule"></div>
-    <p>Our leadership team brings together decades of experience across finance, technology, hospitality, global trade and corporate governance — united by a shared commitment to excellence, integrity and sustainable growth across Singapore and Asia-Pacific.</p>
-  </div>
-
-  <section class="team-section" aria-label="Management team">
-
-    <!-- ROW 1: Founder & Chairman -->
-    <p class="row-label">Founder &amp; Chairman</p>
-    <div class="team-row team-row-1">
-<div class="tm-card card-large" role="article">
-  <div class="tm-photo-wrap">
-    <img src="images/team_sirajudeen.jpg" alt="Mr. Sirajudeen Bin Syed Mohamed — Founder & Chairman, Royal Kings Group" loading="lazy" class="tm-photo">
-    <div class="tm-photo-overlay" aria-hidden="true"></div>
-  </div>
-  <div class="tm-body">
-    <div class="tm-accent" style="background:linear-gradient(to right,var(--gold),var(--gold-dark));"></div>
-    <h3 class="tm-name">Mr. Sirajudeen Bin Syed Mohamed</h3>
-    <p class="tm-title">Founder & Chairman</p>
-    <p class="tm-division">Royal Kings Group</p>
-    <p class="tm-desc">Visionary founder who built Royal Kings Group from the ground up since 2013, steering five integrated business verticals across Singapore and Asia-Pacific with unwavering integrity and strategic leadership.</p>
-  </div>
-</div>
-    </div>
-
-    <!-- ROW 2: Directors -->
-    <p class="row-label">Board of Directors</p>
-    <div class="team-row team-row-2">
-<div class="tm-card card-medium" role="article">
-  <div class="tm-photo-wrap">
-    <img src="images/team_ibrahim.jpg" alt="Mr. Mohamed Ibrahim — Director, Royal Kings Group" loading="lazy" class="tm-photo">
-    <div class="tm-photo-overlay" aria-hidden="true"></div>
-  </div>
-  <div class="tm-body">
-    <div class="tm-accent" style="background:linear-gradient(to right,var(--gold-dark),rgba(201,168,76,.6));"></div>
-    <h3 class="tm-name">Mr. Mohamed Ibrahim</h3>
-    <p class="tm-title">Director</p>
-    <p class="tm-division">Royal Kings Group</p>
-    <p class="tm-desc">Provides strategic direction and governance oversight across the Group&#39;s diversified portfolio, driving sustainable growth and strengthening institutional relationships throughout the region.</p>
-  </div>
-</div><div class="tm-card card-medium" role="article">
-  <div class="tm-photo-wrap">
-    <img src="images/team_joy.jpg" alt="Ms. Joy Valbarez Delgado — Director, Royal Kings Pte. Ltd." loading="lazy" class="tm-photo">
-    <div class="tm-photo-overlay" aria-hidden="true"></div>
-  </div>
-  <div class="tm-body">
-    <div class="tm-accent" style="background:linear-gradient(to right,var(--gold-dark),rgba(201,168,76,.6));"></div>
-    <h3 class="tm-name">Ms. Joy Valbarez Delgado</h3>
-    <p class="tm-title">Director</p>
-    <p class="tm-division">Royal Kings Pte. Ltd.</p>
-    <p class="tm-desc">Leads corporate compliance, regulatory affairs and administrative excellence, ensuring the Group&#39;s operations meet the highest standards of governance and business ethics across all verticals.</p>
-  </div>
-</div>
-    </div>
-
-    <!-- ROW 3: Senior Leadership -->
-    <p class="row-label">Senior Leadership</p>
-    <div class="team-row team-row-3">
-<div class="tm-card card-small" role="article">
-  <div class="tm-photo-wrap">
-    <img src="images/team_jalaudeen.jpg" alt="Mr. Jalaludeen — Senior Advisor, Royal Kings Group" loading="lazy" class="tm-photo">
-    <div class="tm-photo-overlay" aria-hidden="true"></div>
-  </div>
-  <div class="tm-body">
-    <div class="tm-accent" style="background:linear-gradient(to right,rgba(201,168,76,.6),var(--gold-dark));"></div>
-    <h3 class="tm-name">Mr. Jalaludeen</h3>
-    <p class="tm-title">Senior Advisor</p>
-    <p class="tm-division">Royal Kings Group</p>
-    <p class="tm-desc">Brings deep industry expertise and strategic counsel to the Group&#39;s leadership, guiding key business decisions and fostering high-level partnerships across Singapore and international markets.</p>
-  </div>
-</div><div class="tm-card card-small" role="article">
-  <div class="tm-photo-wrap">
-    <img src="images/team_riyasudeen.jpg" alt="Mr. Riyasudeen — Chief Information & Technology Officer, Royal Kings Group" loading="lazy" class="tm-photo">
-    <div class="tm-photo-overlay" aria-hidden="true"></div>
-  </div>
-  <div class="tm-body">
-    <div class="tm-accent" style="background:linear-gradient(to right,rgba(201,168,76,.6),var(--gold-dark));"></div>
-    <h3 class="tm-name">Mr. Riyasudeen</h3>
-    <p class="tm-title">Chief Information & Technology Officer</p>
-    <p class="tm-division">Technology Division</p>
-    <p class="tm-desc">Architects and leads the Group&#39;s digital transformation strategy, overseeing enterprise technology infrastructure, cybersecurity, and innovation initiatives to drive operational efficiency at scale.</p>
-  </div>
-</div><div class="tm-card card-small" role="article">
-  <div class="tm-photo-wrap">
-    <img src="images/team_varin.jpg" alt="Mr. Varin — Chief Operating Officer, Royal Kings Group" loading="lazy" class="tm-photo">
-    <div class="tm-photo-overlay" aria-hidden="true"></div>
-  </div>
-  <div class="tm-body">
-    <div class="tm-accent" style="background:linear-gradient(to right,rgba(201,168,76,.6),var(--gold-dark));"></div>
-    <h3 class="tm-name">Mr. Varin</h3>
-    <p class="tm-title">Chief Operating Officer</p>
-    <p class="tm-division">Global Trading Division</p>
-    <p class="tm-desc">Spearheads global trading operations and supply chain excellence, managing cross-border procurement, supplier networks and strategic commercial partnerships across Asia-Pacific and international markets.</p>
-  </div>
-</div><div class="tm-card card-small" role="article">
-  <div class="tm-photo-wrap">
-    <img src="images/team_harris.jpg" alt="Mr. Garry Harris — Senior Public Relations Officer, Royal Kings Group" loading="lazy" class="tm-photo">
-    <div class="tm-photo-overlay" aria-hidden="true"></div>
-  </div>
-  <div class="tm-body">
-    <div class="tm-accent" style="background:linear-gradient(to right,rgba(201,168,76,.6),var(--gold-dark));"></div>
-    <h3 class="tm-name">Mr. Garry Harris</h3>
-    <p class="tm-title">Senior Public Relations Officer</p>
-    <p class="tm-division">Corporate Communications</p>
-    <p class="tm-desc">Leads brand reputation management, media relations and stakeholder communications for Royal Kings Group, building and sustaining the Group&#39;s public profile across Singapore and the region.</p>
-  </div>
-</div>
-    </div>
-
-  </section>
-
-  <section class="cta-band">
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,40px);font-weight:300;color:var(--text);margin-bottom:10px;">
-      Work With Our <em style="font-style:italic;color:var(--gold);">Leadership Team</em>
-    </h2>
-    <div class="gold-rule"></div>
-    <p>Connect with Royal Kings Group to explore how our experienced leadership team can partner with you for growth and success across Asia-Pacific.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="contact.html" class="btn-p">Get In Touch</a>
-      <a href="about.html" class="btn-g">About the Group</a>
-    </div>
-  </section>
-</main>
-<footer role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="images/footer_logo.png" alt="Royal Kings Group">
-      
-      <span class="footer-tag">Excellence &middot; Integrity &middot; Performance</span>
-    </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <a href="about.html">About Us</a>
-      <a href="about.html#vision">Vision &amp; Mission</a>
-      <a href="about.html#founder">Founder &amp; Chairman</a>
-      <a href="about.html#csr">Corporate Social Responsibility</a>
-      <a href="awards.html">Awards</a>
-      <a href="videos.html">Videos</a>
-    </div>
-    <div class="footer-col">
-      <h5>Our Pillars</h5>
-      <a href="pillars.html#tech">Technology &amp; Digital</a>
-      <a href="pillars.html#consultancy">Corporate Consultancy</a>
-      <a href="pillars.html#hospitality">Hospitality &amp; Events</a>
-      <a href="pillars.html#trading">Global Trading</a>
-      <a href="pillars.html#fintech">Royal Kings Fintech Pte. Ltd.</a>
-    </div>
-    <div class="footer-col">
-      <h5>Connect</h5>
-      <a href="mailto:contact@royalkingsgroup.com">contact@royalkingsgroup.com</a>
-      <a href="tel:+6562260405">+65 6226 0405</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="memberships.html">Memberships</a>
-      <a href="news.html">News</a>
-      <a href="sitemap.html">Sitemap</a>
-      <a href="disclaimer.html">Disclaimer</a>
-    </div>
-  </div>
-  <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
-</footer>
-<script>
-'use strict';
-function openDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.add('open');d.setAttribute('aria-hidden','false');o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
-function closeDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.remove('open');d.setAttribute('aria-hidden','true');o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
-(function(){
-  var h=document.getElementById('hamburger');
-  if(h)h.addEventListener('click',function(){this.classList.contains('open')?closeDrawer():openDrawer();});
-  var o=document.getElementById('drawerOverlay');
-  if(o)o.addEventListener('click',closeDrawer);
-  window.addEventListener('scroll',function(){var n=document.getElementById('mainNav');if(n)n.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
-  ['newsDropdown','aboutDropdown'].forEach(function(did){
-    var dd=document.getElementById(did);
-  if(dd){
-    dd.addEventListener('touchstart',function(e){
-      var menu=dd.querySelector('.nav-dropdown-menu');
-      menu.style.display=menu.style.display==='flex'?'':'flex';
-      e.stopPropagation();
-    },{passive:true});
-    document.addEventListener('touchstart',function(e){
-      if(!dd.contains(e.target)){var m=dd.querySelector('.nav-dropdown-menu');if(m)m.style.display='';}
-    },{passive:true});
-  }
-  });
-})();
-</script>
-</body>
-
-</html
-</nav>
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="index.html" onclick="closeDrawer()">Home</a>
-  <div class="mob-about-group">
-    <span class="mob-about-label">&#x25BE; About Us</span>
-    <a href="our-story.html" onclick="closeDrawer()" class="mob-sub-link">Our Story</a>
-    <a href="founder.html" onclick="closeDrawer()" class="mob-sub-link">Founder &amp; Chairman</a>
-    <a href="management-team.html" onclick="closeDrawer()" class="mob-sub-link active">Our Team</a>
-    <a href="csr.html" onclick="closeDrawer()" class="mob-sub-link">CSR</a>
-  </div>
-  <a href="pillars.html" onclick="closeDrawer()">Our Pillars</a>
-  <a href="awards.html" onclick="closeDrawer()">Awards</a>
-  <a href="videos.html" onclick="closeDrawer()">Videos</a>
-  <div class="mob-news-group">
-    <span class="mob-news-label">&#x25BE; News</span>
-    <a href="news.html" onclick="closeDrawer()" class="mob-sub-link>News Feed</a>
-    <a href="newspaper-features.html" onclick="closeDrawer()" class="mob-sub-link">Newspaper Features</a>
-  </div>
-  <a href="memberships.html" onclick="closeDrawer()">Memberships</a>
-  <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
-  <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
-</nav>
-<main>
+<main id="main-content">
   <div class="page-hero" role="banner">
     <div class="page-hero-bg">
       <img src="images/team_team.jpg" alt="Royal Kings Group Management Team">
