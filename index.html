@@ -86,7 +86,7 @@ nav.scrolled .nav-logo img{height:36px;}
 
 /* ═══ HERO ═══ */
 #hero{position:relative;height:100svh;min-height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://assets.zyrosite.com/XSgOr7vEzx2UoRJ7/merlion-cinemagraph-960x540-mnlJlokxQeIMGzkK.gif');background-size:cover;background-position:center 30%;filter:brightness(0.52) saturate(0.78);}
+.hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://assets.zyrosite.com/XSgOr7vEzx2UoRJ7/merlion-cinemagraph-960x540-mnlJlokxQeIMGzkK.gif');background-size:cover;background-position:center 30%;filter:brightness(0.62) saturate(0.78);}
 .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(10,10,15,0.02) 15%,rgba(10,10,15,0.55) 100%);}
 .hero-content{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;padding:88px 20px 0;margin-top:-100px;}
 .hero-eyebrow{font-family:'Cinzel',serif;font-size:clamp(11px,1vw,15px);letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:28px;animation:fadeUp 1s 0.2s both;}
@@ -147,8 +147,36 @@ nav.scrolled .nav-logo img{height:36px;}
 .pillar-sub{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
 .pillar-desc{font-size:11.5px;line-height:1.75;color:rgba(240,236,224,0.5);font-weight:300;max-height:0;overflow:hidden;transition:max-height 0.5s,opacity 0.4s;opacity:0;}
 .pillar-card.clickable:hover .pillar-desc{max-height:120px;opacity:1;margin-top:4px;}
-.pillar-cta{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:16px;opacity:0;transform:translateY(8px);transition:opacity 0.4s 0.1s,transform 0.4s 0.1s;border:none;background:none;padding:0;}
-.pillar-card.clickable:hover .pillar-cta{opacity:1;transform:translateY(0);cursor:pointer;}
+.pillar-cta{
+  display:inline-block;
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:8px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,.55);
+  border-radius:2px;
+  padding:5px 12px;
+  margin-top:8px;
+  background:rgba(201,168,76,.04);
+  cursor:pointer;
+  transition:background .25s,color .25s;
+}
+.pillar-card:hover .pillar-cta{background:rgba(201,168,76,.15);color:#fff;}
+.pillar-card.clickable:hover .pillar-cta{
+  display:inline-block;
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:8px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,.55);
+  border-radius:2px;
+  padding:5px 12px;
+  margin-top:8px;
+  background:rgba(201,168,76,.04);
+  cursor:pointer;
+  transition:background .25s,color .25s;
+}
+.pillar-card:hover .pillar-cta{background:rgba(201,168,76,.15);color:#fff;}
 .pillar-cta::after{content:' →';}
 /* Fintech pillar — clickable */
 
@@ -984,6 +1012,74 @@ h2.sec-head {
   font-weight: 800 !important;
   letter-spacing: 3px !important;
 }
+
+/* Pillar click-to-explore hint */
+.pillar-cta-hint{
+  display:inline-block;
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:8px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,.55);
+  border-radius:2px;
+  padding:5px 12px;
+  margin-top:10px;
+  background:rgba(201,168,76,.04);
+  transition:background .25s,color .25s;
+}
+.pillar-card:hover .pillar-cta-hint,.pillar-card:focus .pillar-cta-hint{background:rgba(201,168,76,.12);color:#fff;}
+@media(max-width:768px){.pillar-cta-hint{
+  display:inline-block;
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:8px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,.55);
+  border-radius:2px;
+  padding:5px 12px;
+  margin-top:10px;
+  background:rgba(201,168,76,.04);
+  transition:background .25s,color .25s;
+}}
+
+/* WhatsApp floating button */
+.wa-float{
+  position:fixed;
+  bottom:24px;right:24px;
+  z-index:9000;
+  width:42px;height:42px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.45);
+  text-decoration:none;
+  transition:transform .25s,box-shadow .25s;
+  animation:waPulse 2.5s ease-in-out infinite;
+}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.65);}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45);}
+  50%{box-shadow:0 4px 32px rgba(37,211,102,.75),0 0 0 8px rgba(37,211,102,.12);}
+}
+.wa-float svg{width:22px;height:22px;}
+.wa-tooltip{
+  position:absolute;
+  right:62px;
+  background:rgba(10,10,15,.92);
+  color:#fff;
+  font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:11px;font-weight:600;
+  letter-spacing:.5px;
+  padding:5px 12px;
+  border-radius:4px;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s;
+  border:1px solid rgba(37,211,102,.3);
+}
+.wa-float:hover .wa-tooltip{opacity:1;}
+@media(max-width:480px){.wa-float{bottom:16px;right:16px;width:38px;height:38px;}.wa-float svg{width:22px;height:22px;}}
 </style>
 </head>
 <body>
@@ -1106,12 +1202,11 @@ h2.sec-head {
         <h3 class="pillar-title">Royal Kings<br>Pte. Ltd.</h3>
         <p class="pillar-sub">Technology &amp; Digital Solutions</p>
         <p class="pillar-desc">IT consultancy, AI-enabled platforms, and fintech capabilities driving intelligent digital transformation for modern enterprises.</p>
-        <button class="pillar-cta" tabindex="-1">Click Here to Find More</button>
+        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
       </div>
     </div>
 
-    <!-- 02 Consultancy — CLICKABLE -->
-    <div class="pillar-card clickable" onclick="openMicrosite('consultancy')" role="button" tabindex="0" aria-label="Corporate Services">
+    <!-- 02 Consultancy — CLICKABLE --><div class="pillar-card clickable" onclick="openMicrosite('consultancy')" role="button" tabindex="0" aria-label="Corporate Services">
       <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80')"></div>
       <div class="pillar-accent"></div>
       <div class="pillar-inner">
@@ -1119,12 +1214,11 @@ h2.sec-head {
         <h3 class="pillar-title">Royal Kings<br>Consultancy</h3>
         <p class="pillar-sub">Corporate Services &amp; Compliance</p>
         <p class="pillar-desc">ACRA-registered corporate secretarial services, business formation, and regulatory compliance for startups and SMEs in Singapore.</p>
-        <button class="pillar-cta" tabindex="-1">Click Here to Find More</button>
+        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
       </div>
     </div>
 
-    <!-- 03 Hospitality — CLICKABLE -->
-    <div class="pillar-card clickable" onclick="openMicrosite('hospitality')" role="button" tabindex="0" aria-label="Hospitality &amp; Events">
+    <!-- 03 Hospitality — CLICKABLE --><div class="pillar-card clickable" onclick="openMicrosite('hospitality')" role="button" tabindex="0" aria-label="Hospitality &amp; Events">
       <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=80')"></div>
       <div class="pillar-accent"></div>
       <div class="pillar-inner">
@@ -1132,12 +1226,11 @@ h2.sec-head {
         <h3 class="pillar-title">Royal Kings<br>Hospitality</h3>
         <p class="pillar-sub">Hospitality, Events &amp; Exhibition</p>
         <p class="pillar-desc">MICE strategy, corporate advisory, and thoughtfully orchestrated business experiences that elevate brand presence and engagement.</p>
-        <button class="pillar-cta" tabindex="-1">Click Here to Find More</button>
+        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
       </div>
     </div>
 
-    <!-- 04 Trading — CLICKABLE -->
-    <div class="pillar-card clickable" onclick="openMicrosite('trading')" role="button" tabindex="0" aria-label="Global Trading">
+    <!-- 04 Trading — CLICKABLE --><div class="pillar-card clickable" onclick="openMicrosite('trading')" role="button" tabindex="0" aria-label="Global Trading">
       <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=900&q=80')"></div>
       <div class="pillar-accent"></div>
       <div class="pillar-inner">
@@ -1145,18 +1238,18 @@ h2.sec-head {
         <h3 class="pillar-title">Royal Kings<br>Global Trading</h3>
         <p class="pillar-sub">Global Trading &amp; Supply Chain</p>
         <p class="pillar-desc">Cross-border wholesale, strategic sourcing, import/export facilitation and logistics coordination connecting producers to global markets.</p>
-        <button class="pillar-cta" tabindex="-1">Click Here to Find More</button>
+        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
       </div>
     </div>
 
-    <!-- 05 Fintech — CLICKABLE popup -->
-    <div class="pillar-card clickable" onclick="openMicrosite('fintech')" onkeydown="if(event.key==='Enter'||event.key===' ')openMicrosite('fintech')" role="button" tabindex="0" aria-label="Royal Kings Fintech Pte. Ltd.">
+    <!-- 05 Fintech — CLICKABLE popup --><div class="pillar-card clickable" onclick="openMicrosite('fintech')" onkeydown="if(event.key==='Enter'||event.key===' ')openMicrosite('fintech')" role="button" tabindex="0" aria-label="Royal Kings Fintech Pte. Ltd.">
       <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=900&q=80')"></div>
       <div class="pillar-inner">
         <span class="pillar-number">05 / 05</span><span class="pillar-icon">✨</span>
         <h3 class="pillar-title">Royal Kings<br>Fintech</h3>
         <p class="pillar-sub">Financial Technology &amp; Digital Innovation</p>
         <p class="pillar-desc">Premium digital finance and fintech solutions — from digital payment infrastructure to strategic wealth preservation for discerning investors.</p>
+        <button class="pillar-cta" onclick="event.stopPropagation();openMicrosite('fintech')">CLICK HERE TO FIND MORE</button>
       </div>
     </div>
 
@@ -1323,7 +1416,7 @@ var msData = {
     title: 'Royal Kings Pte. Ltd.',
     img: 'images/rkg_logo_hero.png',
     about: '<p>Royal Kings Pte. Ltd. is the Group\'s technology arm, specialising in IT consultancy, AI-enabled solutions, and fintech capabilities. We partner with forward-thinking organisations to navigate digital transformation and build competitive, data-driven enterprises.</p><p>Our approach is practical and business-aligned — we create measurable operational improvements, reduce costs, and open new revenue channels across the Asia-Pacific region.</p>',
-    services: ['IT Consultancy & System Architecture','AI & Machine Learning Integration','Fintech Solutions & Digital Payments','Data Analytics & Business Intelligence','Digital Transformation Roadmapping','Cloud Migration & Managed Services','Cybersecurity Advisory']
+    services: ['IT Consultancy & System Architecture','AI & Machine Learning Integration','Data Analytics & Business Intelligence','Digital Transformation Roadmapping','Cloud Migration & Managed Services','Cybersecurity Advisory']
   },
   consultancy: {
     tag: '02 / 05 — Corporate Services & Compliance',
@@ -1422,5 +1515,14 @@ function playHomeVid(el){
   });
 })();
 </script>
+
+<!-- WhatsApp floating button -->
+<a href="https://wa.me/6591234567?text=Hello+Royal+Kings+Group%2C+I+would+like+to+enquire+about+your+services." class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.526 5.855L.073 23.453a.5.5 0 0 0 .611.611l5.598-1.453A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.947 0-3.77-.5-5.358-1.376l-.384-.214-3.982 1.034 1.034-3.982-.214-.384A9.947 9.947 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
 </body>
 </html>
