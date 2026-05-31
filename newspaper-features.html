@@ -867,166 +867,6 @@ h2.sec-head {
   font-weight: 800 !important;
   letter-spacing: 3px !important;
 }
-
-/* WhatsApp floating button */
-.wa-float{
-  position:fixed;
-  bottom:24px;right:24px;
-  z-index:9000;
-  width:42px;height:42px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,.45);
-  text-decoration:none;
-  transition:transform .25s,box-shadow .25s;
-  animation:waPulse 2.5s ease-in-out infinite;
-}
-.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.65);}
-@keyframes waPulse{
-  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45);}
-  50%{box-shadow:0 4px 32px rgba(37,211,102,.75),0 0 0 8px rgba(37,211,102,.12);}
-}
-.wa-float svg{width:22px;height:22px;}
-.wa-tooltip{
-  position:absolute;
-  right:62px;
-  background:rgba(10,10,15,.92);
-  color:#fff;
-  font-family:'Raleway','Nunito Sans',sans-serif;
-  font-size:11px;font-weight:600;
-  letter-spacing:.5px;
-  padding:5px 12px;
-  border-radius:4px;
-  white-space:nowrap;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .2s;
-  border:1px solid rgba(37,211,102,.3);
-}
-.wa-float:hover .wa-tooltip{opacity:1;}
-@media(max-width:480px){.wa-float{bottom:16px;right:16px;width:38px;height:38px;}.wa-float svg{width:22px;height:22px;}}
-</style>
-
-<style>
-
-/* ══ Newspaper Features — Clean Rebuild ══ */
-.np-filter-bar{display:flex;gap:8px;flex-wrap:wrap;padding:28px 60px 0;justify-content:center;}
-.np-filter-btn{font-family:'Raleway','Nunito Sans',sans-serif;font-size:9px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:2px;cursor:pointer;
-  background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.25);color:rgba(201,168,76,.75);
-  transition:all .25s;}
-.np-filter-btn.active,.np-filter-btn:hover{background:var(--gold);color:var(--deep);border-color:var(--gold);}
-.np-results-bar{text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;
-  text-transform:uppercase;color:var(--muted);padding:12px 0 4px;}
-
-/* Sections */
-.cat-section{padding:40px 60px 0;}
-.cat-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:12px;
-  border-bottom:1px solid rgba(201,168,76,.15);}
-.cat-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,28px);
-  font-weight:300;color:var(--text);white-space:nowrap;}
-.cat-rule{flex:1;height:1px;background:linear-gradient(to right,rgba(201,168,76,.2),transparent);}
-.cat-count{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--gold);white-space:nowrap;}
-
-/* Grid */
-.np-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;}
-
-/* Card */
-.np-card{background:var(--surface);border:1px solid rgba(201,168,76,.12);border-radius:6px;
-  overflow:hidden;display:flex;flex-direction:column;
-  transition:border-color .25s,transform .25s,box-shadow .25s;}
-.np-card:hover{border-color:rgba(201,168,76,.38);transform:translateY(-3px);
-  box-shadow:0 10px 32px rgba(0,0,0,.55);}
-
-/* Thumbnail */
-.np-thumb{position:relative;height:200px;overflow:hidden;cursor:pointer;background:var(--mid);}
-.np-img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
-  transition:transform .4s;}
-.np-card:hover .np-img{transform:scale(1.04);}
-.np-hover{position:absolute;inset:0;background:rgba(10,10,15,.65);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-  opacity:0;transition:opacity .25s;}
-.np-card:hover .np-hover,.np-thumb:focus .np-hover{opacity:1;}
-.np-hover-icon{font-size:24px;}
-.np-hover-txt{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;
-  text-transform:uppercase;color:#fff;font-weight:700;}
-
-/* Card body */
-.np-body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}
-.np-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
-.np-pub{font-family:'Raleway','Nunito Sans',sans-serif;font-size:9px;font-weight:800;
-  letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
-.np-date{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:1.5px;
-  text-transform:uppercase;color:var(--muted);}
-.np-headline{font-family:'Raleway','Nunito Sans',sans-serif;font-size:12.5px;font-weight:700;
-  color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;
-  -webkit-box-orient:vertical;overflow:hidden;}
-.np-desc{font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.65;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1;}
-.np-btn{font-family:'Cinzel',serif;font-size:8px;font-weight:700;letter-spacing:2px;
-  text-transform:uppercase;color:var(--gold);background:transparent;border:none;
-  cursor:pointer;padding:6px 0 2px;text-align:left;transition:color .2s;margin-top:auto;}
-.np-btn:hover{color:#fff;}
-
-/* Lightbox */
-#lb{position:fixed;inset:0;z-index:9800;background:rgba(5,5,10,.94);
-  display:none;align-items:center;justify-content:center;padding:16px;
-  animation:lbFadeIn .2s ease;}
-#lb.open{display:flex;}
-@keyframes lbFadeIn{from{opacity:0}to{opacity:1}}
-#lb-box{position:relative;max-width:860px;width:100%;max-height:92vh;
-  background:var(--dark);border:1px solid rgba(201,168,76,.22);border-radius:8px;
-  overflow:hidden;display:flex;flex-direction:column;
-  box-shadow:0 20px 80px rgba(0,0,0,.9),0 0 0 1px rgba(201,168,76,.08);}
-#lb-header{display:flex;align-items:center;justify-content:space-between;
-  padding:12px 18px;background:linear-gradient(to right,var(--deep),var(--mid));
-  border-bottom:1px solid rgba(201,168,76,.15);flex-shrink:0;}
-#lb-header-info{display:flex;flex-direction:column;gap:2px;}
-#lb-pub-name{font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:2px;
-  text-transform:uppercase;color:var(--gold);}
-#lb-pub-date{font-family:'Cinzel',serif;font-size:8px;letter-spacing:1.5px;color:var(--muted);}
-#lb-close{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);
-  color:var(--gold);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:14px;
-  display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
-#lb-close:hover{background:var(--gold);color:var(--deep);}
-#lb-img-wrap{flex:1;overflow:auto;position:relative;min-height:200px;
-  background:#111;display:flex;align-items:flex-start;justify-content:center;}
-#lb-spinner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  display:none;z-index:2;}
-#lb-spinner.show{display:block;}
-#lb-spinner svg{animation:spin .8s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg)}}
-#lb-img{width:100%;height:auto;display:block;transition:opacity .3s;}
-#lb-img.fading{opacity:0;}
-#lb-footer{padding:12px 18px;background:var(--deep);border-top:1px solid rgba(201,168,76,.12);
-  display:flex;align-items:center;justify-content:space-between;flex-shrink:0;flex-wrap:wrap;gap:8px;}
-#lb-headline{font-family:'Raleway','Nunito Sans',sans-serif;font-size:12px;font-weight:600;
-  color:var(--text);line-height:1.4;flex:1;min-width:0;}
-.lb-nav-btns{display:flex;gap:8px;flex-shrink:0;}
-.lb-nav-btn{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);
-  color:var(--gold);padding:6px 14px;border-radius:2px;cursor:pointer;
-  font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;transition:all .2s;}
-.lb-nav-btn:hover:not(:disabled){background:var(--gold);color:var(--deep);}
-.lb-nav-btn:disabled{opacity:.3;cursor:default;}
-#lb-counter{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--muted);}
-
-/* Desc strip */
-#lb-desc-strip{padding:8px 18px;background:rgba(201,168,76,.04);
-  border-bottom:1px solid rgba(201,168,76,.08);}
-#lb-desc-text{font-size:12px;color:rgba(255,255,255,.65);line-height:1.65;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-
-/* Hidden cards */
-.np-card[data-hidden="true"]{display:none;}
-
-@media(max-width:1100px){.np-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:900px){.np-grid{grid-template-columns:repeat(2,1fr);}.cat-section{padding:32px 24px 0;}.np-filter-bar{padding:20px 24px 0;}}
-@media(max-width:600px){.np-grid{grid-template-columns:1fr;}.cat-section{padding:24px 14px 0;}.np-filter-bar{padding:16px 14px 0;}.np-thumb{height:220px;}
-  #lb-box{max-height:96vh;}.lb-nav-btns{order:3;width:100%;justify-content:center;}
-  #lb-headline{font-size:11px;}}
-
 </style>
 </head>
 <body>
@@ -1091,7 +931,6 @@ h2.sec-head {
   <a href="testimonials.html" onclick="closeDrawer()">Testimonials</a>
   <a href="contact.html" onclick="closeDrawer()" style="color:var(--gold);">Contact Us</a>
 </nav>
-
 <main id="main-content">
   <div class="page-hero" role="banner">
     <div class="page-hero-bg" aria-hidden="true"></div>
@@ -1108,822 +947,494 @@ h2.sec-head {
       <span class="cur" aria-current="page">Newspaper Features</span>
     </div>
   </nav>
-
-  <!-- Filter bar -->
-  <div class="np-filter-bar" role="toolbar" aria-label="Filter by region">
-    <button class="np-filter-btn active" data-cat="all"           onclick="filterCat('all')">All Features</button>
-    <button class="np-filter-btn"        data-cat="singapore"     onclick="filterCat('singapore')">🇸🇬 Singapore</button>
-    <button class="np-filter-btn"        data-cat="srilanka"      onclick="filterCat('srilanka')">🇱🇰 Sri Lanka</button>
-    <button class="np-filter-btn"        data-cat="india"         onclick="filterCat('india')">🇮🇳 India</button>
-    <button class="np-filter-btn"        data-cat="international" onclick="filterCat('international')">🌐 International</button>
+  <div class="intro-bar">
+    <h2>Royal Kings Group in the <em>Press</em></h2>
+    <div class="gold-rule"></div>
+    <p>Print and digital media coverage from Tamil Murasu, Manichudar, Trinity Mirror, Makkal Kural, Chief of Staff Asia, Yahoo Finance and more — reporting on Royal Kings Group's business achievements, partnerships and community contributions across Singapore and Asia-Pacific.</p>
   </div>
-  <p class="np-results-bar" id="results-info" aria-live="polite"></p>
-
-  
-<section class="cat-section" id="sec-singapore" aria-label="Singapore Press">
-  <div class="cat-header">
-    <h2>🇸🇬 Singapore Press</h2>
-    <div class="cat-rule"></div>
-    <span class="cat-count">16 features</span>
+  <div class="stats-bar">
+    <div class="si"><span class="sn">29</span><span class="sl">Media Features</span></div>
+    <div class="si"><span class="sn">9</span><span class="sl">Publications</span></div>
+    <div class="si"><span class="sn">3</span><span class="sl">Press Regions</span></div>
+    <div class="si"><span class="sn">2022–2026</span><span class="sl">Coverage Years</span></div>
   </div>
-  <div class="np-grid" id="grid-singapore">
 
-<article class="np-card" id="sg01" data-cat="singapore" data-year="2026">
-  <div class="np-thumb" onclick="openClip('sg01')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('sg01')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="images/npth_sg01.jpg" alt="Tamil Murasu — Community Iftar: A Wonderful Celebration in a Peaceful Atmosphere" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
+  <div class="filter-wrap">
+    <span class="filter-section-label">Filter by Region</span>
+    <div class="filter-bar" role="tablist" aria-label="Filter by region">
+<button class="tab-btn active" data-cat="all" onclick="filterCat('all')">All <span class="tab-count">11</span></button>
+<button class="tab-btn" data-cat="singapore" onclick="filterCat('singapore')">Singapore Press <span class="tab-count">2</span></button>
+<button class="tab-btn" data-cat="india" onclick="filterCat('india')">India Press <span class="tab-count">8</span></button>
+<button class="tab-btn" data-cat="international" onclick="filterCat('international')">International Press <span class="tab-count">1</span></button>
     </div>
+    <span class="filter-section-label">Filter by Publication</span>
+    <div class="pub-bar" role="group" aria-label="Filter by publication">
+<button class="pub-pill active" data-pub="all" onclick="filterPub('all')">All Publications</button>
+<button class="pub-pill" data-pub="benzinga" onclick="filterPub('benzinga')">Benzinga</button>
+<button class="pub-pill" data-pub="chiefofstaffasia" onclick="filterPub('chiefofstaffasia')">Chief of Staff Asia</button>
+<button class="pub-pill" data-pub="makkalkuraltamildaily" onclick="filterPub('makkalkuraltamildaily')">Makkal Kural Tamil Daily</button>
+<button class="pub-pill" data-pub="manichudartamildaily" onclick="filterPub('manichudartamildaily')">Manichudar Tamil Daily</button>
+<button class="pub-pill" data-pub="nambikkaiseithigal" onclick="filterPub('nambikkaiseithigal')">Nambikkai Seithigal</button>
+<button class="pub-pill" data-pub="tamilmedia" onclick="filterPub('tamilmedia')">Tamil Media</button>
+<button class="pub-pill" data-pub="tamilmurasu" onclick="filterPub('tamilmurasu')">Tamil Murasu</button>
+<button class="pub-pill" data-pub="trinitymirror" onclick="filterPub('trinitymirror')">Trinity Mirror</button>
+<button class="pub-pill" data-pub="yahoofinance" onclick="filterPub('yahoofinance')">Yahoo Finance</button>
+    </div>
+  </div>
+  <p class="results-info" id="results-info" aria-live="polite">11 features displayed (current year)</p>
+
+  <!-- SINGAPORE PRESS -->
+  <section class="cat-section" id="sec-singapore" aria-label="Singapore Press">
+    <div class="cat-header">
+      <h2 class="sg">&#x1F1F8;&#x1F1EC; Singapore Press</h2>
+      <div class="cat-rule"></div>
+      <span class="cat-count"> 1 clipping</span>
+    </div>
+    <div class="np-grid" id="grid-singapore">
+<article class="np-card" data-cat="singapore" data-pub="tamilmurasu" data-year="2026" id="sg01">
+  <div class="np-thumb" onclick="openClipping('sg01')">
+    <img src="images/npth_sg01.jpg" alt="Tamil Murasu — Community Iftar: A Wonderful Celebration in a Peaceful " loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇸🇬 Singapore</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">21 March 2026</span>
-    </div>
+    <div class="np-pub-row"><span class="np-pub">Tamil Murasu</span><span class="np-date">21 March 2026</span></div>
     <h3 class="np-headline">Community Iftar: A Wonderful Celebration in a Peaceful Atmosphere</h3>
-    <p class="np-desc">Tamil Murasu, Singapore's premier Tamil-language daily, covers Royal Kings Group's community Iftar event bringing together Singapore's diverse communities in a celebration of unity and harmony.</p>
-    <button class="np-btn" onclick="openClip('sg01')">View Full Page &#8594;</button>
+    <p class="np-desc">Tamil Murasu (SPH Media) covers Royal Kings Group's community Iftar dinner, attended by prominent community leaders and families from diverse backgrounds across Singapore.</p>
+    <button class="np-view-btn" onclick="openClipping('sg01')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="ar01" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar01')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar01')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/01-Nzzy0nRnwZaGDROM.jpg" alt="Tamil Murasu — Tamil Murasu Archive Feature — Royal Kings Group Community Leadership" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive Feature — Royal Kings Group Community Leadership</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar01')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar02" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar02')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar02')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/02-w5X06B8DgLULGKt9.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Business Excellence Coverage" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Business Excellence Coverage</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar02')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar03" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar03')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar03')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/03-vQfFwcaKUXZrbSjq.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Community Initiative" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Community Initiative</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar03')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar04" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar04')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar04')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/04-q6Y3th2NiyaIg81s.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Event Coverage" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Event Coverage</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar04')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar05" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar05')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar05')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/05-aYtoizAVRKaWvV2a.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Recognition Feature" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Recognition Feature</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar05')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar06" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar06')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar06')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/06-7ukKXlyxGTOKHnsS.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Community Contribution" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Community Contribution</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar06')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar07" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar07')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar07')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/07-3o2R3OnYb7tF7IF1.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Partnership Announcement" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Partnership Announcement</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar07')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar08" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar08')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar08')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/08-QsYaxtFB6eaGz7d5.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Award & Achievement" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Award & Achievement</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar08')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar09" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar09')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar09')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/09-TY0Vl5pPJ7wQLY7W.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Leadership Feature" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Leadership Feature</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar09')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar10" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar10')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar10')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/10-a0qtvQfszvR8vqyC.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Corporate News" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Corporate News</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar10')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar11" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar11')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar11')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/11-GfDXoJIjtd2iWCqy.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Social Initiative" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Social Initiative</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar11')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar12" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar12')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar12')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/12-s3jUvXE1lQSgvbRv.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Business Development" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Business Development</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar12')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar13" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar13')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar13')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/13-7KeSJMXmOqJyx9Au.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Annual Feature" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Annual Feature</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar13')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar14" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar14')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar14')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/14-8qCeJYZx5vu6fP31.jpg" alt="Tamil Murasu — Tamil Murasu Archive — Royal Kings Group Community Impact" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Murasu Archive — Royal Kings Group Community Impact</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar14')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="ar15" data-cat="singapore" data-year="2023">
-  <div class="np-thumb" onclick="openClip('ar15')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('ar15')"
-       aria-label="View Tamil Murasu clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/15-MecTmVp3RrUCvIdv.jpg" alt="Tamil Murasu — Tamil Muratu Archive — Royal Kings Group Media Coverage" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Tamil Murasu</span>
-      <span class="np-date">Archive</span>
-    </div>
-    <h3 class="np-headline">Tamil Muratu Archive — Royal Kings Group Media Coverage</h3>
-    <p class="np-desc">Archived Tamil Murasu newspaper feature covering Royal Kings Group events, recognitions, and community activities.</p>
-    <button class="np-btn" onclick="openClip('ar15')">View Full Page &#8594;</button>
-  </div>
-</article>
-  </div>
-</section>
-  
-<section class="cat-section" id="sec-srilanka" aria-label="Sri Lanka Press">
-  <div class="cat-header">
-    <h2>🇱🇰 Sri Lanka Press</h2>
-    <div class="cat-rule"></div>
-    <span class="cat-count">3 features</span>
-  </div>
-  <div class="np-grid" id="grid-srilanka">
 
-<article class="np-card" id="uth01" data-cat="srilanka" data-year="2026">
-  <div class="np-thumb" onclick="openClip('uth01')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('uth01')"
-       aria-label="View Uthayam Daily (Sri Lanka) clipping">
-    <img src="images/npth_uth01.jpg" alt="Uthayam Daily (Sri Lanka) — Royal Kings Group & Akila Eelam Makkal Congress Leader Riyadh Badyuthin Meeting in Singapore" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Uthayam Daily (Sri Lanka)</span>
-      <span class="np-date">27 April 2026</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group & Akila Eelam Makkal Congress Leader Riyadh Badyuthin Meeting in Singapore</h3>
-    <p class="np-desc">Sri Lanka's Uthayam Daily reports on the significant visit of Akila Eelam Makkal Congress leader Riyadh Badyuthin MP to Royal Kings Group's Singapore headquarters, marking a strengthening of bilateral ties.</p>
-    <button class="np-btn" onclick="openClip('uth01')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="uth02" data-cat="srilanka" data-year="2026">
-  <div class="np-thumb" onclick="openClip('uth02')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('uth02')"
-       aria-label="View Uthayam Daily (Sri Lanka) clipping">
-    <img src="images/npth_uth02.jpg" alt="Uthayam Daily (Sri Lanka) — Malaysian Literary Journalist Pithaval-Lahkan visits Royal Kings Group Founder" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Uthayam Daily (Sri Lanka)</span>
-      <span class="np-date">28 May 2026</span>
-    </div>
-    <h3 class="np-headline">Malaysian Literary Journalist Pithaval-Lahkan visits Royal Kings Group Founder</h3>
-    <p class="np-desc">Uthayam Daily covers the visit of prominent Malaysian Tamil literary journalist and activist Pithaval-Lahkan to Royal Kings Group Founder Sirajudeen in Singapore, discussing Tamil literary development.</p>
-    <button class="np-btn" onclick="openClip('uth02')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="uth03" data-cat="srilanka" data-year="2026">
-  <div class="np-thumb" onclick="openClip('uth03')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('uth03')"
-       aria-label="View Uthayam Daily (Sri Lanka) clipping">
-    <img src="images/npth_uth03.jpg" alt="Uthayam Daily (Sri Lanka) — Malaysia Front-line Trade Industry Leader visits Royal Kings Group" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Uthayam Daily (Sri Lanka)</span>
-      <span class="np-date">28 May 2026</span>
-    </div>
-    <h3 class="np-headline">Malaysia Front-line Trade Industry Leader visits Royal Kings Group</h3>
-    <p class="np-desc">Uthayam Daily reports on a senior Malaysian trade and industry official visiting Royal Kings Group Singapore headquarters for strategic business and trade collaboration discussions.</p>
-    <button class="np-btn" onclick="openClip('uth03')">View Full Page &#8594;</button>
-  </div>
-</article>
-  </div>
-</section>
-  
-<section class="cat-section" id="sec-india" aria-label="India Press">
-  <div class="cat-header">
-    <h2>🇮🇳 India Press</h2>
-    <div class="cat-rule"></div>
-    <span class="cat-count">15 features</span>
-  </div>
-  <div class="np-grid" id="grid-india">
+  </section>
+  <div class="section-gap"></div>
 
-<article class="np-card" id="in01" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('in01')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('in01')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_in01.jpg" alt="Manichudar Tamil Daily — Royal Kings Group Partners with Mission ShakthiSAT for Space Technology" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
+  <!-- INDIA PRESS -->
+  <section class="cat-section" id="sec-india" aria-label="India Press">
+    <div class="cat-header">
+      <h2 class="in">&#x1F1EE;&#x1F1F3; India Press</h2>
+      <div class="cat-rule"></div>
+      <span class="cat-count">8 clippings (current year)</span>
     </div>
+    <div class="np-grid" id="grid-india">
+<article class="np-card" data-cat="india" data-pub="manichudartamildaily" data-year="2026" id="in01">
+  <div class="np-thumb" onclick="openClipping('in01')">
+    <img src="images/npth_in01.jpg" alt="Manichudar Tamil Daily — Royal Kings Group Partners with Mission ShakthiSAT for " loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">May 2026</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group Partners with Mission ShakthiSAT for Space Technology</h3>
-    <p class="np-desc">Manichudar Tamil Daily reports on Royal Kings Group's strategic partnership and MOU signing with Mission ShakthiSAT, advancing Singapore's space technology collaboration with India.</p>
-    <button class="np-btn" onclick="openClip('in01')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Manichudar Tamil Daily</span><span class="np-date">8 May 2026</span></div>
+    <h3 class="np-headline">Royal Kings Group Partners with Mission ShakthiSAT for Women's STEM Empowerment</h3>
+    <p class="np-desc">Manichudar reports on Royal Kings Group's global partnership with Mission ShakthiSAT, supporting women and girls in science, technology and aerospace education across 108+ countries.</p>
+    <button class="np-view-btn" onclick="openClipping('in01')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="in02" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('in02')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('in02')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_in02.jpg" alt="Manichudar Tamil Daily — Royal Kings Group Founder Receives Commemorative Book on Prophet Muhammad's Life" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card" data-cat="india" data-pub="manichudartamildaily" data-year="2026" id="in02">
+  <div class="np-thumb" onclick="openClipping('in02')">
+    <img src="images/npth_in02.jpg" alt="Manichudar Tamil Daily — Royal Kings Group Founder Receives Book on Prophet Muha" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">March 2026</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group Founder Receives Commemorative Book on Prophet Muhammad's Life</h3>
-    <p class="np-desc">Manichudar covers the cultural exchange where a distinguished book on Prophet Muhammad's life and teachings was presented to Royal Kings Group Founder during a community gathering.</p>
-    <button class="np-btn" onclick="openClip('in02')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Manichudar Tamil Daily</span><span class="np-date">18 March 2026</span></div>
+    <h3 class="np-headline">Royal Kings Group Founder Receives Book on Prophet Muhammad in Chennai</h3>
+    <p class="np-desc">Manichudar features Royal Kings Group's Founder Mr. Sirajudeen receiving the prestigious book "Irai Thoothar Muhammad" from Universal Publishers at a private hotel in Chennai.</p>
+    <button class="np-view-btn" onclick="openClipping('in02')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="in03" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('in03')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('in03')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_in03.jpg" alt="Manichudar Tamil Daily — Royal Kings Group Participates in Saaliheen Education Foundation Event" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card" data-cat="india" data-pub="manichudartamildaily" data-year="2026" id="in03">
+  <div class="np-thumb" onclick="openClipping('in03')">
+    <img src="images/npth_in03.jpg" alt="Manichudar Tamil Daily — Royal Kings Group Participates in Saaliheen Education F" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">April 2026</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group Participates in Saaliheen Education Foundation Event</h3>
-    <p class="np-desc">Manichudar Tamil Daily covers Royal Kings Group's active participation in the Saaliheen Education Foundation's community development and educational empowerment event.</p>
-    <button class="np-btn" onclick="openClip('in03')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Manichudar Tamil Daily</span><span class="np-date">4 April 2026</span></div>
+    <h3 class="np-headline">Royal Kings Group Participates in Saaliheen Education Foundation Anniversary Event</h3>
+    <p class="np-desc">Manichudar covers Royal Kings Group's participation in the Saaliheen Education Foundation anniversary event in Singapore, strengthening community education and development initiatives.</p>
+    <button class="np-view-btn" onclick="openClipping('in03')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="in04" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('in04')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('in04')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_in04.jpg" alt="Manichudar Tamil Daily — Royal Kings Group and SeaPool Group Sign Shipping & Logistics Collaboration" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card" data-cat="india" data-pub="manichudartamildaily" data-year="2026" id="in04">
+  <div class="np-thumb" onclick="openClipping('in04')">
+    <img src="images/npth_in04.jpg" alt="Manichudar Tamil Daily — Royal Kings Group & SeaPool Group Discuss Shipping and " loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">April 2026</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group and SeaPool Group Sign Shipping & Logistics Collaboration</h3>
-    <p class="np-desc">Royal Kings Group partners with SeaPool Group in a landmark international shipping and logistics agreement, strengthening supply chain capabilities across Asia-Pacific.</p>
-    <button class="np-btn" onclick="openClip('in04')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Manichudar Tamil Daily</span><span class="np-date">17 April 2026</span></div>
+    <h3 class="np-headline">Royal Kings Group & SeaPool Group Discuss Shipping and Logistics Innovation</h3>
+    <p class="np-desc">Manichudar reports on high-level strategic discussions between Royal Kings Group and India's SeaPool Group on technology advancement in shipping, port facilities and logistics.</p>
+    <button class="np-view-btn" onclick="openClipping('in04')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="in05" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('in05')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('in05')"
-       aria-label="View Makkal Kural clipping">
-    <img src="images/npth_in05.jpg" alt="Makkal Kural — Royal Kings Group and SeaPool — Singapore Shipping & Logistics Partnership" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card" data-cat="india" data-pub="makkalkuraltamildaily" data-year="2026" id="in05">
+  <div class="np-thumb" onclick="openClipping('in05')">
+    <img src="images/npth_in05.jpg" alt="Makkal Kural Tamil Daily — Royal Kings Group & SeaPool Groups Collaborate on Shipp" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Makkal Kural</span>
-      <span class="np-date">April 2026</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group and SeaPool — Singapore Shipping & Logistics Partnership</h3>
-    <p class="np-desc">Makkal Kural Independent Tamil Daily covers the Royal Kings Group and SeaPool's strategic maritime logistics partnership for international shipping connectivity.</p>
-    <button class="np-btn" onclick="openClip('in05')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Makkal Kural Tamil Daily</span><span class="np-date">17 April 2026</span></div>
+    <h3 class="np-headline">Royal Kings Group & SeaPool Groups Collaborate on Shipping and Logistics</h3>
+    <p class="np-desc">Makkal Kural covers the strategic meeting between Royal Kings Group and SeaPool Group on shipping industry advancement, logistics technology and future global trade partnerships.</p>
+    <button class="np-view-btn" onclick="openClipping('in05')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="in06" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('in06')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('in06')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_in06.jpg" alt="Manichudar Tamil Daily — Mission ShakthiSAT MOU Signing Ceremony at Taj Coromandel Chennai" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card" data-cat="india" data-pub="makkalkuraltamildaily" data-year="2026" id="in06">
+  <div class="np-thumb" onclick="openClipping('in06')">
+    <img src="images/npth_in06.jpg" alt="Makkal Kural Tamil Daily — Mission ShakthiSAT MOU Signed — Royal Kings Group Empow" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">May 2026</span>
-    </div>
-    <h3 class="np-headline">Mission ShakthiSAT MOU Signing Ceremony at Taj Coromandel Chennai</h3>
-    <p class="np-desc">Manichudar Tamil Daily reports on the historic MOU signing ceremony between Royal Kings Group and Mission ShakthiSAT at the prestigious Taj Coromandel Hotel in Chennai.</p>
-    <button class="np-btn" onclick="openClip('in06')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Makkal Kural Tamil Daily</span><span class="np-date">8 May 2026</span></div>
+    <h3 class="np-headline">Mission ShakthiSAT MOU Signed — Royal Kings Group Empowers Girls in STEM</h3>
+    <p class="np-desc">Makkal Kural reports on the landmark MOU signing between Royal Kings Group and Kento Kaizen for Mission ShakthiSAT — promoting aerospace careers for girls in 108 countries.</p>
+    <button class="np-view-btn" onclick="openClipping('in06')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="in07" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('in07')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('in07')"
-       aria-label="View Trinity Mirror clipping">
-    <img src="images/npth_in07.jpg" alt="Trinity Mirror — Royal Kings Group Founder meets MONFI Digital Bank Leadership in Kuala Lumpur" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card" data-cat="india" data-pub="trinitymirror" data-year="2026" id="in07">
+  <div class="np-thumb" onclick="openClipping('in07')">
+    <img src="images/npth_in07.jpg" alt="Trinity Mirror — Royal Kings Group Holds Strategic Meet in Kuala Lumpur " loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Trinity Mirror</span>
-      <span class="np-date">April 2026</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group Founder meets MONFI Digital Bank Leadership in Kuala Lumpur</h3>
-    <p class="np-desc">Trinity Mirror covers Royal Kings Group Founder's meeting with MONFI Digital Bank's leadership team in Kuala Lumpur for fintech and digital banking collaboration opportunities.</p>
-    <button class="np-btn" onclick="openClip('in07')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Trinity Mirror</span><span class="np-date">21 April 2026</span></div>
+    <h3 class="np-headline">Royal Kings Group Holds Strategic Meet in Kuala Lumpur with MONFI Digital Bank</h3>
+    <p class="np-desc">Trinity Mirror covers Royal Kings Group's high-level meeting in Malaysia with MONFI Digital Bank Ltd., exploring digital banking, fintech and cross-border financial services.</p>
+    <button class="np-view-btn" onclick="openClipping('in07')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="in08" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('in08')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('in08')"
-       aria-label="View Trinity Mirror clipping">
-    <img src="images/npth_in08.jpg" alt="Trinity Mirror — Mission ShakthiSAT MOU — Royal Kings Group at Taj Coromandel Chennai" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card" data-cat="india" data-pub="trinitymirror" data-year="2026" id="in08">
+  <div class="np-thumb" onclick="openClipping('in08')">
+    <img src="images/npth_in08.jpg" alt="Trinity Mirror — Royal Kings Group Partners with Mission Shakthi SAT for" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Trinity Mirror</span>
-      <span class="np-date">May 2026</span>
-    </div>
-    <h3 class="np-headline">Mission ShakthiSAT MOU — Royal Kings Group at Taj Coromandel Chennai</h3>
-    <p class="np-desc">Trinity Mirror covers the landmark signing of the MOU between Royal Kings Group and Mission ShakthiSAT, marking a new era of space technology collaboration.</p>
-    <button class="np-btn" onclick="openClip('in08')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Trinity Mirror</span><span class="np-date">7 May 2026</span></div>
+    <h3 class="np-headline">Royal Kings Group Partners with Mission Shakthi SAT for Global Women's STEM Initiative</h3>
+    <p class="np-desc">Trinity Mirror reports Royal Kings Group's partnership with Mission ShakthiSAT, formalised with an MOU at Taj Coromandel, Chennai — supporting women's empowerment in science and technology.</p>
+    <button class="np-view-btn" onclick="openClipping('in08')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
-</article>
-<article class="np-card" id="man01" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('man01')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('man01')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_man01.jpg" alt="Manichudar Tamil Daily — Rucibetham Book Launch — Royal Kings Group Founder Receives First Copy" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">25 May 2026</span>
-    </div>
-    <h3 class="np-headline">Rucibetham Book Launch — Royal Kings Group Founder Receives First Copy</h3>
-    <p class="np-desc">Manichudar Tamil Daily reports on the book launch of "Rucibetham" by Singapore Tamil author Sha Nawaz, with Royal Kings Group Founder receiving the first launch copy.</p>
-    <button class="np-btn" onclick="openClip('man01')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="man02" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('man02')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('man02')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_man02.jpg" alt="Manichudar Tamil Daily — Riyadh Badyuthin MP meets Royal Kings Group Singapore" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+</article>    </div>
+<div class="view-more-row" id="vm-india">
+  <button class="vm-btn" onclick="toggleOlder('india')" id="vm-btn-india"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Older Articles (15 entries from 2025, 2024, 2023, 2022)</button>
+</div><div class="older-section" id="older-india" style="display:none">
+  <div class="older-header"><span class="older-label">Archive: 2025, 2024, 2023, 2022</span></div>
+  <div class="np-grid" id="older-grid-india">
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2025" id="ar01">
+  <div class="np-thumb" onclick="openClippingUrl('ar01','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/01-Nzzy0nRnwZaGDROM.jpg','Tamil Media','1 January 2025')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/01-Nzzy0nRnwZaGDROM.jpg" alt="Tamil Media — Royal Kings Group Featured in Tamil Regional Press — Ne" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2025</span>
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">25 April 2026</span>
-    </div>
-    <h3 class="np-headline">Riyadh Badyuthin MP meets Royal Kings Group Singapore</h3>
-    <p class="np-desc">Manichudar covers the visit of Sri Lankan Member of Parliament Riyadh Badyuthin to Royal Kings Group Singapore headquarters, discussing bilateral ties and future cooperation.</p>
-    <button class="np-btn" onclick="openClip('man02')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">1 January 2025</span></div>
+    <h3 class="np-headline">Royal Kings Group Featured in Tamil Regional Press — New Year 2025</h3>
+    <p class="np-desc">Tamil regional press coverage of Royal Kings Group's business achievements and community contributions as the Group enters 2025 with expanded operations across Asia-Pacific.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar01','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/01-Nzzy0nRnwZaGDROM.jpg','Tamil Media','1 January 2025')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="man03" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('man03')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('man03')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_man03.jpg" alt="Manichudar Tamil Daily — Malaysian Tamil Islamic Journalist Pithaval-Lahkan meets Royal Kings Group" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2024" id="ar02">
+  <div class="np-thumb" onclick="openClippingUrl('ar02','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/02-w5X06B8DgLULGKt9.jpg','Tamil Media','29 December 2024')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/02-w5X06B8DgLULGKt9.jpg" alt="Tamil Media — Royal Kings Group Year-End Feature in Tamil Press" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2024</span>
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">25 May 2026</span>
-    </div>
-    <h3 class="np-headline">Malaysian Tamil Islamic Journalist Pithaval-Lahkan meets Royal Kings Group</h3>
-    <p class="np-desc">Manichudar Tamil Daily covers the meeting between prominent Malaysian Tamil Islamic journalist Pithaval-Lahkan and Royal Kings Group Founder in Singapore.</p>
-    <button class="np-btn" onclick="openClip('man03')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">29 December 2024</span></div>
+    <h3 class="np-headline">Royal Kings Group Year-End Feature in Tamil Press</h3>
+    <p class="np-desc">Tamil press year-end coverage highlighting Royal Kings Group's achievements, awards and community milestones throughout 2024.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar02','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/02-w5X06B8DgLULGKt9.jpg','Tamil Media','29 December 2024')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="man04" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('man04')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('man04')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_man04.jpg" alt="Manichudar Tamil Daily — Malaysia Senior Trade Industry Leader meets Royal Kings Group Founder" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2024" id="ar03">
+  <div class="np-thumb" onclick="openClippingUrl('ar03','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/03-vQfFwcaKUXZrbSjq.jpg','Tamil Media','9 December 2024')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/03-vQfFwcaKUXZrbSjq.jpg" alt="Tamil Media — Royal Kings Group Business Milestones Covered in Tamil " loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2024</span>
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">27 May 2026</span>
-    </div>
-    <h3 class="np-headline">Malaysia Senior Trade Industry Leader meets Royal Kings Group Founder</h3>
-    <p class="np-desc">A senior Malaysian trade and industry leader's visit to Royal Kings Group Singapore for discussions on trade development and business expansion across the region.</p>
-    <button class="np-btn" onclick="openClip('man04')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">9 December 2024</span></div>
+    <h3 class="np-headline">Royal Kings Group Business Milestones Covered in Tamil Regional Media</h3>
+    <p class="np-desc">Tamil regional media features Royal Kings Group's strategic milestones and business developments in December 2024.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar03','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/03-vQfFwcaKUXZrbSjq.jpg','Tamil Media','9 December 2024')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="man05" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('man05')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('man05')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_man05.jpg" alt="Manichudar Tamil Daily — Tamil Actor Surathkumar & Wife Radhika Welcomed at Singapore Airport" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2024" id="ar04">
+  <div class="np-thumb" onclick="openClippingUrl('ar04','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/04-q6Y3th2NiyaIg81s.jpg','Tamil Media','28 November 2024')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/04-q6Y3th2NiyaIg81s.jpg" alt="Tamil Media — Royal Kings Group Community Initiatives Featured in Tam" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2024</span>
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">24 May 2026</span>
-    </div>
-    <h3 class="np-headline">Tamil Actor Surathkumar & Wife Radhika Welcomed at Singapore Airport</h3>
-    <p class="np-desc">Manichudar Tamil Daily captures the warm welcome extended to popular Tamil film actor Surathkumar and his wife Radhika by Royal Kings Group leadership at Singapore Changi Airport.</p>
-    <button class="np-btn" onclick="openClip('man05')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">28 November 2024</span></div>
+    <h3 class="np-headline">Royal Kings Group Community Initiatives Featured in Tamil Press</h3>
+    <p class="np-desc">Tamil press coverage of Royal Kings Group's community service initiatives and corporate social responsibility activities in November 2024.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar04','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/04-q6Y3th2NiyaIg81s.jpg','Tamil Media','28 November 2024')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="man06" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('man06')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('man06')"
-       aria-label="View Manichudar Tamil Daily clipping">
-    <img src="images/npth_man06.jpg" alt="Manichudar Tamil Daily — Dato Sri Mukhamu Ikbal — Malaysia Front-line Trade Leader visits Royal Kings" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2024" id="ar05">
+  <div class="np-thumb" onclick="openClippingUrl('ar05','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/05-aYtoizAVRKaWvV2a.jpg','Tamil Media','30 November 2024')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/05-aYtoizAVRKaWvV2a.jpg" alt="Tamil Media — Royal Kings Group Recognised in Tamil Regional Publicat" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2024</span>
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Manichudar Tamil Daily</span>
-      <span class="np-date">28 May 2026</span>
-    </div>
-    <h3 class="np-headline">Dato Sri Mukhamu Ikbal — Malaysia Front-line Trade Leader visits Royal Kings</h3>
-    <p class="np-desc">Manichudar Tamil Daily reports on the visit of Malaysian trade leader Dato Sri Mukhamu Ikbal to Royal Kings Group, exploring opportunities for Malaysia-Singapore trade collaboration.</p>
-    <button class="np-btn" onclick="openClip('man06')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">30 November 2024</span></div>
+    <h3 class="np-headline">Royal Kings Group Recognised in Tamil Regional Publications</h3>
+    <p class="np-desc">Tamil media recognition of Royal Kings Group's leadership and business excellence, featuring the group's cross-industry contributions.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar05','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/05-aYtoizAVRKaWvV2a.jpg','Tamil Media','30 November 2024')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
-<article class="np-card" id="mak01" data-cat="india" data-year="2026">
-  <div class="np-thumb" onclick="openClip('mak01')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('mak01')"
-       aria-label="View Makkal Kural clipping">
-    <img src="images/npth_mak01.jpg" alt="Makkal Kural — Riyadh Badyuthin MP Visits Royal Kings Group Singapore" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2024" id="ar06">
+  <div class="np-thumb" onclick="openClippingUrl('ar06','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/06-7ukKXlyxGTOKHnsS.jpg','Tamil Media','29 July 2024')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/06-7ukKXlyxGTOKHnsS.jpg" alt="Tamil Media — Royal Kings Group Mid-Year Achievements Highlighted in " loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2024</span>
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Makkal Kural</span>
-      <span class="np-date">25 April 2026</span>
-    </div>
-    <h3 class="np-headline">Riyadh Badyuthin MP Visits Royal Kings Group Singapore</h3>
-    <p class="np-desc">Makkal Kural Independent Tamil Daily covers the official visit of Akila Eelam Makkal Congress leader and Sri Lankan MP Riyadh Badyuthin to Royal Kings Group Singapore.</p>
-    <button class="np-btn" onclick="openClip('mak01')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">29 July 2024</span></div>
+    <h3 class="np-headline">Royal Kings Group Mid-Year Achievements Highlighted in Tamil Press</h3>
+    <p class="np-desc">Tamil press coverage of Royal Kings Group's mid-year business achievements, awards and expanding presence across Singapore and Asia-Pacific.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar06','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/06-7ukKXlyxGTOKHnsS.jpg','Tamil Media','29 July 2024')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2023" id="ar07">
+  <div class="np-thumb" onclick="openClippingUrl('ar07','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/07-3o2R3OnYb7tF7IF1.jpg','Tamil Media','1 January 2023')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/07-3o2R3OnYb7tF7IF1.jpg" alt="Tamil Media — Royal Kings Group New Year Coverage in Tamil Regional P" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">1 January 2023</span></div>
+    <h3 class="np-headline">Royal Kings Group New Year Coverage in Tamil Regional Press</h3>
+    <p class="np-desc">Tamil press New Year coverage of Royal Kings Group's business outlook and achievements entering 2023.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar07','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/07-3o2R3OnYb7tF7IF1.jpg','Tamil Media','1 January 2023')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2023" id="ar08">
+  <div class="np-thumb" onclick="openClippingUrl('ar08','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/08-QsYaxtFB6eaGz7d5.jpg','Tamil Media','4 April 2023')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/08-QsYaxtFB6eaGz7d5.jpg" alt="Tamil Media — Royal Kings Group Business Expansion Covered in Tamil P" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">4 April 2023</span></div>
+    <h3 class="np-headline">Royal Kings Group Business Expansion Covered in Tamil Press</h3>
+    <p class="np-desc">Tamil media coverage of Royal Kings Group's business expansion and strategic development activities in 2023.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar08','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/08-QsYaxtFB6eaGz7d5.jpg','Tamil Media','4 April 2023')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2023" id="ar09">
+  <div class="np-thumb" onclick="openClippingUrl('ar09','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/09-TY0Vl5pPJ7wQLY7W.jpg','Tamil Media','22 April 2023')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/09-TY0Vl5pPJ7wQLY7W.jpg" alt="Tamil Media — Royal Kings Group Leadership Profiled in Tamil Regional" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">22 April 2023</span></div>
+    <h3 class="np-headline">Royal Kings Group Leadership Profiled in Tamil Regional Media</h3>
+    <p class="np-desc">Tamil regional media profiles Royal Kings Group's leadership team and business vision for growth across the Asia-Pacific region.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar09','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/09-TY0Vl5pPJ7wQLY7W.jpg','Tamil Media','22 April 2023')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2023" id="ar10">
+  <div class="np-thumb" onclick="openClippingUrl('ar10','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/10-a0qtvQfszvR8vqyC.jpg','Tamil Media','16 July 2023')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/10-a0qtvQfszvR8vqyC.jpg" alt="Tamil Media — Awards Recognition Featured in Tamil Press" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">16 July 2023</span></div>
+    <h3 class="np-headline">Awards Recognition Featured in Tamil Press</h3>
+    <p class="np-desc">Tamil media coverage of Royal Kings Group's multiple award recognitions and business excellence in 2023.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar10','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/10-a0qtvQfszvR8vqyC.jpg','Tamil Media','16 July 2023')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2023" id="ar11">
+  <div class="np-thumb" onclick="openClippingUrl('ar11','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/11-GfDXoJIjtd2iWCqy.jpg','Tamil Media','September 2023')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/11-GfDXoJIjtd2iWCqy.jpg" alt="Tamil Media — Royal Kings Group CSR Initiatives Highlighted in Tamil " loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">September 2023</span></div>
+    <h3 class="np-headline">Royal Kings Group CSR Initiatives Highlighted in Tamil Press</h3>
+    <p class="np-desc">Tamil media highlights Royal Kings Group's corporate social responsibility programmes and community welfare activities across Singapore.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar11','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/11-GfDXoJIjtd2iWCqy.jpg','Tamil Media','September 2023')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2023" id="ar12">
+  <div class="np-thumb" onclick="openClippingUrl('ar12','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/12-s3jUvXE1lQSgvbRv.jpg','Tamil Media','October 2023')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/12-s3jUvXE1lQSgvbRv.jpg" alt="Tamil Media — Royal Kings Group Featured in Tamil Regional Publicatio" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">October 2023</span></div>
+    <h3 class="np-headline">Royal Kings Group Featured in Tamil Regional Publications</h3>
+    <p class="np-desc">Tamil regional press coverage recognising Royal Kings Group's contributions to business and community development in Singapore.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar12','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/12-s3jUvXE1lQSgvbRv.jpg','Tamil Media','October 2023')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2023" id="ar14">
+  <div class="np-thumb" onclick="openClippingUrl('ar14','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/14-8qCeJYZx5vu6fP31.jpg','Tamil Media','6 July 2023')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/14-8qCeJYZx5vu6fP31.jpg" alt="Tamil Media — Royal Kings Group Business Profile in Tamil Media" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">6 July 2023</span></div>
+    <h3 class="np-headline">Royal Kings Group Business Profile in Tamil Media</h3>
+    <p class="np-desc">Tamil media feature on Royal Kings Group's expanding business footprint and integrated services across Singapore and Asia-Pacific.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar14','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/14-8qCeJYZx5vu6fP31.jpg','Tamil Media','6 July 2023')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2023" id="ar15">
+  <div class="np-thumb" onclick="openClippingUrl('ar15','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/15-MecTmVp3RrUCvIdv.jpg','Tamil Media','August 2023')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/15-MecTmVp3RrUCvIdv.jpg" alt="Tamil Media — Royal Kings Group Award Season Coverage in Tamil Press" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">August 2023</span></div>
+    <h3 class="np-headline">Royal Kings Group Award Season Coverage in Tamil Press</h3>
+    <p class="np-desc">Tamil press coverage of Royal Kings Group's remarkable award season, celebrating recognition across Singapore's business community.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar15','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/15-MecTmVp3RrUCvIdv.jpg','Tamil Media','August 2023')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>
+<article class="np-card year-old" data-cat="india" data-pub="tamilmedia" data-year="2022" id="ar13">
+  <div class="np-thumb" onclick="openClippingUrl('ar13','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/13-7KeSJMXmOqJyx9Au.jpg','Tamil Media','14 October 2022')">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/13-7KeSJMXmOqJyx9Au.jpg" alt="Tamil Media — Royal Kings Group 2022 Recognition Covered in Tamil Reg" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🇮🇳 India</span>
+    <span class="np-year-badge">2022</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Tamil Media</span><span class="np-date">14 October 2022</span></div>
+    <h3 class="np-headline">Royal Kings Group 2022 Recognition Covered in Tamil Regional Press</h3>
+    <p class="np-desc">Tamil press documents Royal Kings Group's award recognitions and business milestones in October 2022, affirming the group's growing regional prominence.</p>
+    <button class="np-view-btn" onclick="openClippingUrl('ar13','https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/13-7KeSJMXmOqJyx9Au.jpg','Tamil Media','14 October 2022')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
   </div>
 </article>
   </div>
-</section>
-  
-<section class="cat-section" id="sec-international" aria-label="International Digital Press">
-  <div class="cat-header">
-    <h2>🌐 International Digital Press</h2>
-    <div class="cat-rule"></div>
-    <span class="cat-count">4 features</span>
-  </div>
-  <div class="np-grid" id="grid-international">
+</div>  </section>
+  <div class="section-gap"></div>
 
-<article class="np-card" id="int01" data-cat="international" data-year="2026">
-  <div class="np-thumb" onclick="openClip('int01')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('int01')"
-       aria-label="View Nambikkai Seithigal clipping">
-    <img src="images/npth_int01.jpg" alt="Nambikkai Seithigal — Royal Kings Group Community Iftar Celebration — Singapore" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
+  <!-- INTERNATIONAL & DIGITAL PRESS -->
+  <section class="cat-section" id="sec-international" aria-label="International &amp; Digital Press">
+    <div class="cat-header">
+      <h2 class="int">&#x1F310; International &amp; Digital Press</h2>
+      <div class="cat-rule"></div>
+      <span class="cat-count">4 features</span>
     </div>
+    <div class="np-grid" id="grid-international">
+<article class="np-card" data-cat="international" data-pub="nambikkaiseithigal" data-year="2026" id="int01">
+  <div class="np-thumb" onclick="openClipping('int01')">
+    <img src="images/npth_int01.jpg" alt="Nambikkai Seithigal — Royal Kings Group Strengthens Community Unity with Gran" loading="lazy">
+    <div class="np-thumb-overlay" aria-hidden="true"><div class="np-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <span class="np-cat-badge">🌐 International</span>
+    
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Nambikkai Seithigal</span>
-      <span class="np-date">March 2026</span>
+    <div class="np-pub-row"><span class="np-pub">Nambikkai Seithigal</span><span class="np-date">22 March 2026</span></div>
+    <h3 class="np-headline">Royal Kings Group Strengthens Community Unity with Grand Iftar Opening Event</h3>
+    <p class="np-desc">Nambikkai Seithigal online Tamil news covers Royal Kings Group's community Iftar event, where 150+ attendees from diverse backgrounds gathered for interfaith unity.</p>
+    <button class="np-view-btn" onclick="openClipping('int01')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>View Full Clipping</button>
+  </div>
+</article>    </div>
+<div class="older-section" id="older-international" style="display:block">
+  <div class="older-header"><span class="older-label">Archive: 2023</span></div>
+  <div class="np-grid" id="older-grid-international">
+<article class="np-card np-digital year-old" data-cat="international" data-pub="chiefofstaffasia" data-year="2023" id="dig01">
+  <div class="np-digital-thumb">
+    <div class="np-digital-logo">
+      <span class="np-digital-name">Chief of Staff Asia</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.6)" stroke-width="1.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 0 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
     </div>
-    <h3 class="np-headline">Royal Kings Group Community Iftar Celebration — Singapore</h3>
-    <p class="np-desc">International Tamil publication Nambikkai Seithigal covers Royal Kings Group's community Iftar celebration, highlighting the group's commitment to social harmony.</p>
-    <button class="np-btn" onclick="openClip('int01')">View Full Page &#8594;</button>
+    <span class="np-cat-badge">🌐 International</span>
+    <span class="np-year-badge">2023</span>
+  </div>
+  <div class="np-body">
+    <div class="np-pub-row"><span class="np-pub">Chief of Staff Asia</span><span class="np-date">31 July 2023</span></div>
+    <h3 class="np-headline">HR Stars Awards: Community Focus Underlines HR Initiatives at Royal Kings Group</h3>
+    <p class="np-desc">Chief of Staff Asia recognises Mr. Sirajudeen Bin Syed Mohamed with the Best CEO with HR Focus award at the HR Stars Awards, highlighting his people-first leadership philosophy.</p>
+    <a href="https://chiefofstaff.asia/news-and-insights/community-focus-underlines-hr-initiatives-at-royal-kings-group/" target="_blank" rel="noopener" class="np-view-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 0 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Read Full Article</a>
   </div>
 </article>
-<article class="np-card" id="dig01" data-cat="international" data-year="2023">
-  <div class="np-thumb" onclick="openClip('dig01')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('dig01')"
-       aria-label="View Chief of Staff Asia clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/chiefofstaff-YleGGk0PkJSdxGgP.jpg" alt="Chief of Staff Asia — Royal Kings Group — Best CEO with HR Focus, Chief of Staff Asia HR Stars Awards" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
+<article class="np-card np-digital year-old" data-cat="international" data-pub="yahoofinance" data-year="2023" id="dig02">
+  <div class="np-digital-thumb">
+    <div class="np-digital-logo">
+      <span class="np-digital-name">Yahoo Finance</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.6)" stroke-width="1.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 0 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
     </div>
+    <span class="np-cat-badge">🌐 International</span>
+    <span class="np-year-badge">2023</span>
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Chief of Staff Asia</span>
-      <span class="np-date">2023</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group — Best CEO with HR Focus, Chief of Staff Asia HR Stars Awards</h3>
-    <p class="np-desc">Chief of Staff Asia magazine features Royal Kings Group Founder Sirajudeen Bin Syed Mohamed's recognition as Best CEO with HR Focus at the prestigious HR Stars Awards.</p>
-    <button class="np-btn" onclick="openClip('dig01')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Yahoo Finance</span><span class="np-date">27 August 2023</span></div>
+    <h3 class="np-headline">Global Recognition Awards Honors Royal Kings Group with Esteemed 2023 Award</h3>
+    <p class="np-desc">Yahoo Finance carries the Global Recognition Awards announcement honouring Royal Kings Group and Founder Mr. Sirajudeen Bin Syed Mohamed for outstanding leadership and business innovation.</p>
+    <a href="https://finance.yahoo.com/news/global-recognition-awards-tm-honors-031300308.html" target="_blank" rel="noopener" class="np-view-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 0 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Read Full Article</a>
   </div>
 </article>
-<article class="np-card" id="dig02" data-cat="international" data-year="2023">
-  <div class="np-thumb" onclick="openClip('dig02')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('dig02')"
-       aria-label="View Yahoo Finance clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/yahoo-YBgJJkxzZzfqbaRJ.jpg" alt="Yahoo Finance — Royal Kings Group — Global Recognition Awards 2023 Winner" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
+<article class="np-card np-digital year-old" data-cat="international" data-pub="benzinga" data-year="2023" id="dig03">
+  <div class="np-digital-thumb">
+    <div class="np-digital-logo">
+      <span class="np-digital-name">Benzinga</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.6)" stroke-width="1.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 0 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
     </div>
+    <span class="np-cat-badge">🌐 International</span>
+    <span class="np-year-badge">2023</span>
   </div>
   <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Yahoo Finance</span>
-      <span class="np-date">2023</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group — Global Recognition Awards 2023 Winner</h3>
-    <p class="np-desc">Yahoo Finance announces Royal Kings Group's achievement at the Global Recognition Awards 2023, recognising outstanding business leadership and excellence.</p>
-    <button class="np-btn" onclick="openClip('dig02')">View Full Page &#8594;</button>
-  </div>
-</article>
-<article class="np-card" id="dig03" data-cat="international" data-year="2023">
-  <div class="np-thumb" onclick="openClip('dig03')" role="button" tabindex="0"
-       onkeydown="if(event.key==='Enter'||event.key===' ')openClip('dig03')"
-       aria-label="View Benzinga clipping">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=560,fit=crop/XSgOr7vEzx2UoRJ7/benzinga-mnlJlokxQeHVjrk6.jpg" alt="Benzinga — Royal Kings Group — Global Recognition Award Winner 2023" loading="lazy" class="np-img">
-    <div class="np-hover">
-      <span class="np-hover-icon">&#x1F50D;</span>
-      <span class="np-hover-txt">View Full Page</span>
-    </div>
-  </div>
-  <div class="np-body">
-    <div class="np-meta">
-      <span class="np-pub">Benzinga</span>
-      <span class="np-date">2023</span>
-    </div>
-    <h3 class="np-headline">Royal Kings Group — Global Recognition Award Winner 2023</h3>
-    <p class="np-desc">Benzinga covers Royal Kings Group's win at the Global Recognition Awards for outstanding entrepreneurship, business excellence, and community contributions.</p>
-    <button class="np-btn" onclick="openClip('dig03')">View Full Page &#8594;</button>
+    <div class="np-pub-row"><span class="np-pub">Benzinga</span><span class="np-date">27 August 2023</span></div>
+    <h3 class="np-headline">Royal Kings Group Honoured with 2023 Global Recognition Award</h3>
+    <p class="np-desc">Benzinga financial news platform publishes the Global Recognition Awards announcement, showcasing Royal Kings Group's business excellence, CSR initiatives and 30% revenue growth.</p>
+    <a href="https://www.benzinga.com/pressreleases/23/08/34061568/global-recognition-awards-tm-honors-royal-kings-group-with-esteemed-2023-global-recognition-award" target="_blank" rel="noopener" class="np-view-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 0 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Read Full Article</a>
   </div>
 </article>
   </div>
-</section>
+</div>  </section>
 
+  <section class="cta-band">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,40px);font-weight:300;color:var(--text);margin-bottom:10px;">
+      More <em style="font-style:italic;color:var(--gold);">in the News</em>
+    </h2>
+    <div class="gold-rule"></div>
+    <p>Follow our latest updates on Facebook or explore our award wins and community highlights.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="news.html" class="btn-p">Facebook News Feed</a>
+      <a href="awards.html" class="btn-g">Awards &amp; Recognition</a>
+    </div>
+  </section>
 </main>
 <footer role="contentinfo">
   <div class="footer-grid">
@@ -1962,174 +1473,179 @@ h2.sec-head {
   </div>
   <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
 </footer>
-
-<!-- Lightbox -->
-<div id="lb" role="dialog" aria-modal="true" aria-labelledby="lb-pub-name">
+<div id="lb" role="dialog" aria-modal="true" aria-labelledby="lb-pub">
   <div id="lb-box">
-    <div id="lb-header">
-      <div id="lb-header-info">
-        <span id="lb-pub-name"></span>
-        <span id="lb-pub-date"></span>
-      </div>
-      <button id="lb-close" onclick="closeLb()" aria-label="Close">&#x2715;</button>
+    <button id="lb-close" onclick="closeLb()" aria-label="Close clipping">&#x2715;</button>
+    <div id="lb-spinner" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+        <path d="M21 12a9 9 0 1 1-6.219-8.56" stroke-linecap="round"/>
+      </svg>
     </div>
-    <div id="lb-desc-strip"><p id="lb-desc-text"></p></div>
-    <div id="lb-img-wrap">
-      <div id="lb-spinner" aria-hidden="true">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
-          <path d="M21 12a9 9 0 1 1-6.219-8.56" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <img id="lb-img" src="" alt="Newspaper clipping">
-    </div>
-    <div id="lb-footer">
-      <p id="lb-headline"></p>
-      <span id="lb-counter"></span>
-      <div class="lb-nav-btns">
-        <button id="lb-prev" class="lb-nav-btn" onclick="prevClip()" aria-label="Previous">&#x2190; Prev</button>
-        <button id="lb-next" class="lb-nav-btn" onclick="nextClip()" aria-label="Next">Next &#x2192;</button>
+    <img id="lb-img" src="" alt="Newspaper clipping">
+    <div id="lb-cap">
+      <div id="lb-cap-text"><p id="lb-pub"></p><p id="lb-headline"></p></div>
+      <div class="lb-nav">
+        <button class="lb-nbtn" id="lb-prev" onclick="lbNav(-1)" aria-label="Previous">&#8249;</button>
+        <span id="lb-ctr"></span>
+        <button class="lb-nbtn" id="lb-next" onclick="lbNav(1)" aria-label="Next">&#8250;</button>
       </div>
     </div>
   </div>
 </div>
-
 <script>
-
 'use strict';
+var FULL_SG01 = 'images/np_sg01.jpg';
+var FULL_IN01 = 'images/np_in01.jpg';
+var FULL_IN02 = 'images/np_in02.jpg';
+var FULL_IN03 = 'images/np_in03.jpg';
+var FULL_IN04 = 'images/np_in04.jpg';
+var FULL_IN05 = 'images/np_in05.jpg';
+var FULL_IN06 = 'images/np_in06.jpg';
+var FULL_IN07 = 'images/np_in07.jpg';
+var FULL_IN08 = 'images/np_in08.jpg';
+var FULL_INT01 = 'images/np_int01.jpg';
 var CLIPS = {
-  'sg01': {'full':'images/np_sg01.jpg','pub':'Tamil Murasu','headline':'Community Iftar: A Wonderful Celebration in a Peaceful Atmosphere','desc':'Tamil Murasu, Singapore\'s premier Tamil-language daily, covers Royal Kings Group\'s community Iftar event bringing together Singapore\'s diverse communities in a celebration of unity and harmony.','date':'21 March 2026'},
-  'uth01': {'full':'images/np_uth01.jpg','pub':'Uthayam Daily (Sri Lanka)','headline':'Royal Kings Group & Akila Eelam Makkal Congress Leader Riyadh Badyuthin Meeting in Singapore','desc':'Sri Lanka\'s Uthayam Daily reports on the significant visit of Akila Eelam Makkal Congress leader Riyadh Badyuthin MP to Royal Kings Group\'s Singapore headquarters, marking a strengthening of bilateral ties.','date':'27 April 2026'},
-  'uth02': {'full':'images/np_uth02.jpg','pub':'Uthayam Daily (Sri Lanka)','headline':'Malaysian Literary Journalist Pithaval-Lahkan visits Royal Kings Group Founder','desc':'Uthayam Daily covers the visit of prominent Malaysian Tamil literary journalist and activist Pithaval-Lahkan to Royal Kings Group Founder Sirajudeen in Singapore, discussing Tamil literary development.','date':'28 May 2026'},
-  'uth03': {'full':'images/np_uth03.jpg','pub':'Uthayam Daily (Sri Lanka)','headline':'Malaysia Front-line Trade Industry Leader visits Royal Kings Group','desc':'Uthayam Daily reports on a senior Malaysian trade and industry official visiting Royal Kings Group Singapore headquarters for strategic business and trade collaboration discussions.','date':'28 May 2026'},
-  'in01': {'full':'images/np_in01.jpg','pub':'Manichudar Tamil Daily','headline':'Royal Kings Group Partners with Mission ShakthiSAT for Space Technology','desc':'Manichudar Tamil Daily reports on Royal Kings Group\'s strategic partnership and MOU signing with Mission ShakthiSAT, advancing Singapore\'s space technology collaboration with India.','date':'May 2026'},
-  'in02': {'full':'images/np_in02.jpg','pub':'Manichudar Tamil Daily','headline':'Royal Kings Group Founder Receives Commemorative Book on Prophet Muhammad\'s Life','desc':'Manichudar covers the cultural exchange where a distinguished book on Prophet Muhammad\'s life and teachings was presented to Royal Kings Group Founder during a community gathering.','date':'March 2026'},
-  'in03': {'full':'images/np_in03.jpg','pub':'Manichudar Tamil Daily','headline':'Royal Kings Group Participates in Saaliheen Education Foundation Event','desc':'Manichudar Tamil Daily covers Royal Kings Group\'s active participation in the Saaliheen Education Foundation\'s community development and educational empowerment event.','date':'April 2026'},
-  'in04': {'full':'images/np_in04.jpg','pub':'Manichudar Tamil Daily','headline':'Royal Kings Group and SeaPool Group Sign Shipping & Logistics Collaboration','desc':'Royal Kings Group partners with SeaPool Group in a landmark international shipping and logistics agreement, strengthening supply chain capabilities across Asia-Pacific.','date':'April 2026'},
-  'in05': {'full':'images/np_in05.jpg','pub':'Makkal Kural','headline':'Royal Kings Group and SeaPool — Singapore Shipping & Logistics Partnership','desc':'Makkal Kural Independent Tamil Daily covers the Royal Kings Group and SeaPool\'s strategic maritime logistics partnership for international shipping connectivity.','date':'April 2026'},
-  'in06': {'full':'images/np_in06.jpg','pub':'Manichudar Tamil Daily','headline':'Mission ShakthiSAT MOU Signing Ceremony at Taj Coromandel Chennai','desc':'Manichudar Tamil Daily reports on the historic MOU signing ceremony between Royal Kings Group and Mission ShakthiSAT at the prestigious Taj Coromandel Hotel in Chennai.','date':'May 2026'},
-  'in07': {'full':'images/np_in07.jpg','pub':'Trinity Mirror','headline':'Royal Kings Group Founder meets MONFI Digital Bank Leadership in Kuala Lumpur','desc':'Trinity Mirror covers Royal Kings Group Founder\'s meeting with MONFI Digital Bank\'s leadership team in Kuala Lumpur for fintech and digital banking collaboration opportunities.','date':'April 2026'},
-  'in08': {'full':'images/np_in08.jpg','pub':'Trinity Mirror','headline':'Mission ShakthiSAT MOU — Royal Kings Group at Taj Coromandel Chennai','desc':'Trinity Mirror covers the landmark signing of the MOU between Royal Kings Group and Mission ShakthiSAT, marking a new era of space technology collaboration.','date':'May 2026'},
-  'man01': {'full':'images/np_man01.jpg','pub':'Manichudar Tamil Daily','headline':'Rucibetham Book Launch — Royal Kings Group Founder Receives First Copy','desc':'Manichudar Tamil Daily reports on the book launch of "Rucibetham" by Singapore Tamil author Sha Nawaz, with Royal Kings Group Founder receiving the first launch copy.','date':'25 May 2026'},
-  'man02': {'full':'images/np_man02.jpg','pub':'Manichudar Tamil Daily','headline':'Riyadh Badyuthin MP meets Royal Kings Group Singapore','desc':'Manichudar covers the visit of Sri Lankan Member of Parliament Riyadh Badyuthin to Royal Kings Group Singapore headquarters, discussing bilateral ties and future cooperation.','date':'25 April 2026'},
-  'man03': {'full':'images/np_man03.jpg','pub':'Manichudar Tamil Daily','headline':'Malaysian Tamil Islamic Journalist Pithaval-Lahkan meets Royal Kings Group','desc':'Manichudar Tamil Daily covers the meeting between prominent Malaysian Tamil Islamic journalist Pithaval-Lahkan and Royal Kings Group Founder in Singapore.','date':'25 May 2026'},
-  'man04': {'full':'images/np_man04.jpg','pub':'Manichudar Tamil Daily','headline':'Malaysia Senior Trade Industry Leader meets Royal Kings Group Founder','desc':'A senior Malaysian trade and industry leader\'s visit to Royal Kings Group Singapore for discussions on trade development and business expansion across the region.','date':'27 May 2026'},
-  'man05': {'full':'images/np_man05.jpg','pub':'Manichudar Tamil Daily','headline':'Tamil Actor Surathkumar & Wife Radhika Welcomed at Singapore Airport','desc':'Manichudar Tamil Daily captures the warm welcome extended to popular Tamil film actor Surathkumar and his wife Radhika by Royal Kings Group leadership at Singapore Changi Airport.','date':'24 May 2026'},
-  'man06': {'full':'images/np_man06.jpg','pub':'Manichudar Tamil Daily','headline':'Dato Sri Mukhamu Ikbal — Malaysia Front-line Trade Leader visits Royal Kings','desc':'Manichudar Tamil Daily reports on the visit of Malaysian trade leader Dato Sri Mukhamu Ikbal to Royal Kings Group, exploring opportunities for Malaysia-Singapore trade collaboration.','date':'28 May 2026'},
-  'mak01': {'full':'images/np_mak01.jpg','pub':'Makkal Kural','headline':'Riyadh Badyuthin MP Visits Royal Kings Group Singapore','desc':'Makkal Kural Independent Tamil Daily covers the official visit of Akila Eelam Makkal Congress leader and Sri Lankan MP Riyadh Badyuthin to Royal Kings Group Singapore.','date':'25 April 2026'},
-  'int01': {'full':'images/np_int01.jpg','pub':'Nambikkai Seithigal','headline':'Royal Kings Group Community Iftar Celebration — Singapore','desc':'International Tamil publication Nambikkai Seithigal covers Royal Kings Group\'s community Iftar celebration, highlighting the group\'s commitment to social harmony.','date':'March 2026'},
-  'dig01': {'full':'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/chiefofstaff-YleGGk0PkJSdxGgP.jpg','pub':'Chief of Staff Asia','headline':'Royal Kings Group — Best CEO with HR Focus, Chief of Staff Asia HR Stars Awards','desc':'Chief of Staff Asia magazine features Royal Kings Group Founder Sirajudeen Bin Syed Mohamed\'s recognition as Best CEO with HR Focus at the prestigious HR Stars Awards.','date':'2023'},
-  'dig02': {'full':'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/yahoo-YBgJJkxzZzfqbaRJ.jpg','pub':'Yahoo Finance','headline':'Royal Kings Group — Global Recognition Awards 2023 Winner','desc':'Yahoo Finance announces Royal Kings Group\'s achievement at the Global Recognition Awards 2023, recognising outstanding business leadership and excellence.','date':'2023'},
-  'dig03': {'full':'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/benzinga-mnlJlokxQeHVjrk6.jpg','pub':'Benzinga','headline':'Royal Kings Group — Global Recognition Award Winner 2023','desc':'Benzinga covers Royal Kings Group\'s win at the Global Recognition Awards for outstanding entrepreneurship, business excellence, and community contributions.','date':'2023'}
+  'sg01':{'full':FULL_SG01,'pub':'Tamil Murasu','date':'21 March 2026','headline':'Community Iftar: A Wonderful Celebration in a Peaceful Atmosphere'},
+  'in01':{'full':FULL_IN01,'pub':'Manichudar Tamil Daily','date':'8 May 2026','headline':'Royal Kings Group Partners with Mission ShakthiSAT for Women\'s STEM Empowerment'},
+  'in02':{'full':FULL_IN02,'pub':'Manichudar Tamil Daily','date':'18 March 2026','headline':'Royal Kings Group Founder Receives Book on Prophet Muhammad in Chennai'},
+  'in03':{'full':FULL_IN03,'pub':'Manichudar Tamil Daily','date':'4 April 2026','headline':'Royal Kings Group Participates in Saaliheen Education Foundation Anniversary Event'},
+  'in04':{'full':FULL_IN04,'pub':'Manichudar Tamil Daily','date':'17 April 2026','headline':'Royal Kings Group & SeaPool Group Discuss Shipping and Logistics Innovation'},
+  'in05':{'full':FULL_IN05,'pub':'Makkal Kural Tamil Daily','date':'17 April 2026','headline':'Royal Kings Group & SeaPool Groups Collaborate on Shipping and Logistics'},
+  'in06':{'full':FULL_IN06,'pub':'Makkal Kural Tamil Daily','date':'8 May 2026','headline':'Mission ShakthiSAT MOU Signed — Royal Kings Group Empowers Girls in STEM'},
+  'in07':{'full':FULL_IN07,'pub':'Trinity Mirror','date':'21 April 2026','headline':'Royal Kings Group Holds Strategic Meet in Kuala Lumpur with MONFI Digital Bank'},
+  'in08':{'full':FULL_IN08,'pub':'Trinity Mirror','date':'7 May 2026','headline':'Royal Kings Group Partners with Mission Shakthi SAT for Global Women\'s STEM Initiative'},
+  'int01':{'full':FULL_INT01,'pub':'Nambikkai Seithigal','date':'22 March 2026','headline':'Royal Kings Group Strengthens Community Unity with Grand Iftar Opening Event'},
+  'ar01':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/01-Nzzy0nRnwZaGDROM.jpg",'pub':'Tamil Media','date':'1 January 2025','headline':'Royal Kings Group Featured in Tamil Regional Press — New Year 2025'},
+  'ar02':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/02-w5X06B8DgLULGKt9.jpg",'pub':'Tamil Media','date':'29 December 2024','headline':'Royal Kings Group Year-End Feature in Tamil Press'},
+  'ar03':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/03-vQfFwcaKUXZrbSjq.jpg",'pub':'Tamil Media','date':'9 December 2024','headline':'Royal Kings Group Business Milestones Covered in Tamil Regional Media'},
+  'ar04':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/04-q6Y3th2NiyaIg81s.jpg",'pub':'Tamil Media','date':'28 November 2024','headline':'Royal Kings Group Community Initiatives Featured in Tamil Press'},
+  'ar05':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/05-aYtoizAVRKaWvV2a.jpg",'pub':'Tamil Media','date':'30 November 2024','headline':'Royal Kings Group Recognised in Tamil Regional Publications'},
+  'ar06':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/06-7ukKXlyxGTOKHnsS.jpg",'pub':'Tamil Media','date':'29 July 2024','headline':'Royal Kings Group Mid-Year Achievements Highlighted in Tamil Press'},
+  'ar07':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/07-3o2R3OnYb7tF7IF1.jpg",'pub':'Tamil Media','date':'1 January 2023','headline':'Royal Kings Group New Year Coverage in Tamil Regional Press'},
+  'ar08':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/08-QsYaxtFB6eaGz7d5.jpg",'pub':'Tamil Media','date':'4 April 2023','headline':'Royal Kings Group Business Expansion Covered in Tamil Press'},
+  'ar09':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/09-TY0Vl5pPJ7wQLY7W.jpg",'pub':'Tamil Media','date':'22 April 2023','headline':'Royal Kings Group Leadership Profiled in Tamil Regional Media'},
+  'ar10':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/10-a0qtvQfszvR8vqyC.jpg",'pub':'Tamil Media','date':'16 July 2023','headline':'Awards Recognition Featured in Tamil Press'},
+  'ar11':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/11-GfDXoJIjtd2iWCqy.jpg",'pub':'Tamil Media','date':'September 2023','headline':'Royal Kings Group CSR Initiatives Highlighted in Tamil Press'},
+  'ar12':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/12-s3jUvXE1lQSgvbRv.jpg",'pub':'Tamil Media','date':'October 2023','headline':'Royal Kings Group Featured in Tamil Regional Publications'},
+  'ar14':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/14-8qCeJYZx5vu6fP31.jpg",'pub':'Tamil Media','date':'6 July 2023','headline':'Royal Kings Group Business Profile in Tamil Media'},
+  'ar15':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/15-MecTmVp3RrUCvIdv.jpg",'pub':'Tamil Media','date':'August 2023','headline':'Royal Kings Group Award Season Coverage in Tamil Press'},
+  'ar13':{'full':"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,fit=contain/XSgOr7vEzx2UoRJ7/13-7KeSJMXmOqJyx9Au.jpg",'pub':'Tamil Media','date':'14 October 2022','headline':'Royal Kings Group 2022 Recognition Covered in Tamil Regional Press'}
 };
-var ALL_IDS     = ["sg01", "uth01", "uth02", "uth03", "in01", "in02", "in03", "in04", "in05", "in06", "in07", "in08", "man01", "man02", "man03", "man04", "man05", "man06", "mak01", "int01", "dig01", "dig02", "dig03"];
-var visibleIds  = ALL_IDS.slice();
-var currIdx     = 0;
+var ALL_IDS = ['sg01', 'sg02', 'in01', 'in02', 'in03', 'in04', 'in05', 'in06', 'in07', 'in08', 'int01', 'ar01', 'ar02', 'ar03', 'ar04', 'ar05', 'ar06', 'ar07', 'ar08', 'ar09', 'ar10', 'ar11', 'ar12', 'ar14', 'ar15', 'ar13'];
 
-/* ── Filter ── */
-function filterCat(cat) {
-  var btns = document.querySelectorAll('.np-filter-btn');
-  btns.forEach(function(b){ b.classList.remove('active'); });
-  var active = document.querySelector('.np-filter-btn[data-cat="'+cat+'"]');
-  if (active) active.classList.add('active');
+var activeCat='all'; var activePub='all';
+var visibleIds=ALL_IDS.slice(); var currIdx=-1;
 
-  var allCards = document.querySelectorAll('.np-card');
-  var shown = 0;
-  allCards.forEach(function(c){
-    var match = cat==='all' || c.dataset.cat===cat;
-    c.dataset.hidden = match ? 'false' : 'true';
-    if (match) shown++;
-  });
-  var sections = document.querySelectorAll('.cat-section');
-  sections.forEach(function(s){
-    var secCat = s.id.replace('sec-','');
-    var hasVisible = cat==='all' || secCat===cat;
-    s.style.display = hasVisible ? '' : 'none';
-  });
-  var ri = document.getElementById('results-info');
-  if (ri) ri.textContent = shown + ' feature' + (shown!==1?'s':'') + ' shown';
-  visibleIds = [];
-  allCards.forEach(function(c){
-    if (c.dataset.hidden !== 'true') visibleIds.push(c.id);
+function getVisibleCards(){
+  return Array.from(document.querySelectorAll('.np-card:not(.year-old), .np-card.year-old[style*="flex"], .np-card.year-old:not([style*="none"])'))
+    .filter(function(c){ return !c.classList.contains('filtered-out'); });
+}
+
+function filterCat(cat){
+  activeCat=cat;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.toggle('active',b.getAttribute('data-cat')===cat); });
+  applyFilters();
+  ['singapore','india','international'].forEach(function(s){
+    var sec=document.getElementById('sec-'+s);
+    var gap=sec&&sec.nextElementSibling;
+    if(sec)sec.style.display=(cat==='all'||cat===s)?'':'none';
+    if(gap&&gap.classList.contains('section-gap'))gap.style.display=(cat==='all')?'':'none';
   });
 }
 
-/* ── Lightbox ── */
-function openClip(id) {
-  var d = CLIPS[id];
-  if (!d) { console.warn('No CLIPS entry for:', id); return; }
-  currIdx = visibleIds.indexOf(id);
-  if (currIdx === -1) { visibleIds = ALL_IDS.slice(); currIdx = ALL_IDS.indexOf(id); }
-  loadClip(id);
-  var lb = document.getElementById('lb');
-  lb.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  updNav();
-  setTimeout(function(){ var c=document.getElementById('lb-close'); if(c)c.focus(); }, 150);
+function filterPub(pub){
+  activePub=pub;
+  document.querySelectorAll('.pub-pill').forEach(function(b){ b.classList.toggle('active',b.getAttribute('data-pub')===pub); });
+  applyFilters();
 }
 
-function loadClip(id) {
-  var d = CLIPS[id];
-  if (!d) return;
-  var img  = document.getElementById('lb-img');
-  var spin = document.getElementById('lb-spinner');
-  img.classList.add('fading');
-  if (spin) spin.classList.add('show');
-  img.onload  = function(){ img.classList.remove('fading'); if(spin)spin.classList.remove('show'); };
-  img.onerror = function(){ img.classList.remove('fading'); if(spin)spin.classList.remove('show'); };
-  img.src = d.full || '';
-  img.alt = (d.pub||'') + ' — ' + (d.headline||'');
-  var pub = document.getElementById('lb-pub-name');
-  var dt  = document.getElementById('lb-pub-date');
-  var hl  = document.getElementById('lb-headline');
-  var ds  = document.getElementById('lb-desc-text');
-  var ctr = document.getElementById('lb-counter');
-  if (pub) pub.textContent = d.pub || '';
-  if (dt)  dt.textContent  = d.date || '';
-  if (hl)  hl.textContent  = d.headline || '';
-  if (ds)  ds.textContent  = d.desc || '';
-  if (ctr) ctr.textContent = (currIdx+1) + ' / ' + visibleIds.length;
+function applyFilters(){
+  var cards=document.querySelectorAll('.np-card');
+  var vis=0;
+  cards.forEach(function(c){
+    var catMatch = (activeCat==='all'||c.getAttribute('data-cat')===activeCat);
+    var pubMatch = (activePub==='all'||c.getAttribute('data-pub')===activePub);
+    var show = catMatch && pubMatch;
+    c.classList.toggle('filtered-out',!show);
+    if(show) vis++;
+  });
+  var ri=document.getElementById('results-info');
+  if(ri) ri.textContent=vis+' feature'+(vis!==1?'s':'')+' displayed';
+  visibleIds=Array.from(document.querySelectorAll('.np-card:not(.filtered-out)')).map(function(c){ return c.id; });
 }
 
-function closeLb() {
-  var lb = document.getElementById('lb');
-  lb.style.display = 'none';
-  document.body.style.overflow = '';
+function toggleOlder(cat){
+  var sec=document.getElementById('older-'+cat);
+  var btn=document.getElementById('vm-btn-'+cat);
+  if(!sec)return;
+  var isOpen=sec.style.display==='block';
+  sec.style.display=isOpen?'none':'block';
+  if(btn){
+    btn.classList.toggle('open',!isOpen);
+    if(!isOpen){
+      var arrow='&#x25B2;';
+      btn.innerHTML=btn.innerHTML.replace('&#x25BC;',arrow);
+      btn.innerHTML=btn.innerHTML.replace('View Older Articles','Hide Older Articles');
+    }else{
+      btn.innerHTML=btn.innerHTML.replace('&#x25B2;','&#x25BC;');
+      btn.innerHTML=btn.innerHTML.replace('Hide Older Articles','View Older Articles');
+    }
+  }
+  applyFilters();
 }
 
-function prevClip() {
-  if (currIdx > 0) { currIdx--; loadClip(visibleIds[currIdx]); updNav(); }
-}
-function nextClip() {
-  if (currIdx < visibleIds.length-1) { currIdx++; loadClip(visibleIds[currIdx]); updNav(); }
-}
-function updNav() {
-  var p = document.getElementById('lb-prev');
-  var n = document.getElementById('lb-next');
-  var ctr = document.getElementById('lb-counter');
-  if (p) p.disabled = currIdx <= 0;
-  if (n) n.disabled = currIdx >= visibleIds.length-1;
-  if (ctr) ctr.textContent = (currIdx+1) + ' / ' + visibleIds.length;
+function openClipping(id){
+  currIdx=visibleIds.indexOf(id);
+  if(currIdx===-1){ visibleIds=ALL_IDS.slice(); currIdx=ALL_IDS.indexOf(id); }
+  loadLb(id);
+  var lb=document.getElementById('lb');
+  lb.style.display='flex'; lb.classList.add('open');
+  document.body.style.overflow='hidden';
+  updLbNav();
+  setTimeout(function(){ document.getElementById('lb-close').focus(); },180);
 }
 
-/* Keyboard navigation */
-document.addEventListener('keydown', function(e){
-  var lb = document.getElementById('lb');
-  if (!lb || lb.style.display==='none') return;
-  if (e.key==='Escape') closeLb();
-  if (e.key==='ArrowLeft') prevClip();
-  if (e.key==='ArrowRight') nextClip();
-});
-/* Click backdrop to close */
-document.getElementById('lb') && document.getElementById('lb').addEventListener('click', function(e){
-  if (e.target === this) closeLb();
-});
+function openClippingUrl(id,imgUrl,pub,date){
+  var d={full:imgUrl,pub:pub,date:date,headline:''};
+  CLIPS[id]=d;
+  openClipping(id);
+}
 
-/* Init */
-document.addEventListener('DOMContentLoaded', function(){
-  filterCat('all');
-  var lb = document.getElementById('lb');
-  if (lb) lb.addEventListener('click', function(e){ if(e.target===this) closeLb(); });
-  initNav();
+function loadLb(id){
+  var d=CLIPS[id]; if(!d)return;
+  var img=document.getElementById('lb-img');
+  var spin=document.getElementById('lb-spinner');
+  img.classList.add('fading'); spin.classList.add('show');
+  img.onload=function(){ img.classList.remove('fading'); spin.classList.remove('show'); };
+  img.onerror=function(){ spin.classList.remove('show'); img.classList.remove('fading'); };
+  img.src=d.full; img.alt=(d.pub||'')+' — '+(d.headline||'');
+  document.getElementById('lb-pub').textContent=(d.pub||'')+(d.date?' · '+d.date:'');
+  document.getElementById('lb-headline').textContent=d.headline||'';
+  document.getElementById('lb-ctr').textContent=(currIdx+1)+' / '+visibleIds.length;
+}
+
+function closeLb(){
+  var lb=document.getElementById('lb');
+  lb.classList.remove('open'); lb.style.display='';
+  document.getElementById('lb-img').src='';
+  document.body.style.overflow='';
+}
+
+function lbNav(dir){
+  var n=currIdx+dir; if(n<0||n>=visibleIds.length)return;
+  currIdx=n; loadLb(visibleIds[currIdx]); updLbNav();
+}
+function updLbNav(){
+  document.getElementById('lb-prev').disabled=(currIdx<=0);
+  document.getElementById('lb-next').disabled=(currIdx>=visibleIds.length-1);
+  document.getElementById('lb-ctr').textContent=(currIdx+1)+' / '+visibleIds.length;
+}
+document.getElementById('lb').addEventListener('click',function(e){ if(e.target===this)closeLb(); });
+document.addEventListener('keydown',function(e){
+  if(!document.getElementById('lb').classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')lbNav(-1);
+  if(e.key==='ArrowRight')lbNav(1);
 });
 
 function openDrawer(){var d=document.getElementById('mobileDrawer'),o=document.getElementById('drawerOverlay'),h=document.getElementById('hamburger');if(!d)return;d.classList.add('open');d.setAttribute('aria-hidden','false');o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
@@ -2149,7 +1665,7 @@ function closeDrawer(){var d=document.getElementById('mobileDrawer'),o=document.
   }
   });
 })();
-
 </script>
 </body>
+
 </html>
