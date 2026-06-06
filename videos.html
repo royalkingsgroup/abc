@@ -157,19 +157,19 @@ body{font-family:'Raleway',sans-serif;background:var(--deep);color:var(--text);o
 
 /* FOOTER */
 footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:56px 60px 30px;}
-.footer-grid{display:grid;grid-template-columns:260px 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
-.footer-brand{display:flex;flex-direction:column;align-items:flex-start;}
+
+
 .footer-brand img{height:150px;width:auto;object-fit:contain;margin-bottom:16px;filter:drop-shadow(0 0 10px rgba(201,168,76,.15));}
 .footer-brand p{font-size:12px;line-height:1.85;color:var(--muted);}
-.footer-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;color:var(--gold-dark);text-transform:uppercase;margin-top:10px;}
+
 .footer-col h5{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.1);font-weight:700;}
 .footer-col a{display:block;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color .3s,padding-left .3s;}
 .footer-col a:hover{color:var(--text);padding-left:4px;}
-.footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:20px;display:flex;justify-content:center;}
-.footer-bottom p{font-size:10px;color:rgba(138,128,112,.5);}
+
+
 ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px;}
 
-@media(max-width:1100px){.vid-grid{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:1100px){.vid-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){
   .vid-grid{grid-template-columns:1fr;}
   .container{padding:0 18px;}
@@ -178,7 +178,7 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.14);padding:
   .yr-section{padding:32px 0 44px;}
   .yr-label{font-size:22px;}
   #vidModal-box{width:96vw;}
-  .footer-grid{grid-template-columns:1fr;}
+  
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
 
@@ -880,6 +880,39 @@ h2.sec-head {
 }
 .wa-float:hover .wa-tooltip{opacity:1;}
 @media(max-width:480px){.wa-float{bottom:16px;right:16px;width:38px;height:38px;}.wa-float svg{width:22px;height:22px;}}
+
+
+/* ── Subpage logo-only footer ── */
+
+
+
+
+
+@media(max-width:768px){
+  
+  
+  
+}
+
+/* ── Section logo accent ── */
+
+
+
+@media(max-width:600px){
+  
+}
+
+
+
+@media(max-width:768px){}
+
+
+
+@media(max-width:768px){}
+
+.footer-bottom{padding:14px 60px;background:var(--deep);border-top:1px solid rgba(201,168,76,.1);text-align:center;}
+.footer-bottom p{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+@media(max-width:768px){.footer-bottom{padding:12px 18px;}}
 </style>
 </head>
 <body>
@@ -965,7 +998,7 @@ h2.sec-head {
 
   <!-- INTRO -->
   <div class="page-intro">
-    <h2>Our Video <em>Library</em></h2>
+<h2>Our Video <em>Library</em></h2>
     <div class="gold-rule"></div>
     <p>Watch Royal Kings Group's milestones, award ceremonies, community initiatives and corporate launches. Click any video to play it directly on this page.</p>
   </div>
@@ -1308,44 +1341,10 @@ h2.sec-head {
 </main>
 
 <footer role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="images/footer_logo.png" alt="Royal Kings Group">
-      
-      <span class="footer-tag">Excellence &middot; Integrity &middot; Performance</span>
-    </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <a href="about.html">About Us</a>
-      <a href="about.html#vision">Vision &amp; Mission</a>
-      <a href="about.html#founder">Founder &amp; Chairman</a>
-      <a href="about.html#csr">Corporate Social Responsibility</a>
-      <a href="awards.html">Awards</a>
-      <a href="videos.html">Videos</a>
-    </div>
-    <div class="footer-col">
-      <h5>Our Pillars</h5>
-      <a href="pillars.html#tech">Technology &amp; Digital</a>
-      <a href="pillars.html#consultancy">Corporate Consultancy</a>
-      <a href="pillars.html#hospitality">Hospitality &amp; Events</a>
-      <a href="pillars.html#trading">Global Trading</a>
-      <a href="pillars.html#fintech">Royal Kings Fintech Pte. Ltd.</a>
-    </div>
-    <div class="footer-col">
-      <h5>Connect</h5>
-      <a href="mailto:contact@royalkingsgroup.com">contact@royalkingsgroup.com</a>
-      <a href="tel:+6562260405">+65 6226 0405</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="memberships.html">Memberships</a>
-      <a href="news.html">News</a>
-      <a href="sitemap.html">Sitemap</a>
-      <a href="disclaimer.html">Disclaimer</a>
-    </div>
+  <div class="footer-bottom">
+    <p>&copy; 2013&ndash;2026 Royal Kings Group. All rights reserved.</p>
   </div>
-  <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
 </footer>
-
-
 <div id="vidModal" role="dialog" aria-modal="true" aria-label="Video player">
   <div id="vidModal-backdrop"></div>
   <div id="vidModal-box">
