@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Royal Kings Group is a Singapore-headquartered diversified business platform spanning Technology, Consultancy, Hospitality, Global Trading and Fintech — trusted across Asia-Pacific since 2013.">
+<meta name="description" content="Royal Kings Group is a Singapore-headquartered diversified business platform spanning Technology, Consultancy, Hospitality, Global Trading and Fintech — trusted across Asia since 2013.">
 <meta name="keywords" content="Royal Kings Group, Singapore business, diversified business, technology consultancy, hospitality, global trading, fintech Singapore">
 <meta name="author" content="Royal Kings Group">
 <meta name="robots" content="index, follow">
@@ -12,14 +12,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://royalkingsgroup.github.io/website/index.html">
 <meta property="og:title" content="Royal Kings Group — Excellence · Integrity · Performance">
-<meta property="og:description" content="Singapore's premier diversified business group. Five integrated verticals serving Asia-Pacific since 2013.">
+<meta property="og:description" content="Singapore's premier diversified business group. Five integrated verticals serving Asia since 2013.">
 <meta property="og:image" content="https://royalkingsgroup.github.io/website/images/footer_logo.png">
 <meta property="og:site_name" content="Royal Kings Group">
 <meta property="og:locale" content="en_SG">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Royal Kings Group — Excellence · Integrity · Performance">
-<meta name="twitter:description" content="Singapore's premier diversified business group. Five integrated verticals serving Asia-Pacific since 2013.">
+<meta name="twitter:description" content="Singapore's premier diversified business group. Five integrated verticals serving Asia since 2013.">
 <meta name="twitter:image" content="https://royalkingsgroup.github.io/website/images/footer_logo.png">
 <!-- Schema.org -->
 <script type="application/ld+json">
@@ -29,7 +29,7 @@
       "name": "Royal Kings Group",
       "url": "https://royalkingsgroup.github.io/website",
       "logo": "https://royalkingsgroup.github.io/website/images/footer_logo.png",
-      "description": "Royal Kings Group is a Singapore-headquartered diversified business platform spanning Technology, Consultancy, Hospitality, Global Trading and Fintech — trusted across Asia-Pacific since 2013.",
+      "description": "Royal Kings Group is a Singapore-headquartered diversified business platform spanning Technology, Consultancy, Hospitality, Global Trading and Fintech — trusted across Asia since 2013.",
       "foundingDate": "2013",
       "address": {"@type":"PostalAddress","streetAddress":"10 Ubi Crescent, #02-61 (Lobby D)","addressLocality":"Singapore","postalCode":"408564","addressCountry":"SG"},
       "sameAs": ["https://www.facebook.com/100091498026763"]
@@ -113,8 +113,22 @@ nav.scrolled .nav-logo img{height:36px;}
 .btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,0.08);}
 
 /* STATS */
-.stats-bar{background:linear-gradient(to right,var(--deep),var(--mid),var(--deep));border-top:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.2);padding:26px 60px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;}
-.stat-item{text-align:center;padding:0 44px;border-right:1px solid rgba(201,168,76,0.14);}
+.stats-bar{
+  background:linear-gradient(to right,var(--deep),var(--mid),var(--deep));
+  border-top:1px solid rgba(201,168,76,.2);
+  border-bottom:1px solid rgba(201,168,76,.2);
+  padding:22px 40px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  margin-top:20px;
+}
+.stat-item{
+  text-align:center;
+  padding:12px 16px;
+  border-right:1px solid rgba(201,168,76,.14);
+}
+.stat-item:last-child{border-right:none;}
 .stat-item:last-child{border-right:none;}
 .stat-num{font-family:'Cinzel',serif;font-size:30px;color:var(--gold);display:block;line-height:1;}
 .stat-lbl{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:5px;display:block;}
@@ -182,9 +196,9 @@ nav.scrolled .nav-logo img{height:36px;}
 
 /* WHY US */
 .why-outer{background:var(--mid);}
-.why-section{padding:84px 60px;display:grid;grid-template-columns:1fr 1fr;gap:68px;max-width:1200px;margin:0 auto;align-items:center;}
+.why-section{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:480px;}
 .why-text-body{font-size:16px;line-height:2;color:rgba(240,236,224,0.65);font-weight:300;margin-bottom:22px;}
-.why-image-wrap{position:relative;}
+.why-image-wrap{position:relative;overflow:hidden;min-height:420px;order:1;}
 .why-image-wrap::before{content:'';position:absolute;top:-14px;left:-14px;width:100%;height:100%;border:1px solid rgba(201,168,76,0.2);z-index:-1;}
 .why-list{list-style:none;margin-top:20px;}
 .why-list li{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
@@ -228,16 +242,16 @@ nav.scrolled .nav-logo img{height:36px;}
 
 /* FOOTER */
 footer{background:var(--deep);border-top:1px solid rgba(201,168,76,0.14);padding:56px 60px 30px;}
-.footer-grid{display:grid;grid-template-columns:260px 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
-.footer-brand{display:flex;flex-direction:column;align-items:flex-start;}
+
+
 .footer-brand img{height:150px;width:auto;object-fit:contain;margin-bottom:16px;filter:drop-shadow(0 0 10px rgba(201,168,76,0.15));}
 .footer-brand p{font-size:12px;line-height:1.85;color:var(--muted);}
-.footer-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;color:var(--gold-dark);text-transform:uppercase;margin-top:10px;}
+
 .footer-col h5{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,0.1);font-weight:700;}
 .footer-col a{display:block;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color var(--t),padding-left var(--t);}
 .footer-col a:hover{color:var(--text);padding-left:4px;}
-.footer-bottom{border-top:1px solid rgba(201,168,76,0.08);padding-top:20px;display:flex;justify-content:center;}
-.footer-bottom p{font-size:10px;color:rgba(138,128,112,0.5);}
+
+
 
 /* MICROSITE */
 .microsite-overlay{position:fixed;inset:0;z-index:9000;background:rgba(5,5,10,0);display:none;align-items:center;justify-content:center;transition:background 0.4s;}
@@ -272,20 +286,20 @@ footer{background:var(--deep);border-top:1px solid rgba(201,168,76,0.14);padding
   .nav-links{gap:14px;}
   .nav-links a{font-size:10px;letter-spacing:1.5px;}
 }
-@media(max-width:768px){
-  nav{padding:0 16px;height:62px;}
-  .nav-links{display:none;}
-  .hamburger{display:flex;}
-  .pillars-grid{grid-template-columns:1fr 1fr;}
-  .stats-bar{flex-wrap:wrap;padding:18px;gap:18px;}
-  .stat-item{border-right:none;padding:0 18px;}
-  .footer-grid{grid-template-columns:1fr;}
+@media(max-width:768px){.stats-bar{grid-template-columns:repeat(2,1fr);}.stat-item{border-right:none;border-bottom:1px solid rgba(201,168,76,.1);}}
+  .stat-item{
+  text-align:center;
+  padding:12px 16px;
+  border-right:1px solid rgba(201,168,76,.14);
+}
+.stat-item:last-child{border-right:none;}
+  
   .testimonials-grid{grid-template-columns:1fr;}
   .microsite-grid{grid-template-columns:1fr;}
   .intro-section,.why-section,.testimonials-section,.cta-band{padding:50px 18px;}
   .pillars-section{padding:36px 8px 56px;}
   .hero-logo{width:clamp(280px,22vw,500px);max-width:75vw;height:auto;object-fit:contain;filter:drop-shadow(0 0 20px rgba(201,168,76,.15));image-rendering:auto;}
-  .why-section{grid-template-columns:1fr;}
+  .why-section{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:480px;}
   .yt-poster{height:260px;}
   .microsite-body{padding:24px 20px 36px;}
   .microsite-footer{flex-direction:column;}
@@ -1080,7 +1094,90 @@ h2.sec-head {
 }
 .wa-float:hover .wa-tooltip{opacity:1;}
 @media(max-width:480px){.wa-float{bottom:16px;right:16px;width:38px;height:38px;}.wa-float svg{width:22px;height:22px;}}
-</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer-bottom p,.footer-bottom a{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);}
+
+.footer-bottom-links a{text-decoration:none;transition:color .2s;}
+.footer-bottom-links a:hover{color:var(--gold);}
+@media(max-width:768px){
+  
+  
+  
+  
+}
+
+
+
+
+@media(max-width:768px){}
+
+
+
+@media(max-width:768px){}
+
+/* ── Homepage footer ── */
+.footer-cta-band{
+  display:flex;align-items:center;justify-content:center;gap:72px;
+  padding:72px 80px;
+  background:linear-gradient(135deg,#0D0D14 0%,#1C1C2C 60%,#131320 100%);
+  border-top:1px solid rgba(201,168,76,.25);
+}
+.footer-cta-logo{width:180px;height:auto;flex-shrink:0;filter:drop-shadow(0 4px 24px rgba(201,168,76,.15));}
+.footer-cta-right{max-width:560px;}
+.footer-cta-eyebrow{
+  display:block;font-family:'Raleway','Nunito Sans',sans-serif;
+  font-size:9px;font-weight:700;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+.footer-cta-title{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.2vw,46px);
+  font-weight:300;color:var(--text);line-height:1.15;margin-bottom:14px;
+}
+.footer-cta-title em{font-style:italic;color:var(--gold);}
+.footer-cta-sub{font-size:14.5px;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:28px;}
+.footer-cta-btns{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.footer-email-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Raleway','Nunito Sans',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;
+  border:1px solid rgba(201,168,76,.45);border-radius:2px;padding:11px 22px;
+  transition:all .25s;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+}
+.footer-email-btn:hover{background:rgba(201,168,76,.12);border-color:var(--gold);}
+.footer-bottom{
+  padding:16px 60px;background:var(--deep);
+  border-top:1px solid rgba(201,168,76,.1);text-align:center;
+}
+.footer-bottom p{
+  font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+@media(max-width:900px){
+  .footer-cta-band{flex-direction:column;gap:36px;padding:52px 28px;text-align:center;}
+  .footer-cta-logo{width:140px;}
+  .footer-cta-btns{justify-content:center;}
+}
+@media(max-width:480px){
+  .footer-cta-band{padding:40px 18px;}
+  .footer-email-btn,.btn-primary{width:100%;justify-content:center;}
+}
+
+.why-inner{padding:52px 56px;display:flex;flex-direction:column;justify-content:center;order:2;}
+.why-content{padding:52px 56px;display:flex;flex-direction:column;justify-content:center;order:2;}
+@media(max-width:900px){.why-section{grid-template-columns:1fr;}.why-image-wrap,.why-content{order:unset;}.why-content{padding:36px 28px;}}</style>
 </head>
 <body>
 
@@ -1151,7 +1248,7 @@ h2.sec-head {
 <div id="main-content" style="position:absolute;top:0"></div><section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow">Singapore &nbsp;·&nbsp; Asia Pacific &nbsp;·&nbsp; Global</span>
+    <span class="hero-eyebrow">Singapore &nbsp;·&nbsp; Asia &nbsp;·&nbsp; Global</span>
     <div class="hero-logo-wrap">
       <img class="hero-logo" src="images/rkg_logo_hero.png" alt="Royal Kings Group logo">
     </div>
@@ -1168,18 +1265,20 @@ h2.sec-head {
 </section>
 
 <!-- STATS -->
-<div class="stats-bar">
-  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-lbl">Years of Excellence</span></div>
-  <div class="stat-item"><span class="stat-num">5</span><span class="stat-lbl">Business Pillars</span></div>
-  <div class="stat-item"><span class="stat-num" style="font-size:22px;letter-spacing:1px;">APAC &amp; India</span><span class="stat-lbl">Regional Reach</span></div>
-  <div class="stat-item"><span class="stat-num">SG</span><span class="stat-lbl">Headquartered</span></div>
-</div>
+
 
 <!-- WHO WE ARE -->
 <section class="intro-section">
   <span class="section-eyebrow">Who We Are</span>
   <h2 class="section-title">An Integrated Business Group<br><em>Delivering Multi-Industry Solutions</em></h2>
   <div class="gold-rule"></div>
+  <div class="stats-bar">
+  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-lbl">Years of Excellence</span></div>
+  <div class="stat-item"><span class="stat-num">5</span><span class="stat-lbl">Business Pillars</span></div>
+  <div class="stat-item"><span class="stat-num" style="font-size:22px;letter-spacing:1px;">Asia &amp; Global</span><span class="stat-lbl">Regional Reach</span></div>
+  <div class="stat-item"><span class="stat-num">SG</span><span class="stat-lbl">Headquartered</span></div>
+</div>
+
   
 </section>
 
@@ -1189,63 +1288,27 @@ h2.sec-head {
     <span class="section-eyebrow">Our Business Architecture</span>
     <h2 class="section-title">Five <em>Pillars</em> of Excellence</h2>
     <div class="gold-rule"></div>
-    <p style="font-size:13px;color:var(--muted);max-width:540px;margin:0 auto;line-height:1.85;">Each vertical operates as an independent centre of expertise. Click any pillar to explore its full microsite.</p>
+    
   </div>
   <div class="pillars-grid">
 
-    <!-- 01 Tech — CLICKABLE -->
-    <div class="pillar-card clickable" onclick="openMicrosite('tech')" role="button" tabindex="0" aria-label="Technology &amp; Digital Solutions">
+<div class="pillar-card clickable" onclick="openMicrosite('tech')" role="button" tabindex="0" aria-label="Technology &amp; Digital Solutions">
       <div class="pillar-bg" style="background-image:url('images/cloud.jpg')"></div>
       <div class="pillar-accent"></div>
       <div class="pillar-inner">
         <span class="pillar-number">01 / 05</span><span class="pillar-icon">💼</span>
-        <h3 class="pillar-title">Royal Kings<br>Pte. Ltd.</h3>
+        <h3 class="pillar-title">Royal Kings</h3>
         <p class="pillar-sub">Technology &amp; Digital Solutions</p>
         <p class="pillar-desc">IT consultancy, AI-enabled platforms, and fintech capabilities driving intelligent digital transformation for modern enterprises.</p>
         <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
       </div>
     </div>
 
-    <!-- 02 Consultancy — CLICKABLE --><div class="pillar-card clickable" onclick="openMicrosite('consultancy')" role="button" tabindex="0" aria-label="Corporate Services">
-      <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80')"></div>
-      <div class="pillar-accent"></div>
-      <div class="pillar-inner">
-        <span class="pillar-number">02 / 05</span><span class="pillar-icon">🏢</span>
-        <h3 class="pillar-title">Royal Kings<br>Consultancy</h3>
-        <p class="pillar-sub">Corporate Services &amp; Compliance</p>
-        <p class="pillar-desc">ACRA-registered corporate secretarial services, business formation, and regulatory compliance for startups and SMEs in Singapore.</p>
-        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
-      </div>
-    </div>
-
-    <!-- 03 Hospitality — CLICKABLE --><div class="pillar-card clickable" onclick="openMicrosite('hospitality')" role="button" tabindex="0" aria-label="Hospitality &amp; Events">
-      <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=80')"></div>
-      <div class="pillar-accent"></div>
-      <div class="pillar-inner">
-        <span class="pillar-number">03 / 05</span><span class="pillar-icon">🏨</span>
-        <h3 class="pillar-title">Royal Kings<br>Hospitality</h3>
-        <p class="pillar-sub">Hospitality, Events &amp; Exhibition</p>
-        <p class="pillar-desc">MICE strategy, corporate advisory, and thoughtfully orchestrated business experiences that elevate brand presence and engagement.</p>
-        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
-      </div>
-    </div>
-
-    <!-- 04 Trading — CLICKABLE --><div class="pillar-card clickable" onclick="openMicrosite('trading')" role="button" tabindex="0" aria-label="Global Trading">
-      <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=900&q=80')"></div>
-      <div class="pillar-accent"></div>
-      <div class="pillar-inner">
-        <span class="pillar-number">04 / 05</span><span class="pillar-icon">🌍</span>
-        <h3 class="pillar-title">Royal Kings<br>Global Trading</h3>
-        <p class="pillar-sub">Global Trading &amp; Supply Chain</p>
-        <p class="pillar-desc">Cross-border wholesale, strategic sourcing, import/export facilitation and logistics coordination connecting producers to global markets.</p>
-        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
-      </div>
-    </div>
-
-    <!-- 05 Fintech — CLICKABLE popup --><div class="pillar-card clickable" onclick="openMicrosite('fintech')" onkeydown="if(event.key==='Enter'||event.key===' ')openMicrosite('fintech')" role="button" tabindex="0" aria-label="Royal Kings Fintech Pte. Ltd.">
+    
+<div class="pillar-card clickable" onclick="openMicrosite('fintech')" onkeydown="if(event.key==='Enter'||event.key===' ')openMicrosite('fintech')" role="button" tabindex="0" aria-label="Royal Kings Fintech Pte. Ltd.">
       <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=900&q=80')"></div>
       <div class="pillar-inner">
-        <span class="pillar-number">05 / 05</span><span class="pillar-icon">✨</span>
+        <span class="pillar-number">02 / 05</span><span class="pillar-icon">✨</span>
         <h3 class="pillar-title">Royal Kings<br>Fintech</h3>
         <p class="pillar-sub">Financial Technology &amp; Digital Innovation</p>
         <p class="pillar-desc">Premium digital finance and fintech solutions — from digital payment infrastructure to strategic wealth preservation for discerning investors.</p>
@@ -1253,6 +1316,46 @@ h2.sec-head {
       </div>
     </div>
 
+    
+<div class="pillar-card clickable" onclick="openMicrosite('consultancy')" role="button" tabindex="0" aria-label="Corporate Services">
+      <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80')"></div>
+      <div class="pillar-accent"></div>
+      <div class="pillar-inner">
+        <span class="pillar-number">03 / 05</span><span class="pillar-icon">🏢</span>
+        <h3 class="pillar-title">Royal Kings<br>Consultancy</h3>
+        <p class="pillar-sub">Corporate Services &amp; Compliance</p>
+        <p class="pillar-desc">ACRA-registered corporate secretarial services, business formation, and regulatory compliance for startups and SMEs in Singapore.</p>
+        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
+      </div>
+    </div>
+
+    
+<div class="pillar-card clickable" onclick="openMicrosite('hospitality')" role="button" tabindex="0" aria-label="Hospitality &amp; Events">
+      <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=80')"></div>
+      <div class="pillar-accent"></div>
+      <div class="pillar-inner">
+        <span class="pillar-number">04 / 05</span><span class="pillar-icon">🏨</span>
+        <h3 class="pillar-title">Royal Kings<br>Hospitality</h3>
+        <p class="pillar-sub">Hospitality, Events &amp; Exhibition</p>
+        <p class="pillar-desc">MICE strategy, corporate advisory, and thoughtfully orchestrated business experiences that elevate brand presence and engagement.</p>
+        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
+      </div>
+    </div>
+
+    
+<div class="pillar-card clickable" onclick="openMicrosite('trading')" role="button" tabindex="0" aria-label="Global Trading">
+      <div class="pillar-bg" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=900&q=80')"></div>
+      <div class="pillar-accent"></div>
+      <div class="pillar-inner">
+        <span class="pillar-number">05 / 05</span><span class="pillar-icon">🌍</span>
+        <h3 class="pillar-title">Royal Kings<br>Global Trading</h3>
+        <p class="pillar-sub">Global Trading &amp; Supply Chain</p>
+        <p class="pillar-desc">Cross-border wholesale, strategic sourcing, import/export facilitation and logistics coordination connecting producers to global markets.</p>
+        <button class="pillar-cta" tabindex="-1">CLICK HERE TO FIND MORE</button>
+      </div>
+    </div>
+
+  </div>
   </div>
 </section>
 
@@ -1280,105 +1383,60 @@ h2.sec-head {
         </div>
       </div>
     </div>
-    <div>
-      <span class="section-eyebrow">Your Strategic Partner</span>
-      <h2 class="section-title" id="why-heading">Your Strategic Partner for<br><em>Growth, Compliance &amp; Expansion</em></h2>
-      <div class="gold-rule" style="margin:14px 0 20px;"></div>
-      <p class="why-text-body">We go beyond traditional corporate services — acting as a strategic partner in growth, regulatory compliance, and long-term value creation across Asia-Pacific.</p>
+    <div class="why-content" style="order:2;">
+      <span class="section-eyebrow" id="why-heading">Your Strategic Partner</span>
+      <h2 class="section-title">Your Strategic Partner for<br><em>Growth, Compliance &amp; Expansion</em></h2>
+      <div class="gold-rule"></div>
+      <p class="why-text-body">Royal Kings Group serves as an integrated business partner across Singapore and Asia — providing technology solutions, corporate advisory, hospitality management, global trade facilitation, and fintech innovation through five specialised verticals.</p>
       <ul class="why-list">
-        <li><div class="why-icon">🎯</div><div><h4>Performance-Driven</h4><p>Every engagement measured by outcomes — tangible, quantifiable results for every client.</p></div></li>
-        <li><div class="why-icon">🔍</div><div><h4>Full Transparency</h4><p>Open communication and honest governance form the bedrock of every client relationship.</p></div></li>
-        <li><div class="why-icon">🌐</div><div><h4>APAC Network</h4><p>Deep regional connections enabling faster market entry and strategic partnerships.</p></div></li>
-        <li><div class="why-icon">⚖️</div><div><h4>Regulatory Compliance</h4><p>ACRA-registered with Qualified Individuals — operating to the highest Singapore standards.</p></div></li>
+        <li>
+          <div class="why-icon">⚡</div>
+          <div><h4>Innovation-Led Growth</h4><p>Harnessing emerging technology and digital strategies to build sustainable competitive advantages for clients.</p></div>
+        </li>
+        <li>
+          <div class="why-icon">🌏</div>
+          <div><h4>ASIA &amp; Global Network</h4><p>Extensive connections across Asia and globally — enabling strategic market entry, cross-border partnerships, and sustainable business growth.</p></div>
+        </li>
+        <li>
+          <div class="why-icon">🏆</div>
+          <div><h4>Proven Excellence</h4><p>15+ national and international awards recognising leadership, service quality, and community contributions.</p></div>
+        </li>
+        <li>
+          <div class="why-icon">🤝</div>
+          <div><h4>Trusted Partnership</h4><p>Long-term strategic relationships built on accountability, transparency, and measurable business outcomes.</p></div>
+        </li>
       </ul>
+      
+
     </div>
   </div>
 </div>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials-section" id="testimonials">
-  <div class="pillars-header">
-    <span class="section-eyebrow">Client Voices</span>
-    <h2 class="section-title">What Our <em>Partners</em> Say</h2>
-    <div class="gold-rule"></div>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Royal Kings Group exceeded our expectations with their professionalism and outstanding service. Their integrated approach saved us months of coordination time."</p>
-      <div class="testi-rule"></div>
-      <p class="testi-name">Chen Daoming</p><p class="testi-role">Managing Director, Asia Pacific</p>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"The consultancy team guided us through our Singapore incorporation flawlessly. Every regulatory requirement was handled with precision and we launched on schedule."</p>
-      <div class="testi-rule"></div>
-      <p class="testi-name">Priya Ramasamy</p><p class="testi-role">Founder, TechVenture SG</p>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"The hospitality division organised our regional conference with remarkable attention to detail. Our delegates left deeply impressed — we will return for every future event."</p>
-      <div class="testi-rule"></div>
-      <p class="testi-name">Hiroshi Tanaka</p><p class="testi-role">VP Corporate Affairs, Tokyo HQ</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-band" id="contact">
-  <span class="section-eyebrow">Let's Build Together</span>
-  <h2 class="section-title">Ready to Partner With <em>Excellence?</em></h2>
-  <p>Whether you are scaling a startup, restructuring operations, exploring global markets, or preserving generational wealth — we have the pillar for you.</p>
-  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-    <a href="mailto:contact@royalkingsgroup.com" class="btn-primary">Email Us Now</a>
-    <a href="tel:+6562260405" class="btn-ghost">+65 6226 0405</a>
-  </div>
-  <div class="cta-details">
-    <div class="cta-detail"><span>📍</span><span>10 Ubi Crescent, #02-61 (Lobby D), Singapore 408564</span></div>
-    <div class="cta-detail"><span>✉</span><span><strong>contact@royalkingsgroup.com</strong></span></div>
-    <div class="cta-detail"><span>🕐</span><span>Mon–Fri 9AM–6PM SGT</span></div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="images/footer_logo.png" alt="Royal Kings Group">
-      
-      <span class="footer-tag">Excellence &middot; Integrity &middot; Performance</span>
+  <div class="footer-cta-band">
+    <div class="footer-cta-left">
+      <img src="images/rkg_logo_hero.png" alt="Royal Kings Group" class="footer-cta-logo" loading="lazy">
     </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <a href="about.html">About Us</a>
-      <a href="about.html#vision">Vision &amp; Mission</a>
-      <a href="about.html#founder">Founder &amp; Chairman</a>
-      <a href="about.html#csr">Corporate Social Responsibility</a>
-      <a href="awards.html">Awards</a>
-      <a href="videos.html">Videos</a>
-    </div>
-    <div class="footer-col">
-      <h5>Our Pillars</h5>
-      <a href="#" onclick="openMicrosite('tech');return false;">Technology &amp; Digital</a>
-      <a href="#" onclick="openMicrosite('consultancy');return false;">Corporate Consultancy</a>
-      <a href="#" onclick="openMicrosite('hospitality');return false;">Hospitality &amp; Events</a>
-      <a href="#" onclick="openMicrosite('trading');return false;">Global Trading</a>
-      <a href="pillars.html#fintech">Royal Kings Fintech Pte. Ltd.</a>
-    </div>
-    <div class="footer-col">
-      <h5>Connect</h5>
-      <a href="mailto:contact@royalkingsgroup.com">contact@royalkingsgroup.com</a>
-      <a href="tel:+6562260405">+65 6226 0405</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="memberships.html">Memberships</a>
-      <a href="news.html">News</a>
-      <a href="sitemap.html">Sitemap</a>
-      <a href="disclaimer.html">Disclaimer</a>
+    <div class="footer-cta-right">
+      <span class="footer-cta-eyebrow">Partner with Excellence</span>
+      <h2 class="footer-cta-title">Ready to Partner<br><em>with Excellence?</em></h2>
+      <p class="footer-cta-sub">Connect with Royal Kings Group to explore strategic opportunities across Singapore, Asia, and beyond.</p>
+      <div class="footer-cta-btns">
+        <a href="contact.html" class="btn-primary">Get In Touch</a>
+        <a href="mailto:contact@royalkingsgroup.com" class="footer-email-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,12 2,6"/>
+          </svg>
+          Email Us Now
+        </a>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom"><p>© 2013–2026 Royal Kings Group. All rights reserved.</p></div>
+  <div class="footer-bottom">
+    <p>&copy; 2013&ndash;2026 Royal Kings Group. All rights reserved.</p>
+  </div>
 </footer>
-
 <!-- MICROSITE OVERLAY -->
 <div class="microsite-overlay" id="micrositeOverlay" role="dialog" aria-modal="true" aria-labelledby="ms-title">
   <div class="microsite-panel">
@@ -1415,7 +1473,7 @@ var msData = {
     tag: '01 / 05 — Technology & Digital Solutions',
     title: 'Royal Kings Pte. Ltd.',
     img: 'images/rkg_logo_hero.png',
-    about: '<p>Royal Kings Pte. Ltd. is the Group\'s technology arm, specialising in IT consultancy, AI-enabled solutions, and fintech capabilities. We partner with forward-thinking organisations to navigate digital transformation and build competitive, data-driven enterprises.</p><p>Our approach is practical and business-aligned — we create measurable operational improvements, reduce costs, and open new revenue channels across the Asia-Pacific region.</p>',
+    about: '<p>Royal Kings Pte. Ltd. is the Group\'s technology arm, specialising in IT consultancy, AI-enabled solutions, and fintech capabilities. We partner with forward-thinking organisations to navigate digital transformation and build competitive, data-driven enterprises.</p><p>Our approach is practical and business-aligned — we create measurable operational improvements, reduce costs, and open new revenue channels across the Asia region.</p>',
     services: ['IT Consultancy & System Architecture','AI & Machine Learning Integration','Data Analytics & Business Intelligence','Digital Transformation Roadmapping','Cloud Migration & Managed Services','Cybersecurity Advisory']
   },
   consultancy: {
@@ -1436,7 +1494,7 @@ var msData = {
     tag: '04 / 05 — Global Trading & Supply Chain',
     title: 'Royal Kings Global Trading Pte. Ltd.',
     img: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1200&q=85',
-    about: '<p>Royal Kings Global Trading manages cross-border wholesale, strategic sourcing, import and export facilitation, and logistics coordination. We connect producers and buyers with reliable, end-to-end execution across the Asia-Pacific region and beyond.</p><p>Our commission-based wholesale model enables businesses of all sizes to access global markets without the complexity of building their own international trade infrastructure.</p>',
+    about: '<p>Royal Kings Global Trading manages cross-border wholesale, strategic sourcing, import and export facilitation, and logistics coordination. We connect producers and buyers with reliable, end-to-end execution across the Asia region and beyond.</p><p>Our commission-based wholesale model enables businesses of all sizes to access global markets without the complexity of building their own international trade infrastructure.</p>',
     services: ['Cross-Border Wholesale Trading','Strategic Procurement & Sourcing','Import / Export Facilitation','Logistics & Freight Coordination','Customs Compliance Advisory','Commission-Based Distribution','Supply Chain Risk Management']
   },
   fintech: {
