@@ -87,7 +87,7 @@ nav.scrolled .nav-logo img{height:36px;}
 
 /* ═══ HERO ═══ */
 #hero{position:relative;height:100svh;min-height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://assets.zyrosite.com/XSgOr7vEzx2UoRJ7/merlion-cinemagraph-960x540-mnlJlokxQeIMGzkK.gif');background-size:cover;background-position:center 30%;filter:brightness(0.62) saturate(0.78);}
+.hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://assets.zyrosite.com/XSgOr7vEzx2UoRJ7/merlion-cinemagraph-960x540-mnlJlokxQeIMGzkK.gif');background-size:cover;background-position:center 30%;filter:brightness(0.78) saturate(0.78);}
 .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(10,10,15,0.02) 15%,rgba(10,10,15,0.55) 100%);}
 .hero-content{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;padding:88px 20px 0;margin-top:-100px;}
 .hero-eyebrow{font-family:'Cinzel',serif;font-size:clamp(11px,1vw,15px);letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:28px;animation:fadeUp 1s 0.2s both;}
@@ -837,7 +837,7 @@ body, p, .body-text p, .np-desc, .csr-desc,
 
 /* Improve hero brightness across all pages */
 .page-hero-bg {
-  filter: brightness(0.52) saturate(.75) !important;
+  filter: brightness(0.78) saturate(.75) !important;
 }
 .hero-bg {
   filter: brightness(.36) saturate(.7) !important;
@@ -1540,6 +1540,43 @@ body{overflow-x:hidden;}
 img{loading:lazy;display:block;}
 .page-hero-bg img,.yt-poster img{loading:eager;}
 
+
+/* ── Pillar cards mobile fix ── */
+@media(max-width:1024px){
+  .pillar-cards-grid{grid-template-columns:repeat(2,1fr) !important;gap:16px;}
+  .pillar-card{height:400px;}
+  .pillar-inner{padding:24px 18px 22px;}
+  .pillar-title{font-size:13px;}
+  .pillar-desc{display:none;}
+}
+@media(max-width:768px){
+  .pillar-cards-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px;}
+  .pillar-card{height:340px;}
+  .pillar-inner{padding:20px 16px 18px;}
+  .pillar-number{font-size:8px;letter-spacing:2px;margin-bottom:6px;}
+  .pillar-icon{font-size:20px;margin-bottom:7px;}
+  .pillar-title{font-size:12px;letter-spacing:.8px;}
+  .pillar-sub{font-size:8px;letter-spacing:1.5px;margin-bottom:8px;}
+  .pillar-desc{display:none;}
+  .pillar-cta{font-size:7.5px;padding:8px 14px;}
+}
+@media(max-width:540px){
+  .pillar-cards-grid{grid-template-columns:1fr !important;gap:12px;}
+  .pillar-card{height:220px;}
+  .pillar-inner{padding:18px 16px 16px;flex-direction:row;align-items:center;flex-wrap:wrap;gap:8px;}
+  .pillar-number{display:none;}
+  .pillar-icon{font-size:22px;margin:0;flex-shrink:0;}
+  .pillar-title{font-size:14px;letter-spacing:.8px;margin:0;}
+  .pillar-sub{font-size:9px;width:100%;margin:4px 0 8px;}
+  .pillar-desc{display:none;}
+  .pillar-cta{font-size:8px;padding:7px 16px;margin-top:auto;}
+}
+@media(max-width:400px){
+  .pillar-card{height:200px;}
+  .pillar-inner{padding:14px 14px;}
+  .pillar-title{font-size:13px;}
+  .pillar-sub{font-size:8px;}
+}
 </style>
 </head>
 <body>
