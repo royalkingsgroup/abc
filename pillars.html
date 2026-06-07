@@ -1119,12 +1119,368 @@ h2.sec-head {
   object-fit: cover;
   object-position: center;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   MASTER RESPONSIVE SYSTEM — All breakpoints, all pages
+   320  → xs mobile
+   480  → mobile
+   600  → large mobile
+   768  → tablet portrait
+   900  → tablet landscape / small laptop
+   1024 → iPad Pro / laptop
+   1200 → desktop
+   1440 → large desktop
+   1920 → ultra-wide / 4K
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Ultra-wide / 4K (1920px+) ── */
+@media(min-width:1920px){
+  .container{max-width:1600px !important;}
+  .nav-inner{max-width:1600px;}
+  .story-grid{max-width:1500px;}
+  .pillar-card{height:560px;}
+  .two-col{max-width:1500px;margin:0 auto;}
+  .dark-inner{max-width:1400px;}
+  .why-section{max-width:1500px;margin:0 auto;padding:0 60px;}
+}
+
+/* ── Large desktop (1440px) ── */
+@media(min-width:1440px){
+  .why-outer > .why-section{max-width:1400px;margin:0 auto;}
+  .story-grid{max-width:1340px;}
+  .stats-bar{max-width:100%;}
+}
+
+/* ── 1200px — standard desktop ── */
+@media(max-width:1200px){
+  .pillar-cards-grid{grid-template-columns:repeat(3,1fr) !important;}
+  .why-section{gap:0;}
+  .story-grid{gap:48px;}
+  .os-leadership-inner{gap:40px;}
+  .two-col{gap:48px;}
+  .founder-grid{gap:40px;}
+  .awards-grid{grid-template-columns:repeat(3,1fr);}
+  .ap-photos-grid{grid-template-columns:repeat(3,1fr);}
+}
+
+/* ── 1024px — iPad Pro / small laptop ── */
+@media(max-width:1024px){
+  /* Navigation */
+  .nav-links{display:none !important;}
+  .hamburger{display:flex !important;}
+
+  /* Homepage pillars */
+  .pillar-cards-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .pillar-card{height:420px;}
+
+  /* Why section (video + text) */
+  .why-section{grid-template-columns:1fr !important;}
+  .why-image-wrap{order:1 !important;height:340px !important;min-height:340px !important;}
+  .why-content{order:2 !important;padding:40px 36px !important;}
+  .yt-poster{min-height:340px !important;}
+
+  /* Our story */
+  .story-grid{grid-template-columns:1fr !important;gap:0 !important;}
+  .office-col{min-height:320px !important;height:320px !important;position:relative !important;}
+  .office-wrap{position:absolute !important;inset:0 !important;}
+  .vm-grid{grid-template-columns:1fr !important;}
+  .leadership-inner{grid-template-columns:1fr !important;gap:32px;}
+  .team-grid{grid-template-columns:repeat(4,1fr);}
+
+  /* Pillars page */
+  .two-col{grid-template-columns:1fr !important;gap:32px !important;}
+  .fintech-visual-wrap{justify-content:flex-start;}
+  .pillar-img-frame{max-width:100% !important;}
+  .fintech-visual{max-width:100% !important;}
+  .fintech-grid{grid-template-columns:1fr 1fr;}
+
+  /* Management team */
+  .tm-grid-outer{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Founder page */
+  .founder-grid{grid-template-columns:1fr !important;gap:28px;}
+  .founder-photo{max-width:320px;margin:0 auto;}
+  .awards-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* General sections */
+  .dark-section{padding:64px 28px !important;}
+  .story-section{padding:56px 28px 48px !important;}
+  .leadership-section{padding:64px 28px !important;}
+  .pillar-page-section{padding:64px 28px !important;}
+  .section-inner{padding:0 28px !important;}
+  .breadcrumb{padding:10px 20px !important;}
+}
+
+/* ── 900px — tablet landscape ── */
+@media(max-width:900px){
+  /* Stats bars */
+  .stats-bar{grid-template-columns:repeat(2,1fr) !important;}
+  .os-stats{grid-template-columns:repeat(2,1fr) !important;}
+  .np-stats-bar{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Homepage hero */
+  .hero-content h1{font-size:clamp(28px,6vw,52px) !important;}
+  .hero-btns{flex-direction:column;align-items:center;gap:10px;}
+
+  /* Pillar cards */
+  .pillar-cards-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .pillar-card{height:380px;}
+
+  /* Core values */
+  .cv-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Testimonials */
+  .testimonial-grid{grid-template-columns:1fr !important;}
+
+  /* CSR */
+  .csr-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Awards */
+  .awards-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .ap-photos-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Videos */
+  .video-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Memberships */
+  .members-grid{grid-template-columns:repeat(3,1fr) !important;}
+
+  /* Newspaper */
+  .np-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .np-filter-wrap{padding:18px 16px 0 !important;}
+  .np-filter-panel{flex-direction:column;gap:14px;padding:16px !important;}
+  .np-filter-col{padding:0 !important;min-width:auto !important;}
+  .np-filter-divider{display:none !important;}
+
+  /* Section headings */
+  .sec-head{font-size:clamp(22px,4vw,38px) !important;}
+  .section-title{font-size:clamp(22px,4vw,38px) !important;}
+  .story-title{font-size:clamp(22px,4vw,40px) !important;}
+
+  /* Footer */
+  .footer-bottom{padding:12px 20px !important;}
+}
+
+/* ── 768px — tablet portrait ── */
+@media(max-width:768px){
+  /* Nav */
+  .hamburger{display:flex !important;}
+  .nav-links{display:none !important;}
+  .nav-logo img{height:36px !important;}
+
+  /* Page heroes */
+  .page-hero{height:280px !important;}
+
+  /* Homepage stats */
+  .stats-bar{grid-template-columns:repeat(2,1fr) !important;}
+  .si{border-right:none !important;border-bottom:1px solid rgba(201,168,76,.12);}
+
+  /* Why section */
+  .why-section{grid-template-columns:1fr !important;}
+  .why-image-wrap{height:280px !important;min-height:280px !important;order:1 !important;}
+  .why-content{padding:32px 20px !important;order:2 !important;}
+  .yt-poster{min-height:280px !important;}
+
+  /* Pillars */
+  .pillar-cards-grid{grid-template-columns:1fr !important;}
+  .pillar-card{height:360px;}
+
+  /* Newspaper modal */
+  #np-modal-box{max-height:98vh;}
+  .np-mnav-btn{padding:6px 10px;}
+
+  /* Our story leadership */
+  .team-grid{grid-template-columns:repeat(3,1fr) !important;}
+
+  /* General padding */
+  .dark-section{padding:52px 18px !important;}
+  .story-section{padding:44px 18px !important;}
+  .leadership-section{padding:52px 18px !important;}
+  .pillar-page-section{padding:52px 18px !important;}
+  .dark-inner{padding:0 !important;}
+  .os-vm-inner,.os-values-inner,.os-leadership-inner{padding:0 18px !important;}
+}
+
+/* ── 600px — large mobile ── */
+@media(max-width:600px){
+  /* Pillar cards: single column */
+  .pillar-cards-grid{grid-template-columns:1fr !important;}
+  .pillar-card{height:300px;}
+
+  /* Stats: 2 col */
+  .stats-bar{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Why section */
+  .why-image-wrap{height:240px !important;min-height:240px !important;}
+  .why-content{padding:28px 18px !important;}
+  .yt-poster{min-height:240px !important;}
+
+  /* Fintech grid */
+  .fintech-grid{grid-template-columns:1fr !important;}
+
+  /* Awards, CSR */
+  .awards-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .csr-grid{grid-template-columns:1fr !important;}
+
+  /* Memberships */
+  .members-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Videos */
+  .video-grid{grid-template-columns:1fr !important;}
+
+  /* Newspaper */
+  .np-grid{grid-template-columns:1fr !important;}
+
+  /* Team */
+  .team-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Pillars services */
+  .service-pills{gap:7px !important;}
+  .service-pill{font-size:9px !important;padding:6px 11px !important;}
+
+  /* Core values */
+  .cv-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* VM grid */
+  .vm-grid{grid-template-columns:1fr !important;}
+
+  /* Story CTA */
+  .story-cta-row{flex-direction:column;gap:10px !important;}
+  .story-cta-row a{width:100%;text-align:center;justify-content:center;}
+
+  /* Founder awards */
+  .awards-grid{grid-template-columns:repeat(2,1fr) !important;}
+}
+
+/* ── 480px — standard mobile ── */
+@media(max-width:480px){
+  /* Hero */
+  .page-hero{height:240px !important;}
+  .page-hero h1{font-size:clamp(20px,6vw,32px) !important;}
+
+  /* Homepage hero */
+  .hero-content{padding:24px 16px !important;}
+  .hero-content h1{font-size:clamp(24px,7vw,40px) !important;}
+  .hero-btns{flex-direction:column;align-items:stretch;gap:8px !important;}
+  .hero-btns a{text-align:center;justify-content:center;}
+
+  /* Why section */
+  .why-image-wrap{height:200px !important;min-height:200px !important;}
+  .why-content{padding:24px 16px !important;}
+
+  /* Pillar cards */
+  .pillar-cards-grid{grid-template-columns:1fr !important;}
+  .pillar-card{height:280px;}
+  .pillar-card-content{padding:18px !important;}
+  .pillar-title{font-size:clamp(16px,4vw,22px) !important;}
+
+  /* Stats bar */
+  .stats-bar{grid-template-columns:repeat(2,1fr) !important;}
+  .sn{font-size:22px !important;}
+
+  /* Sections */
+  .dark-section{padding:40px 14px !important;}
+  .story-section{padding:36px 14px !important;}
+  .pillar-page-section{padding:40px 14px !important;}
+  .leadership-section{padding:40px 14px !important;}
+
+  /* Section headings */
+  .sec-head{font-size:clamp(20px,5vw,30px) !important;}
+  .story-title{font-size:clamp(20px,5vw,30px) !important;}
+
+  /* Our story */
+  .office-col{min-height:240px !important;height:240px !important;}
+  .vm-card-new{padding:22px 18px !important;}
+  .vm-sub{font-size:16px !important;}
+  .vm-body{font-size:12.5px !important;}
+
+  /* CV cards */
+  .cv-grid{grid-template-columns:1fr 1fr !important;}
+  .cv-card{padding:18px 14px !important;}
+
+  /* Newspaper filter */
+  .np-filter-wrap{padding:14px 12px 0 !important;}
+  .np-filters-wrap{padding:14px 12px 0 !important;}
+  .np-reset-btn{width:100% !important;justify-content:center;}
+
+  /* Newspaper cards */
+  .np-thumb-wrap{height:160px !important;}
+  .np-card-body{padding:12px !important;}
+
+  /* Management team */
+  .tm-grid-outer{grid-template-columns:1fr !important;}
+  .tm-photo-wrap{height:240px !important;}
+
+  /* Memberships */
+  .members-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* Videos */
+  .video-grid{grid-template-columns:1fr !important;}
+
+  /* General breadcrumb */
+  .breadcrumb{padding:8px 14px !important;}
+  .bc-sep,.bc-curr,.breadcrumb a{font-size:8px !important;}
+}
+
+/* ── 360px — small mobile ── */
+@media(max-width:360px){
+  .page-hero{height:200px !important;}
+  .page-hero h1{font-size:18px !important;}
+  .hero-content h1{font-size:22px !important;}
+  .pillar-card{height:250px;}
+  .stats-bar{grid-template-columns:1fr 1fr !important;}
+  .sn{font-size:20px !important;}
+  .cv-grid{grid-template-columns:1fr !important;}
+  .members-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .awards-grid{grid-template-columns:1fr 1fr !important;}
+  .np-grid{grid-template-columns:1fr !important;}
+  .dark-section,.story-section,.pillar-page-section,.leadership-section{padding:32px 12px !important;}
+  .pillar-page-section .container{padding:0 !important;}
+}
+
+/* ── Smooth load & scroll ── */
+html{scroll-behavior:smooth;}
+img{max-width:100%;height:auto;}
+*{-webkit-tap-highlight-color:transparent;}
+
+/* ── Touch targets ── */
+@media(max-width:768px){
+  .btn-primary,.btn-ghost,.btn-p,.btn-g{
+    min-height:44px;display:inline-flex;align-items:center;justify-content:center;
+  }
+  .hamburger{min-width:44px;min-height:44px;}
+  .tab-btn,.pub-pill,.pill-btn{min-height:36px;padding:6px 14px;}
+}
+
+/* ── Font size fluid scaling ── */
+@media(max-width:768px){
+  .section-eyebrow,.page-hero-eyebrow,.os-eyebrow,.story-label{letter-spacing:3px !important;}
+  .pillar-legal{font-size:10px !important;}
+  .body-text p{font-size:13px !important;}
+  .fintech-item-title{font-size:11px !important;}
+  .service-pill{white-space:normal !important;text-align:center;}
+}
+
+/* ── Prevent horizontal overflow ── */
+body{overflow-x:hidden;}
+.container,.nav-inner,.dark-inner,.story-grid,.two-col,
+.pillar-cards-grid,.stats-bar,.vm-grid,.cv-grid,.awards-grid,
+.csr-grid,.members-grid,.video-grid,.np-grid,.team-grid,
+.fintech-grid,.service-pills{
+  max-width:100%;box-sizing:border-box;
+}
+
+/* ── Image loading optimisation ── */
+img{loading:lazy;display:block;}
+.page-hero-bg img,.yt-poster img{loading:eager;}
+
 </style>
 </head>
 <body>
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner"><a class="nav-logo" href="index.html" aria-label="Royal Kings Group home">
-    <img src="images/nav_logo.png" alt="Royal Kings Group emblem" class="nav-logo-img">
+    <img src="images/nav_logo.png" alt="Royal Kings Group emblem" class="nav-logo-img" loading="lazy">
     <span class="nav-brand-text">ROYAL KINGS GROUP</span>
   </a>
   <div class="nav-links" role="menubar">
